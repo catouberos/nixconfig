@@ -5,6 +5,7 @@
 
   home.packages = with pkgs; [
     unzip
+    fastfetch
   ];
 
   programs = {
