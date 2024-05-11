@@ -48,7 +48,7 @@
               useUserPackages = true;
               extraSpecialArgs = {inherit inputs;};
               users.catou = {
-                imports = [./home.nix catppuccin.homeManagerModules.catppuccin nixvim.homeManagerModules.nixvim];
+                imports = [./hosts/fishtank/home.nix catppuccin.homeManagerModules.catppuccin nixvim.homeManagerModules.nixvim];
               };
             };
           }
