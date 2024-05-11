@@ -4,6 +4,9 @@
     catppuccin.enable = true;
     settings = {
       font = {
+        normal = {
+          family = "JetBrainsMono Nerd Font";
+        };
         size = 11;
       };
       shell = {
