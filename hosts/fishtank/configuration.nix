@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ../../modules/gaming
     ../../modules/virtualisation
+    ../../modules/security
     inputs.home-manager.nixosModules.default
   ];
 
@@ -101,11 +102,6 @@
 
   programs = {
     dconf.enable = true;
-    _1password.enable = true;
-    _1password-gui = {
-      enable = true;
-      polkitPolicyOwners = ["catou"];
-    };
     mtr.enable = true;
     gnupg.agent = {
       enable = true;
