@@ -6,6 +6,8 @@
   home.packages = with pkgs; [
     unzip
     fastfetch
+    bat
+    eza
   ];
 
   programs = {
@@ -27,6 +29,9 @@
       functions = {
         fish_user_key_bindings = "fish_vi_key_bindings";
         rb = "nixos-rebuild switch --flake .";
+
+        # eza aliases
+        l = "eza";
       };
     };
     starship = {
