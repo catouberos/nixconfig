@@ -8,6 +8,8 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/gaming
+    ../../modules/virtualisation
     inputs.home-manager.nixosModules.default
   ];
 
@@ -109,14 +111,6 @@
       enable = true;
       enableSSHSupport = true;
     };
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
-    gamemode = {
-      enable = true;
-      settings.general.inhibit_screensaver = 0;
-    };
   };
 
   users.users.catou = {
@@ -125,14 +119,6 @@
   };
 
   catppuccin.flavour = "macchiato";
-
-  home-manager = {
-    users = {
-      "catou" = {
-        imports = [./home.nix inputs.catppuccin.homeManagerModules.catppuccin inputs.nixvim.homeManagerModules.nixvim];
-      };
-    };
-  };
 
   environment = {
     pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];

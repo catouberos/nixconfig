@@ -28,10 +28,11 @@
       '';
       functions = {
         fish_user_key_bindings = "fish_vi_key_bindings";
-        rb = "nixos-rebuild switch --flake .";
 
         # eza aliases
-        l = "eza";
+        l = "eza --icons";
+        ll = "eza --icons -l";
+        lt = "eza --icons -t";
       };
     };
     starship = {

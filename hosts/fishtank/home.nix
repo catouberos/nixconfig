@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ../../modules/desktop
-    ../../modules/cli
-    ../../modules/nixvim.nix
-    ../../modules/1password.nix
+    ../../home-manager/desktop
+    ../../home-manager/cli
+    ../../home-manager/nixvim.nix
+    ../../home-manager/1password.nix
   ];
 
   home.username = "catou";

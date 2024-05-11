@@ -19,6 +19,7 @@
     self,
     nixpkgs,
     catppuccin,
+    nixvim,
     home-manager,
     nixos-hardware,
     ...
@@ -42,9 +43,14 @@
           nixos-hardware.nixosModules.common-cpu-intel-cpu-only
           nixos-hardware.nixosModules.common-pc-ssd
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {inherit inputs;};
+              users.catou = {
+                imports = [./home.nix catppuccin.homeManagerModules.catppuccin nixvim.homeManagerModules.nixvim];
+              };
+            };
           }
         ];
       };
