@@ -9,6 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nix-darwin = {
+        url = "github:LnL7/nix-darwin";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +24,7 @@
     nixpkgs,
     catppuccin,
     nixvim,
+    nix-darwin,
     home-manager,
     nixos-hardware,
     ...
@@ -52,6 +57,26 @@
               };
             };
           }
+        ];
+      };
+    };
+
+    darwinConfigurations = {
+      air = nix-darwin.lib.darwinSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/air/configuration.nix
+#          home-manager.darwinModules.home-manager
+#          {
+#            home-manager = {
+#              useGlobalPkgs = true;
+#              useUserPackages = true;
+#              extraSpecialArgs = {inherit inputs;};
+#              users.catou = {
+#                imports = [./hosts/air/home.nix nixvim.homeManagerModules.nixvim];
+#              };
+#            };
+#          }
         ];
       };
     };
