@@ -66,17 +66,17 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/air/configuration.nix
-#          home-manager.darwinModules.home-manager
-#          {
-#            home-manager = {
-#              useGlobalPkgs = true;
-#              useUserPackages = true;
-#              extraSpecialArgs = {inherit inputs;};
-#              users.catou = {
-#                imports = [./hosts/air/home.nix nixvim.homeManagerModules.nixvim];
-#              };
-#            };
-#          }
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {inherit inputs;};
+              users.catou = {
+                imports = [./hosts/air/home.nix nixvim.homeManagerModules.nixvim];
+              };
+            };
+          }
         ];
       };
     };

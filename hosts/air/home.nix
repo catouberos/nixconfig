@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    #../../home-manager/cli
+    ../../home-manager/cli
     ../../home-manager/nixvim.nix
   ];
 
