@@ -5,7 +5,6 @@
   ];
 
   home.username = "catou";
-  home.homeDirectory = "/home/catou";
   home.stateVersion = "23.11";
 
   home.packages = [
