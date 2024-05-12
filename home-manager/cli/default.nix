@@ -13,7 +13,6 @@
   programs = {
     tmux = {
       enable = true;
-      catppuccin.enable = true;
     };
     btop.enable = true;
     nnn = {
@@ -22,7 +21,6 @@
     };
     fish = {
       enable = true;
-      catppuccin.enable = true;
       interactiveShellInit = ''
         set fish_greeting
       '';
@@ -37,7 +35,6 @@
     };
     starship = {
       enable = true;
-      catppuccin.enable = true;
       enableFishIntegration = true;
     };
     git = {
