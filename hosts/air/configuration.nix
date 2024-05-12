@@ -18,7 +18,7 @@
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
-  users.users.aisamu.home = "/Users/aisamu";
+  users.users.catou.home = "/Users/catou";
 
   system = {
   # Set Git commit hash for darwin-version.
