@@ -136,6 +136,7 @@
       #misc
       cabextract
       cifs-utils
+      usbutils
     ];
   };
 

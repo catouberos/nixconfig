@@ -12,6 +12,8 @@
     fastfetch
     bat
     eza
+    imagemagick
+    yt-dlp
   ];
 
   programs = {
