@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.wezterm = {
     enable = true;
     extraConfig = ''
@@ -17,10 +17,12 @@
       -- This is where you actually apply your config choices
 
       config.font = wezterm.font("JetBrainsMono Nerd Font")
-      config.font_size = 10.5
+      config.font_size = 12.5
       config.color_scheme = "catppuccin-macchiato"
 
       config.window_background_opacity = 0.9
+
+      config.default_prog = { '${pkgs.fish}/bin/fish', '-l' }
 
       -- and finally, return the configuration to wezterm
       return config
