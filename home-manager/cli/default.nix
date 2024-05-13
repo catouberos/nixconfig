@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./terminal
   ];
@@ -43,7 +47,12 @@
       userName = "Nguyen Do";
       extraConfig = {
         gpg.format = "ssh";
-        gpg."ssh".program = "${pkgs._1password-gui}/bin/op-ssh-sign";
+        gpg."ssh".program = lib.mkMerge [
+          (lib.mkIf pkgs.stdenv.isLinux "${pkgs._1password-gui}/bin/op-ssh-sign")
+          (lib.mkIf pkgs.stdenv.isDarwin "/Applications/1Password.app/Contents/MacOS/op-ssh-sign")
+        ];
+        user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaumQv5SNC23QI8UytovjkssAor+yxQLixCGqVkk4vJ";
+        commit.gpgsign = true;
       };
     };
   };

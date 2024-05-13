@@ -9,18 +9,16 @@ in {
   programs.ssh = {
     enable = true;
     extraConfig = lib.mkMerge [
-      (
-        lib.mkIf pkgs.stdenv.isLinux
+      (lib.mkIf pkgs.stdenv.isLinux
         ''
           Host *
-              IdentityAgent ${onePassLinuxPath}
+            IdentityAgent "${onePassLinuxPath}"
+        '')
+      (lib.mkIf pkgs.stdenv.isDarwin
         ''
-      )
-      (lib.mkIf pkgs.stdenv.isDarwin ''
-
-        Host *
-        	IdentityAgent ${onePassDarwinPath}
-      '')
+          Host *
+            IdentityAgent "${onePassDarwinPath}"
+        '')
     ];
   };
 }

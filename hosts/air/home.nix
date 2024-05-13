@@ -2,6 +2,7 @@
   imports = [
     ../../home-manager/cli
     ../../home-manager/nixvim.nix
+    ../../home-manager/1password.nix
   ];
 
   home.username = "catou";
