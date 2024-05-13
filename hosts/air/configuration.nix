@@ -15,15 +15,19 @@
   # nix.package = pkgs.nix;
   nixpkgs.config.allowUnfree = true;
 
+  programs = {
+    zsh.enable = true;
+  };
+
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
   users.users.catou.home = "/Users/catou";
 
   system = {
-  # Set Git commit hash for darwin-version.
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
+    # Set Git commit hash for darwin-version.
+    # Used for backwards compatibility, please read the changelog before changing.
+    # $ darwin-rebuild changelog
     stateVersion = 4;
   };
 
