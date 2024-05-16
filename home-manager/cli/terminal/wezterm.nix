@@ -17,12 +17,12 @@
       -- This is where you actually apply your config choices
 
       config.font = wezterm.font("JetBrainsMono Nerd Font")
-      config.font_size = 12.5
+      config.font_size = 14
       config.color_scheme = "catppuccin-macchiato"
 
       config.window_background_opacity = 0.9
 
-      config.default_prog = { '${pkgs.fish}/bin/fish', '-l' }
+      config.default_prog = { '${pkgs.fish}/bin/fish', '--login' }
 
       -- and finally, return the configuration to wezterm
       return config
