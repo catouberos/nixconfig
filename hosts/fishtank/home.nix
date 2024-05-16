@@ -20,6 +20,10 @@
     pkgs.xdg-utils
 
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+
+    # nixvim
+    pkgs.ripgrep
+    pkgs.fd
   ];
 
   home.sessionVariables = {

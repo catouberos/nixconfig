@@ -20,6 +20,7 @@
           flavour = "macchiato";
         };
       };
+
       plugins = {
         # lsp
         lsp = {
@@ -94,27 +95,20 @@
               {
                 name = "buffer"; # text within current buffer
                 option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-                keywordLength = 3;
               }
               {
-                name = "path"; # file system paths
-                keywordLength = 3;
+                name = "path";
               }
               {
-                name = "luasnip"; # snippets
-                keywordLength = 3;
+                name = "luasnip";
               }
             ];
-            mappings = {
-              "<Up>" = "cmp.mapping.select_next_item({ behavior = types.cmp.SelectBehavior.Select })";
-              "<Down>" = "cmp.mapping.select_prev_item({ behavior = types.cmp.SelectBehavior.Select })";
-              "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
-              "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
-
+            mapping = {
               "<CR>" = "cmp.mapping.confirm({ select = true })";
-
-              "<C-n>" = "cmp.mapping.select_next_item()";
-              "<C-p>" = "cmp.mapping.select_prev_item()";
+              "<Down>" = "cmp.mapping.select_next_item()";
+              "<Up>" = "cmp.mapping.select_prev_item()";
+              "<Tab>" = "cmp.mapping.select_next_item()";
+              "<S-Tab>" = "cmp.mapping.select_prev_item()";
               "<C-j>" = "cmp.mapping.select_next_item()";
               "<C-k>" = "cmp.mapping.select_prev_item()";
               "<C-d>" = "cmp.mapping.scroll_docs(-4)";

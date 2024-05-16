@@ -8,8 +8,13 @@
   home.username = "catou";
   home.stateVersion = "23.11";
 
-  home.packages = [
-    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+  home.packages = with pkgs; [
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+
+    # nixvim
+    ripgrep
+    fd
+    alejandra
   ];
 
   home.sessionVariables = {
