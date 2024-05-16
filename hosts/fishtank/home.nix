@@ -2,6 +2,7 @@
   imports = [
     ../../home-manager/desktop
     ../../home-manager/cli
+    ../../home-manager/virtualisation
     ../../home-manager/nixvim.nix
     ../../home-manager/1password.nix
   ];
@@ -10,20 +11,18 @@
   home.homeDirectory = "/home/catou";
   home.stateVersion = "23.11";
 
-  home.packages = [
-    pkgs.anki-bin
+  home.packages = with pkgs; [
+    anki
 
-    pkgs.discord
-    pkgs.discord-screenaudio
-    pkgs.ciscoPacketTracer8
+    discord
+    discord-screenaudio
+    ciscoPacketTracer8
 
-    pkgs.xdg-utils
-
-    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+    xdg-utils
 
     # nixvim
-    pkgs.ripgrep
-    pkgs.fd
+    ripgrep
+    fd
   ];
 
   home.sessionVariables = {

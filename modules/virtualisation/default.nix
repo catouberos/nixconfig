@@ -1,3 +1,3 @@
 {
-  imports = [./waydroid.nix];
+  imports = [./waydroid.nix ./virt-manager.nix];
 }

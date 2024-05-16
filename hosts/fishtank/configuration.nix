@@ -111,7 +111,7 @@
 
   users.users.catou = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "gamemode"];
+    extraGroups = ["wheel" "docker" "gamemode" "libvirtd"];
   };
 
   catppuccin.flavour = "macchiato";
