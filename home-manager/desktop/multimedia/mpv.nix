@@ -37,8 +37,8 @@
       volume = 75;
 
       # screenshot
-      screenshot-format = "png";
-      screenshot-png-compression = 7;
+      screenshot-format = "jpg";
+      screenshot-jpeg-quality = 100;
       screenshot-directory = "${config.home.homeDirectory}/Pictures";
       screenshot-template = "%f-%wH.%wM.%wS.%wT-#%#00n";
 
