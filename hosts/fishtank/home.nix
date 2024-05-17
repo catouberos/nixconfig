@@ -13,6 +13,7 @@
 
   home.packages = with pkgs; [
     anki
+    transmission_4-gtk
 
     discord
     discord-screenaudio
