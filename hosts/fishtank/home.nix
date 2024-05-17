@@ -2,7 +2,6 @@
   imports = [
     ../../home-manager/desktop
     ../../home-manager/cli
-    ../../home-manager/virtualisation
     ../../home-manager/nixvim.nix
     ../../home-manager/1password.nix
   ];
