@@ -15,6 +15,7 @@
     ripgrep
     fd
     alejandra
+    ffmpeg
   ];
 
   home.sessionVariables = {
