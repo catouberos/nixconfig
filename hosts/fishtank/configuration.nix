@@ -9,7 +9,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/gaming
-    ../../modules/virtualisation
     ../../modules/security
     inputs.home-manager.nixosModules.default
   ];
