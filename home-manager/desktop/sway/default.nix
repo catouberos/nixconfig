@@ -139,6 +139,9 @@
         "${modifier}+s" = "floating toggle";
         "${modifier}+Shift+e" = "exec swaymsg exit";
 
+        # focus
+        "${modifier}+bracketleft" = "focus left";
+        "${modifier}+bracketright" = "focus right";
         "${modifier}+Left" = "focus left";
         "${modifier}+Right" = "focus right";
         "${modifier}+Up" = "focus up";
@@ -149,6 +152,9 @@
         "${modifier}+Shift+Up" = "move up";
         "${modifier}+Shift+Down" = "move down";
 
+        # workspace
+        "${modifier}+braceleft" = "workspace prev_on_output";
+        "${modifier}+braceright" = "workspace next_on_output";
         "Alt+Left" = "workspace prev_on_output";
         "Alt+Right" = "workspace next_on_output";
 
