@@ -27,7 +27,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    GTK_IM_MODULE = "fcitx";
   };
 
   services = {

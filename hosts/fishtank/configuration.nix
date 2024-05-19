@@ -137,6 +137,10 @@
       cifs-utils
       usbutils
     ];
+    variables = {
+      # track https://github.com/swaywm/sway/issues/8143
+      GTK_IM_MODULE = "fcitx";
+    };
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
