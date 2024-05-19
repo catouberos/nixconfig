@@ -1,7 +1,6 @@
 {
   pkgs,
   config,
-  output,
   ...
 }: {
   home.packages = with pkgs; [
@@ -23,7 +22,7 @@
           "direct_paths": false,
           "discord_presence": false,
           "display_mirroring": false,
-          "enable_gui": false,
+          "enable_gui": true,
           "enable_osc": true,
           "force_audio_codec": null,
           "force_set_played": false,
