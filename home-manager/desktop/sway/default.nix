@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./theme.nix
     ./waybar.nix
@@ -37,6 +41,7 @@
       flavour = "macchiato";
     };
     systemd.xdgAutostart = true;
+    checkConfig = false;
 
     config = rec {
       modifier = "Mod4";
@@ -62,6 +67,9 @@
       };
 
       output = {
+        "*" = {
+          bg = "${config.home.homeDirectory}/Pictures/wallpaper.png fill";
+        };
         "DP-2" = {
           mode = "1920x1080@144Hz";
           pos = "0 0";
