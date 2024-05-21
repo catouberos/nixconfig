@@ -67,9 +67,6 @@
       };
 
       output = {
-        "*" = {
-          bg = "${config.home.homeDirectory}/Pictures/wallpaper.png fill";
-        };
         "DP-2" = {
           mode = "1920x1080@144Hz";
           pos = "0 0";

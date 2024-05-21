@@ -56,6 +56,8 @@
     };
   };
 
+  stylix.image = ./wallpaper.png;
+
   services = {
     pipewire = {
       enable = true;

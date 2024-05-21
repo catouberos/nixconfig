@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     catppuccin.url = "github:catppuccin/nix";
+    stylix.url = "github:danth/stylix";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,6 +28,7 @@
     nix-darwin,
     home-manager,
     nixos-hardware,
+    stylix,
     ...
   } @ inputs: let
     systems = [
@@ -41,6 +43,7 @@
       fishtank = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          stylix.nixosModules.stylix
           ./hosts/fishtank/configuration.nix
           catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
