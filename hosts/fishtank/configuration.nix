@@ -56,7 +56,13 @@
     };
   };
 
-  stylix.image = ./wallpaper.png;
+  stylix = {
+    image = ./wallpaper.png;
+    polarity = "dark";
+    override = {
+      base00 = "000000";
+    };
+  };
 
   services = {
     pipewire = {

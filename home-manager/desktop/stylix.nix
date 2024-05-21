@@ -1,7 +1,10 @@
 {pkgs, ...}: {
   stylix = {
+    polarity = "dark";
+
     cursor = {
       package = pkgs.apple-cursor;
+
       name = "macOS-Monterey";
       size = 24;
     };
