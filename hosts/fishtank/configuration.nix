@@ -115,8 +115,6 @@
     extraGroups = ["wheel" "docker" "gamemode" "libvirtd"];
   };
 
-  catppuccin.flavour = "macchiato";
-
   environment = {
     pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
     systemPackages = with pkgs; [

@@ -1,9 +1,10 @@
 {
   imports = [
+    ./stylix.nix
+    ./fonts.nix
     ./multimedia
     ./sway
     ./fcitx5.nix
-    ./fonts.nix
   ];
 
   programs = {
@@ -18,7 +19,6 @@
     };
     imv = {
       enable = true;
-      catppuccin.enable = true;
     };
   };
 }

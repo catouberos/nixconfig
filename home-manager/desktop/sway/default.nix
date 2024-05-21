@@ -1,10 +1,5 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
-    ./theme.nix
     ./waybar.nix
     ./xdg.nix
   ];
@@ -36,12 +31,7 @@
 
   wayland.windowManager.sway = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      flavour = "macchiato";
-    };
     systemd.xdgAutostart = true;
-    checkConfig = false;
 
     config = rec {
       modifier = "Mod4";
@@ -82,50 +72,6 @@
       gaps = {
         smartBorders = "on";
         smartGaps = true;
-      };
-
-      fonts = {
-        names = ["JetBrains Mono" "IBM Plex Mono"];
-        size = 11.0;
-      };
-
-      colors = {
-        focused = {
-          background = "$base";
-          border = "$lavender";
-          childBorder = "$lavender";
-          indicator = "$rosewater";
-          text = "$text";
-        };
-        focusedInactive = {
-          background = "$base";
-          border = "$overlay0";
-          childBorder = "$overlay0";
-          indicator = "$rosewater";
-          text = "$text";
-        };
-        unfocused = {
-          background = "$base";
-          border = "$overlay0";
-          childBorder = "$overlay0";
-          indicator = "$rosewater";
-          text = "$text";
-        };
-        urgent = {
-          background = "$base";
-          border = "$peach";
-          childBorder = "$peach";
-          indicator = "$overlay0";
-          text = "$peach";
-        };
-        placeholder = {
-          background = "$base";
-          border = "$overlay0";
-          childBorder = "$overlay0";
-          indicator = "$overlay0";
-          text = "$text";
-        };
-        background = "$base";
       };
 
       keybindings = {

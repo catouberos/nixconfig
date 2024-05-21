@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    catppuccin.url = "github:catppuccin/nix";
     stylix.url = "github:danth/stylix";
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -23,7 +22,6 @@
   outputs = {
     self,
     nixpkgs,
-    catppuccin,
     nixvim,
     nix-darwin,
     home-manager,
@@ -45,7 +43,6 @@
         modules = [
           stylix.nixosModules.stylix
           ./hosts/fishtank/configuration.nix
-          catppuccin.nixosModules.catppuccin
           home-manager.nixosModules.home-manager
           nixos-hardware.nixosModules.common-gpu-amd
           nixos-hardware.nixosModules.common-cpu-intel-cpu-only
@@ -56,7 +53,7 @@
               useUserPackages = true;
               extraSpecialArgs = {inherit inputs;};
               users.catou = {
-                imports = [./hosts/fishtank/home.nix catppuccin.homeManagerModules.catppuccin nixvim.homeManagerModules.nixvim];
+                imports = [./hosts/fishtank/home.nix nixvim.homeManagerModules.nixvim];
               };
             };
           }
