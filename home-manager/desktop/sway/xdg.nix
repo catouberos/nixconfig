@@ -23,6 +23,8 @@
     "audio/*" = ["mpv.desktop"];
     "video/*" = ["mpv.dekstop"];
     "image/*" = ["imv-dir.desktop"];
+    "image/png" = ["imv-dir.desktop"];
+    "image/jpg" = ["imv-dir.desktop"];
     "text/calendar" = ["thunderbird.desktop"]; # ".ics"  iCalendar format
     "application/json" = browser; # ".json"  JSON format
     "application/pdf" = browser; # ".pdf"  Adobe Portable Document Format (PDF)

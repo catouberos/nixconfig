@@ -60,7 +60,6 @@
         "DP-2" = {
           mode = "1920x1080@144Hz";
           pos = "0 0";
-          adaptive_sync = "on";
         };
         "DP-3" = {
           mode = "1920x1080@60Hz";
