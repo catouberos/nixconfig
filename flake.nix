@@ -52,6 +52,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {inherit inputs;};
+              backupFileExtension = "backup";
               users.catou = {
                 imports = [./hosts/fishtank/home.nix nixvim.homeManagerModules.nixvim];
               };
@@ -72,6 +73,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {inherit inputs;};
+              backupFileExtension = "backup";
               users.catou = {
                 imports = [./hosts/air/home.nix nixvim.homeManagerModules.nixvim];
               };
