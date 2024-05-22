@@ -60,7 +60,7 @@
     image = ./wallpaper.png;
     polarity = "dark";
     override = {
-      base00 = "000000";
+      #      base00 = "000000";
     };
   };
 
