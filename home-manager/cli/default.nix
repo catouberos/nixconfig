@@ -5,11 +5,11 @@
 }: {
   imports = [
     ./terminal
+    ./utility
   ];
 
   home.packages = with pkgs; [
     unzip
-    fastfetch
     bat
     eza
     imagemagick
