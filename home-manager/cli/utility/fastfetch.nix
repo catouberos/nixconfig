@@ -9,24 +9,34 @@
         };
       };
       display = {
-        binaryPrefix = "si";
-        color = "blue";
-        separator = "  ";
+        size = {
+          maxPrefix = "MB";
+          ndigits = 0;
+        };
       };
       modules = [
+        "title"
+        "os"
+        "host"
+        "kernel"
+        "shell"
+        "wm"
+        "terminal"
         {
-          type = "datetime";
-          key = "Date";
-          format = "{1}-{3}-{11}";
+          type = "terminalfont";
+          format = "{/2}{-}{/}{2}{?3} {3}{?}";
+        }
+        "cpu"
+        {
+          type = "gpu";
+          key = "GPU";
         }
         {
-          type = "datetime";
-          key = "Time";
-          format = "{14}:{17}:{20}";
+          type = "memory";
+          format = "{/1}{-}{/}{/2}{-}{/}{} / {}";
         }
         "break"
-        "player"
-        "media"
+        "colors"
       ];
     };
   };
