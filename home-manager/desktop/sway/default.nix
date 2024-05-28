@@ -46,13 +46,17 @@
       bars = [{command = "${pkgs.waybar}/bin/waybar";}];
 
       input = {
+        "1133:50504:Logitech_USB_Receiver_Mouse" = {
+          accel_profile = "flat";
+          pointer_accel = "0.5";
+        };
         "1133:45111:MX_Anywhere_3S_Mouse" = {
           accel_profile = "flat";
           pointer_accel = "0.5";
         };
         "1133:50503:Logitech_USB_Receiver" = {
           accel_profile = "flat";
-          pointer_accel = "-0.1";
+          pointer_accel = "-0.5";
         };
       };
 
