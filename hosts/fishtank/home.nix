@@ -16,7 +16,6 @@
 
     discord
     discord-screenaudio
-    ciscoPacketTracer8
 
     xdg-utils
 
