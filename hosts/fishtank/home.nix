@@ -17,7 +17,10 @@
     discord
     discord-screenaudio
 
+    vscode-with-extensions
+
     xdg-utils
+    nethogs
 
     # nixvim
     ripgrep
