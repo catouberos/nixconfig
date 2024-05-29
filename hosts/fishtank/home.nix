@@ -33,7 +33,6 @@
 
     xdg-utils
     nethogs
-    openrgb
 
     # nixvim
     ripgrep

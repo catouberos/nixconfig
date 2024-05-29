@@ -11,6 +11,7 @@
     ../../modules/gaming
     ../../modules/security
     ../../modules/virtualisation
+    ../../modules/rgb.nix
     inputs.home-manager.nixosModules.default
   ];
 
