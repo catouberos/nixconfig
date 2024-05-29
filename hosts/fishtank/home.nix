@@ -17,10 +17,23 @@
     discord
     discord-screenaudio
 
-    vscode-with-extensions
+    (vscode-with-extensions.override {
+      vscodeExtensions = with vscode-extensions;
+        [
+        ]
+        ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "laravel-blade";
+            publisher = "onecentlin";
+            version = "1.36.1";
+            sha256 = "sha256-zOjUrdoBBtSz59/b/n63QByGyQRcOJFe+TMfosktEss=";
+          }
+        ];
+    })
 
     xdg-utils
     nethogs
+    openrgb
 
     # nixvim
     ripgrep
