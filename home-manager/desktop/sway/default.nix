@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./waybar.nix
+    ./mako.nix
     ./xdg.nix
   ];
 
@@ -22,7 +23,6 @@
 
   services = {
     cliphist.enable = true;
-    mako.enable = true;
     gnome-keyring = {
       enable = true;
       components = ["secrets"];
