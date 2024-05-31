@@ -24,6 +24,8 @@
     networkmanager = {
       enable = true;
     };
+    # TODO: check https://discourse.nixos.org/t/connected-to-mullvadvpn-but-no-internet-connection/35803/11
+    resolvconf.enable = false;
   };
 
   time.timeZone = "Asia/Ho_Chi_Minh";
@@ -83,6 +85,7 @@
       nssmdns4 = true;
       nssmdns6 = true;
     };
+    mullvad-vpn.enable = true;
   };
 
   programs = {
