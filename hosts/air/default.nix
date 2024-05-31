@@ -21,6 +21,16 @@
 
   users.users.catou.home = "/Users/catou";
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = {inherit inputs;};
+    backupFileExtension = "backup";
+    users.catou = {
+      imports = [./home.nix inputs.nixvim.homeManagerModules.nixvim];
+    };
+  };
+
   system = {
     # Set Git commit hash for darwin-version.
     # Used for backwards compatibility, please read the changelog before changing.

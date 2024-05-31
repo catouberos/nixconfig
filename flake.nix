@@ -17,69 +17,46 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    systems.url = "github:nix-systems/default-linux";
   };
 
   outputs = {
     self,
     nixpkgs,
-    nixvim,
     nix-darwin,
     home-manager,
-    nixos-hardware,
-    stylix,
+    systems,
     ...
   } @ inputs: let
-    systems = [
-      "x86_64-linux"
-      "aarch64-darwin"
-    ];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
+    inherit (self) outputs;
+
+    forEachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f pkgsFor.${system});
+    pkgsFor = nixpkgs.lib.genAttrs (import systems) (
+      system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        }
+    );
   in {
-    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+    overlays = import ./overlays {inherit inputs outputs;};
+
+    formatter = forEachSystem (pkgs: pkgs.alejandra);
 
     nixosConfigurations = {
+      # main PC
       fishtank = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          stylix.nixosModules.stylix
-          ./hosts/fishtank/configuration.nix
-          home-manager.nixosModules.home-manager
-          nixos-hardware.nixosModules.common-gpu-amd
-          nixos-hardware.nixosModules.common-cpu-intel-cpu-only
-          nixos-hardware.nixosModules.common-pc-ssd
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = {inherit inputs;};
-              backupFileExtension = "backup";
-              users.catou = {
-                imports = [./hosts/fishtank/home.nix nixvim.homeManagerModules.nixvim];
-              };
-            };
-          }
-        ];
+        modules = [./hosts/fishtank];
+        specialArgs = {inherit inputs outputs;};
       };
     };
 
     darwinConfigurations = {
+      # macbook
       air = nix-darwin.lib.darwinSystem {
         specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/air/configuration.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = {inherit inputs;};
-              backupFileExtension = "backup";
-              users.catou = {
-                imports = [./hosts/air/home.nix nixvim.homeManagerModules.nixvim];
-              };
-            };
-          }
-        ];
+        modules = [./hosts/air];
       };
     };
   };
