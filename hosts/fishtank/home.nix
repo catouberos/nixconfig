@@ -37,6 +37,9 @@
     # nixvim
     ripgrep
     fd
+
+    # misc
+    gimp
   ];
 
   home.sessionVariables = {
