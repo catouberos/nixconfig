@@ -6,6 +6,7 @@
   imports = [
     ./terminal
     ./utility
+    ./nnn.nix
   ];
 
   home.packages = with pkgs; [
@@ -21,10 +22,6 @@
       enable = true;
     };
     btop.enable = true;
-    nnn = {
-      enable = true;
-      package = pkgs.nnn.override {withNerdIcons = true;};
-    };
     fish = {
       enable = true;
       interactiveShellInit = ''
