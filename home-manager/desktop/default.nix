@@ -17,8 +17,5 @@
         "--gtk-version=4"
       ];
     };
-    imv = {
-      enable = true;
-    };
   };
 }

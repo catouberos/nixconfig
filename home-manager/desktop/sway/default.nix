@@ -19,6 +19,7 @@
 
   programs = {
     wofi.enable = true;
+    imv.enable = true;
   };
 
   services = {
