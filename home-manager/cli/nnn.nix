@@ -1,8 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.nnn = {
     enable = true;
     package = pkgs.nnn.override {withNerdIcons = true;};
-    extraPackages = with pkgs; [ffmpegthumbnailer mediainfo imv];
+    extraPackages = lib.mkMerge [
+      (lib.mkIf pkgs.stdenv.isLinux (with pkgs; [ffmpegthumbnailer mediainfo imv]))
+    ];
+
     plugins = {
       src =
         (pkgs.fetchFromGitHub {
