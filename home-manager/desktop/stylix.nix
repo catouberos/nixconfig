@@ -24,5 +24,7 @@
         package = pkgs.ibm-plex;
       };
     };
+
+    targets.nixvim.enable = true;
   };
 }
