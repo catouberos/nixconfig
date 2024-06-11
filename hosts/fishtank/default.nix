@@ -86,11 +86,6 @@
     blueman.enable = true;
     gnome.gnome-keyring.enable = true;
     udisks2.enable = true;
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      nssmdns6 = true;
-    };
     mullvad-vpn.enable = true;
   };
 
