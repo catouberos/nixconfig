@@ -34,12 +34,12 @@
       vo = "gpu-next";
 
       # audio
-      volume = 75;
+      volume = 80;
 
       # screenshot
       screenshot-format = "jpg";
       screenshot-jpeg-quality = 100;
-      screenshot-directory = "${config.home.homeDirectory}/Pictures";
+      screenshot-directory = "${config.home.homeDirectory}/Pictures/mpv";
       screenshot-template = "%f-%wH.%wM.%wS.%wT-#%#00n";
 
       # yt-dlp
