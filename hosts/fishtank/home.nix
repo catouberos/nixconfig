@@ -20,6 +20,7 @@
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions;
         [
+          vue.volar
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
