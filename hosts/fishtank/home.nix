@@ -39,6 +39,15 @@
     ripgrep
     fd
 
+    # music
+    shntool
+    flac
+    beets
+
+    zip
+    unzip
+    unrar
+
     # misc
     gimp
   ];

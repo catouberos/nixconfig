@@ -10,9 +10,6 @@
   ];
 
   home.packages = with pkgs; [
-    zip
-    unzip
-    unrar
     bat
     eza
     imagemagick

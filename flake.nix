@@ -50,6 +50,12 @@
         modules = [./hosts/fishtank];
         specialArgs = {inherit inputs outputs;};
       };
+
+      # homelab
+      shinobu = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/shinobu];
+        specialArgs = {inherit inputs outputs;};
+      };
     };
 
     darwinConfigurations = {

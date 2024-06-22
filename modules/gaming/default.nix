@@ -3,5 +3,6 @@
 
   environment.systemPackages = with pkgs; [
     prismlauncher
+    r2modman
   ];
 }
