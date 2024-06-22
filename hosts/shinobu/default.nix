@@ -14,6 +14,7 @@
     ../../modules/virtualisation/podman.nix
     ../../modules/services/transmission.nix
     ../../modules/services/navidrome.nix
+    ../../modules/services/jellyfin.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
