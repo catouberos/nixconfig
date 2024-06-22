@@ -2,6 +2,7 @@
   imports = [
     ../../home-manager/cli
     ../../home-manager/nixvim.nix
+    ../../home-manager/beets.nix
   ];
 
   home.username = "catou";
@@ -19,7 +20,6 @@
     # music
     shntool
     flac
-    beets
 
     zip
     unzip
