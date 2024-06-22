@@ -16,6 +16,7 @@
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
     ../../modules/services/cfdyndns.nix
+    ../../modules/services/caddy.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
