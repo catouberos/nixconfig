@@ -15,7 +15,7 @@
     ../../modules/services/transmission.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
-    ../../modules/services/cloudflare-dyndns.nix
+    ../../modules/services/cfdyndns.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
