@@ -2,6 +2,8 @@
   services.transmission = {
     enable = true;
     webHome = pkgs.flood-for-transmission;
+    openRPCPort = true;
+    openPeerPorts = true;
     settings = {
       # bandwidth
       speed-limit-up = "10000";
@@ -13,6 +15,8 @@
       cache-size-mb = 1024;
       # queuing
       queue-stalled-enabled = false;
+      # rpc
+      rpc-bind-address = "0.0.0.0";
     };
   };
 }
