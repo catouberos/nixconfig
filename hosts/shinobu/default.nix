@@ -13,6 +13,7 @@
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
     ../../modules/services/transmission.nix
+    ../../modules/services/navidrome.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
