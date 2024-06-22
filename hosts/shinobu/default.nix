@@ -28,6 +28,10 @@
     };
     # TODO: check https://discourse.nixos.org/t/connected-to-mullvadvpn-but-no-internet-connection/35803/11
     resolvconf.enable = false;
+    firewall = {
+      enable = true;
+      allowPing = true;
+    };
   };
 
   time.timeZone = "Asia/Ho_Chi_Minh";
