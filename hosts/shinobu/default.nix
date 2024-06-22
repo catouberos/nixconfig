@@ -11,6 +11,7 @@
     inputs.home-manager.nixosModules.default
 
     ./hardware-configuration.nix
+    ../../modules/virtualisation/podman.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -55,6 +56,15 @@
 
   hardware = {
     opengl.enable = true;
+  };
+
+  fileSystems."/mnt/wdpurple" = {
+    device = "/dev/disk/by-uuid/94f0ee25-b428-4583-9523-2b3efa7ce1fa";
+    fsType = "ext4";
+    options = [
+      "users" # Allows any user to mount and unmount
+      "nofail" # Prevent system from failing if this drive doesn't mount
+    ];
   };
 
   services = {
