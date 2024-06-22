@@ -12,6 +12,7 @@
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
+    ../../modules/services/transmission.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
