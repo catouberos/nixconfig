@@ -6,13 +6,13 @@
         image = "ghcr.io/tanamoe/azunyan:latest";
         autoStart = true;
         extraOptions = ["--network=host"];
-        environmentFiles = [/home/catou/rui.env];
+        volumes = ["/home/catou/rui.env:/app/.env"];
       };
       rurino = {
         image = "ghcr.io/tanamoe/azunyan:latest";
         autoStart = true;
         extraOptions = ["--network=host"];
-        environmentFiles = [/home/catou/rurino.env];
+        volumes = ["/home/catou/rurino.env:/app/.env"];
       };
     };
   };
