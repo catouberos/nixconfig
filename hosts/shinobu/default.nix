@@ -16,7 +16,7 @@
     ../../modules/services/transmission.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
-    ../../modules/services/cfdyndns.nix
+    ../../modules/services/ddclient.nix
     ../../modules/services/caddy.nix
   ];
 
