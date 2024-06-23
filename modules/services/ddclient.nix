@@ -6,6 +6,6 @@
     zone = "catou.id.vn";
     passwordFile = "/home/catou/cloudflare.env";
     username = "khoanguyen.do@outlook.com";
-    use = "web, web=cloudflare.com/cdn-cgi/trace/, web-skip='ip='";
+    usev4 = "webv4, webv4=cloudflare.com/cdn-cgi/trace/, webv4-skip='ip='";
   };
 }
