@@ -5,5 +5,6 @@
     protocol = "cloudflare";
     zone = "catou.id.vn";
     passwordFile = "/home/catou/cloudflare.env";
+    username = "khoanguyen.do@outlook.com";
   };
 }
