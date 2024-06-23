@@ -7,7 +7,6 @@
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd
-    inputs.nixos-hardware.nixosModules.common-pc-hdd
     inputs.home-manager.nixosModules.default
 
     ./hardware-configuration.nix
@@ -65,7 +64,7 @@
   };
 
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
   };
 
   fileSystems."/mnt/wdpurple" = {
