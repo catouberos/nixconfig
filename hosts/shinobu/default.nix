@@ -12,6 +12,7 @@
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
+    ../../modules/virtualisation/container
     ../../modules/services/transmission.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix

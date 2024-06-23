@@ -1,3 +1,3 @@
 {
-  imports = [./virt-manager.nix ./docker.nix];
+  imports = [./virt-manager.nix ./podman.nix];
 }
