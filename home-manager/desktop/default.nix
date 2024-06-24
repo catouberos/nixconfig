@@ -1,10 +1,14 @@
-{
+{pkgs, ...}: {
   imports = [
     ./stylix.nix
     ./fonts.nix
     ./multimedia
     ./sway
     ./fcitx5.nix
+  ];
+
+  home.packages = with pkgs; [
+    kdePackages.dolphin
   ];
 
   programs = {
