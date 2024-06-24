@@ -184,7 +184,7 @@
       wget
       tree
 
-      linux-firmware
+      # linux-firmware
       util-linux
       vulkan-tools
       exfat
