@@ -10,10 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    bat
-    eza
     imagemagick
-    yt-dlp
   ];
 
   programs = {
@@ -21,6 +18,13 @@
       enable = true;
     };
     btop.enable = true;
+    fzf.enable = true;
+    bat.enable = true;
+    eza = {
+      enable = true;
+      icons = true;
+    };
+    yt-dlp.enable = true;
     fish = {
       enable = true;
       interactiveShellInit = ''
