@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
+    sops-nix.url = "github:Mic92/sops-nix";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +27,7 @@
     nixpkgs,
     nix-darwin,
     home-manager,
+    sops-nix,
     systems,
     ...
   } @ inputs: let

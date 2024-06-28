@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   inputs,
   outputs,
@@ -8,6 +9,7 @@
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.home-manager.nixosModules.default
+    inputs.sops-nix.nixosModules.sops
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
@@ -15,7 +17,7 @@
     ../../modules/services/transmission.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
-    ../../modules/services/ddclient.nix
+    ../../modules/services/inadyn.nix
     ../../modules/services/caddy.nix
   ];
 
@@ -65,6 +67,15 @@
     rtkit.enable = true;
     polkit.enable = true;
     sudo.wheelNeedsPassword = false;
+  };
+
+  # sops
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+  sops.secrets.cloudflare_tokens = {
+    mode = "0440";
+    owner = config.users.users.inadyn.name;
+    group = config.users.users.inadyn.group;
   };
 
   hardware = {
@@ -162,7 +173,7 @@
     isNormalUser = true;
     extraGroups = ["wheel" "docker"];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaumQv5SNC23QI8UytovjkssAor+yxQLixCGqVkk4vJ"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADAlbdEFy+qGrgOfffqnSNAF8W7ozq36M3R0JtBclFV"
     ];
   };
 

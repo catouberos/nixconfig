@@ -10,6 +10,7 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.home-manager.nixosModules.default
     inputs.stylix.nixosModules.stylix
+    inputs.sops-nix.nixosModules.sops
 
     ./hardware-configuration.nix
     ../../modules/gaming
@@ -61,6 +62,11 @@
     sudo.wheelNeedsPassword = false;
     pam.services.login.enableGnomeKeyring = true;
   };
+
+  # sops
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.age.keyFile = "/home/catou/.config/sops/age/keys.txt";
+  sops.secrets.cloudflare_tokens = {};
 
   hardware = {
     graphics.enable = true;
