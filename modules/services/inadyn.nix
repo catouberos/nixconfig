@@ -4,7 +4,7 @@
     settings.provider."cloudflare.com" = {
       username = "catou.id.vn";
       hostname = "shinobu.catou.id.vn";
-      include = config.sops-nix.secrets.cloudflare_tokens.path;
+      include = config.sops.secrets.cloudflare_tokens.path;
     };
   };
 }
