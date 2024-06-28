@@ -2,6 +2,13 @@
   virtualisation.oci-containers = {
     backend = "podman";
     containers = {
+      flood = {
+        image = "jesec/flood";
+        autoStart = true;
+        ports = ["3000:3000"];
+        extraOptions = ["--network=host"];
+        volumes = ["/mnt/wdpurple:/mnt/wdpurple:ro"];
+      };
       rui = {
         image = "ghcr.io/tanamoe/azunyan:latest";
         autoStart = true;

@@ -35,7 +35,8 @@
     # resolvconf.enable = false;
     firewall = {
       enable = true;
-      allowedTCPPorts = [80 443];
+      # http https pod-flood
+      allowedTCPPorts = [80 443 3000];
     };
   };
 
