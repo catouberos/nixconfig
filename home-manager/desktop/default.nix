@@ -8,8 +8,15 @@
   ];
 
   home.packages = with pkgs; [
-    kdePackages.dolphin
+    libsForQt5.dolphin
+    strawberry-qt6
   ];
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk3";
+    style.name = "adwaita-dark";
+  };
 
   programs = {
     firefox.enable = true;
