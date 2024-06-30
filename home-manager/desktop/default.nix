@@ -8,8 +8,7 @@
   ];
 
   home.packages = with pkgs; [
-    libsForQt5.dolphin
-    strawberry-qt6
+    mullvad-browser
   ];
 
   qt = {
