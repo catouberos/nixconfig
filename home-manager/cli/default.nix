@@ -7,6 +7,7 @@
     ./terminal
     ./utility
     ./nnn.nix
+    ./fish.nix
   ];
 
   home.packages = with pkgs; [
@@ -26,20 +27,6 @@
       icons = true;
     };
     yt-dlp.enable = true;
-    fish = {
-      enable = true;
-      interactiveShellInit = ''
-        set fish_greeting
-      '';
-      functions = {
-        fish_user_key_bindings = "fish_vi_key_bindings";
-
-        # eza aliases
-        l = "eza --icons";
-        ll = "eza --icons -l";
-        lt = "eza --icons -t";
-      };
-    };
     starship = {
       enable = true;
       enableFishIntegration = true;
