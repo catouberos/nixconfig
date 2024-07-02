@@ -5,6 +5,7 @@
     ./multimedia
     ./sway
     ./fcitx5.nix
+    ./thunderbird.nix
   ];
 
   home.packages = with pkgs; [
