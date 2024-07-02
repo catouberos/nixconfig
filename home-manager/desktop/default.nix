@@ -9,6 +9,7 @@
 
   home.packages = with pkgs; [
     mullvad-browser
+    brave
   ];
 
   qt = {
