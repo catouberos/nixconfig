@@ -33,6 +33,9 @@
       hwdec = "auto";
       vo = "gpu-next";
 
+      # subtitles
+      sub-font = "Inter";
+
       # audio
       volume = 80;
 
