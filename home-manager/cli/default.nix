@@ -6,8 +6,9 @@
   imports = [
     ./terminal
     ./utility
-    ./nnn.nix
+    ./compression.nix
     ./fish.nix
+    ./lf.nix
   ];
 
   home.packages = with pkgs; [
