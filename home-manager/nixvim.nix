@@ -29,6 +29,7 @@
             tsserver.enable = true;
             nil-ls.enable = true;
             clangd.enable = true;
+            gopls.enable = true;
           };
         };
         conform-nvim = {
@@ -63,6 +64,7 @@
             typescript = [["biome" "prettierd" "prettier"]];
             vue = [["biome" "prettierd" "prettier"]];
             css = [["biome" "prettierd" "prettier"]];
+            go = ["gofmt"];
           };
         };
 
