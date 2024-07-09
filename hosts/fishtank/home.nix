@@ -44,10 +44,6 @@
     flac
     beets
 
-    zip
-    unzip
-    unrar
-
     # misc
     gimp
   ];
