@@ -53,6 +53,12 @@
         specialArgs = {inherit inputs outputs;};
       };
 
+      # old surface go
+      sfgo = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/sfgo];
+        specialArgs = {inherit inputs outputs;};
+      };
+
       # homelab
       shinobu = nixpkgs.lib.nixosSystem {
         modules = [./hosts/shinobu];
