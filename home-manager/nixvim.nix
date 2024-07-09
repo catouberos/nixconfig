@@ -84,7 +84,7 @@
         # syntax highlighting
         treesitter = {
           enable = true;
-          plugins = {
+          settings = {
             auto_install = true;
             ensure_installed = [
               "all"
