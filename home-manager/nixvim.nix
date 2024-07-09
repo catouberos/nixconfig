@@ -106,6 +106,7 @@
             indent = {
               enable = true;
             };
+            parser_install_dir = "$XDG_DATA_HOME/nvim/treesitter";
           };
         };
 
