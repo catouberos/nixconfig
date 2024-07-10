@@ -21,6 +21,9 @@
       vscodeExtensions = with vscode-extensions;
         [
           vue.volar
+          bradlc.vscode-tailwindcss
+          dbaeumer.vscode-eslint
+          esbenp.prettier-vscode
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
