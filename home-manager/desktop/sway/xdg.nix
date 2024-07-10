@@ -26,6 +26,8 @@
     "image/png" = ["imv-dir.desktop"];
     "image/jpg" = ["imv-dir.desktop"];
     "image/jpeg" = ["imv-dir.desktop"];
+    "image/webp" = ["imv-dir.desktop"];
+    "image/gif" = ["imv-dir.desktop"];
     "text/calendar" = ["thunderbird.desktop"]; # ".ics"  iCalendar format
     "application/json" = browser; # ".json"  JSON format
     "application/pdf" = browser; # ".pdf"  Adobe Portable Document Format (PDF)
