@@ -86,9 +86,6 @@
           enable = true;
           settings = {
             auto_install = true;
-            ensure_installed = [
-              "all"
-            ];
             highlight = {
               additional_vim_regex_highlighting = true;
               custom_captures = {};
