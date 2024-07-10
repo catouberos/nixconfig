@@ -7,7 +7,7 @@
       D = "trash";
     };
     commands = {
-      trash = "%trash-put $fx";
+      trash = "%trash-put \"$fx\"";
     };
     previewer = {
       source = pkgs.writeShellScript "pv.sh" ''
