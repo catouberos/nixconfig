@@ -105,7 +105,12 @@
         AllowUsers = ["catou"]; # Allows all users by default. Can be [ "user1" "user2" ]
       };
     };
-    fail2ban.enable = true;
+    fail2ban = {
+      enable = true;
+      ignoreIP = [
+        "192.168.1.0/16"
+      ];
+    };
     samba = {
       enable = true;
       securityType = "user";
