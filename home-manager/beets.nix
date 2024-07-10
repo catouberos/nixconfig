@@ -4,7 +4,7 @@
     settings = {
       plugins = "fetchart embedart convert";
       directory = "/mnt/wdpurple/Music";
-      library = "/mnt/wdpurple/Music/library.db";
+      library = "/home/catou/library.db";
       match = {
         strong_rec_thresh = 0.15;
       };

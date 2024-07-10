@@ -27,6 +27,8 @@
 
   networking = {
     hostName = "shinobu";
+    # temporarily
+    enableIPv6 = false;
     networkmanager = {
       enable = true;
       dns = "none";
