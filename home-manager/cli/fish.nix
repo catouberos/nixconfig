@@ -9,6 +9,9 @@
       splitcue = ''
         find . -name "*.cue" -exec sh -c 'exec ${pkgs.shntool}/bin/shnsplit -f "$1" -o flac -d "$(dirname "$1")" -t "%n %t" "''${1%.cue}.flac" && exec ${pkgs.cuetools}/bin/cuetag.sh $1 *.flac' _ {} \;
       '';
+      nowebp = ''
+        wget --header "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0" --header "Accept: image/avif,image/apng,image/svg+xml,image/,/*;q=0.8" $argv
+      '';
     };
   };
 }
