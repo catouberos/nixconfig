@@ -20,10 +20,10 @@
       alt-speed-up = 2000;
       alt-speed-down = 10000;
       alt-speed-enabled = true;
-      # 1 hour from midnight (1AM)
-      alt-speed-time-begin = 60;
       # 8 hour from midnight (8AM)
-      alt-speed-time-end = 480;
+      alt-speed-time-begin = 480;
+      # 1 hour from midnight (1AM)
+      alt-speed-time-end = 60;
       # all days
       alt-speed-time-day = 127;
       alt-speed-time-enabled = true;
