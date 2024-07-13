@@ -36,13 +36,13 @@
               }
 
               @api path /api/*
-              reverse_proxy @api :8000 {
+              reverse_proxy @api :8002 {
                   header_up Host {http.reverse_proxy.upstream.hostport}
                   header_up X-Real-IP {http.request.header.X-Real-IP}
               }
 
               @docs path /docs*
-              reverse_proxy @docs :8000 {
+              reverse_proxy @docs :8002 {
                   header_up Host {http.reverse_proxy.upstream.hostport}
                   header_up X-Real-IP {http.request.header.X-Real-IP}
               }
