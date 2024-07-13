@@ -25,9 +25,33 @@
       };
       # chibisafe
       "a.catou.id.vn" = {
+        serverAliases = [
+          ":8000"
+        ];
         extraConfig = ''
-          encode gzip
-          reverse_proxy :8001
+          route {
+              file_server * {
+                  root /app/uploads
+                  pass_thru
+              }
+
+              @api path /api/*
+              reverse_proxy @api :8000 {
+                  header_up Host {http.reverse_proxy.upstream.hostport}
+                  header_up X-Real-IP {http.request.header.X-Real-IP}
+              }
+
+              @docs path /docs*
+              reverse_proxy @docs :8000 {
+                  header_up Host {http.reverse_proxy.upstream.hostport}
+                  header_up X-Real-IP {http.request.header.X-Real-IP}
+              }
+
+              reverse_proxy :8001 {
+                  header_up Host {http.reverse_proxy.upstream.hostport}
+                  header_up X-Real-IP {http.request.header.X-Real-IP}
+              }
+          }
         '';
       };
     };
