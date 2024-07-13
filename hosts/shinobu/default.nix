@@ -15,7 +15,6 @@
     ../../modules/virtualisation/podman.nix
     ../../modules/virtualisation/container
     ../../modules/virtualisation/container/flood.nix
-    ../../modules/virtualisation/container/chibisafe.nix
     ../../modules/services/transmission.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix

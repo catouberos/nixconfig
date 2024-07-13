@@ -30,33 +30,6 @@
           reverse_proxy :24424
         '';
       };
-      ":24424" = {
-        extraConfig = ''
-          route {
-              file_server * {
-                  root /app/uploads
-                  pass_thru
-              }
-
-              @api path /api/*
-              reverse_proxy @api :8002 {
-                  header_up Host {http.reverse_proxy.upstream.hostport}
-                  header_up X-Real-IP {http.request.header.X-Real-IP}
-              }
-
-              @docs path /docs*
-              reverse_proxy @docs :8002 {
-                  header_up Host {http.reverse_proxy.upstream.hostport}
-                  header_up X-Real-IP {http.request.header.X-Real-IP}
-              }
-
-              reverse_proxy :8001 {
-                  header_up Host {http.reverse_proxy.upstream.hostport}
-                  header_up X-Real-IP {http.request.header.X-Real-IP}
-              }
-          }
-        '';
-      };
     };
   };
 }
