@@ -41,8 +41,8 @@
     # resolvconf.enable = false;
     firewall = {
       enable = true;
-      # http https pod-flood
-      allowedTCPPorts = [80 443 3000];
+      # http https pod-flood chibisafe
+      allowedTCPPorts = [80 443 3000 24424];
     };
   };
 

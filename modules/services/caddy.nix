@@ -25,9 +25,12 @@
       };
       # chibisafe
       "a.catou.id.vn" = {
-        serverAliases = [
-          ":8097"
-        ];
+        extraConfig = ''
+          encode gzip
+          reverse_proxy :24424
+        '';
+      };
+      ":24424" = {
         extraConfig = ''
           route {
               file_server * {
