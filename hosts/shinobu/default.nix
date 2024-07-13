@@ -15,6 +15,7 @@
     ../../modules/virtualisation/podman.nix
     ../../modules/virtualisation/container
     ../../modules/virtualisation/container/flood.nix
+    ../../modules/virtualisation/container/filebrowser.nix
     ../../modules/services/transmission.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
@@ -40,8 +41,8 @@
     # resolvconf.enable = false;
     firewall = {
       enable = true;
-      # http https pod-flood chibisafe
-      allowedTCPPorts = [80 443 3000 24424];
+      # http https pod-flood filebrowser
+      allowedTCPPorts = [80 443 3000 8080];
     };
   };
 
