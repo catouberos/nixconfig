@@ -23,6 +23,13 @@
           reverse_proxy :4533
         '';
       };
+      # chibisafe
+      "a.catou.id.vn" = {
+        extraConfig = ''
+          encode gzip
+          reverse_proxy :8001
+        '';
+      };
     };
   };
 }
