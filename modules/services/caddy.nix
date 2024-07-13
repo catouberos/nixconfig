@@ -26,7 +26,7 @@
       # chibisafe
       "a.catou.id.vn" = {
         serverAliases = [
-          ":8000"
+          ":8097"
         ];
         extraConfig = ''
           route {
