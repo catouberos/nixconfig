@@ -6,7 +6,6 @@
       extraOptions = ["--network=host"];
       cmd = [
         "--rundir=/config"
-        "--trurl=http://localhost:9091/transmission/rpc"
       ];
       volumes = [
         "${config.users.users.catou.home}/.config/flood:/config"
