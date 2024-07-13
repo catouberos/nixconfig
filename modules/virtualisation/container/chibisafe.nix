@@ -12,7 +12,7 @@
       hostname = "chibisafe_server";
       image = "chibisafe/chibisafe-server:latest";
       autoStart = true;
-      ports = ["8000:8002"];
+      ports = ["8002:8000"];
       volumes = [
         "${config.users.users.catou.home}/chibisafe/database:/app/database:rw"
         "${config.users.users.catou.home}/chibisafe/uploads:/app/uploads:rw"
