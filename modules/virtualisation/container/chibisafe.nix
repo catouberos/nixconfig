@@ -5,7 +5,7 @@
       autoStart = true;
       ports = ["8001:8001"];
       environment = {
-        BASE_API_URL = "http://chibisafe_server:8000";
+        BASE_API_URL = "http://127.0.0.1:8000";
       };
     };
     chibisafe_server = {
