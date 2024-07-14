@@ -1,4 +1,4 @@
-{
+{config, ...}: {
   programs = {
     nixvim = {
       enable = true;
@@ -31,6 +31,9 @@
             clangd.enable = true;
             gopls.enable = true;
             volar.enable = true;
+            eslint.enable = true;
+            tailwindcss.enable = true;
+            html.enable = true;
           };
         };
         conform-nvim = {
@@ -61,10 +64,11 @@
             # Conform will run multiple formatters sequentially
             python = ["isort" "black"];
             # Use a sub-list to run only the first available formatter
-            javascript = [["biome" "prettierd" "prettier"]];
-            typescript = [["biome" "prettierd" "prettier"]];
-            vue = [["biome" "prettierd" "prettier"]];
-            css = [["biome" "prettierd" "prettier"]];
+            javascript = ["prettier"];
+            typescript = ["prettier"];
+            vue = ["prettier"];
+            html = ["prettier"];
+            css = ["prettier"];
             go = ["gofmt"];
           };
         };
@@ -103,7 +107,7 @@
             indent = {
               enable = true;
             };
-            parser_install_dir = "$XDG_DATA_HOME/nvim/treesitter";
+            parser_install_dir = "${config.home.homeDirectory}/nvim";
           };
         };
 
