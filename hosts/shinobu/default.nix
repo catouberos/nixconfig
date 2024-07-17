@@ -41,8 +41,8 @@
     # resolvconf.enable = false;
     firewall = {
       enable = true;
-      # http https pod-flood filebrowser
-      allowedTCPPorts = [80 443 3000 8080];
+      # http https NFSv4 pod-flood filebrowser
+      allowedTCPPorts = [80 443 2049 3000 8080];
     };
   };
 
@@ -87,13 +87,20 @@
     graphics.enable = true;
   };
 
-  fileSystems."/mnt/wdpurple" = {
-    device = "/dev/disk/by-uuid/94f0ee25-b428-4583-9523-2b3efa7ce1fa";
-    fsType = "ext4";
-    options = [
-      "users" # Allows any user to mount and unmount
-      "nofail" # Prevent system from failing if this drive doesn't mount
-    ];
+  fileSystems = {
+    "/mnt/wdpurple" = {
+      device = "/dev/disk/by-uuid/94f0ee25-b428-4583-9523-2b3efa7ce1fa";
+      fsType = "ext4";
+      options = [
+        "users" # Allows any user to mount and unmount
+        "nofail" # Prevent system from failing if this drive doesn't mount
+      ];
+    };
+
+    "/export/wdpurple" = {
+      device = "/mnt/wdpurple";
+      options = ["bind"];
+    };
   };
 
   services = {
@@ -115,39 +122,14 @@
         "192.168.1.0/16"
       ];
     };
-    samba = {
-      enable = true;
-      securityType = "user";
-      openFirewall = true;
-      extraConfig = ''
-        workgroup = WORKGROUP
-        server string = shinobu
-        netbios name = shinobu
-        security = user
-        #use sendfile = yes
-        #max protocol = smb2
-        # note: localhost is the ipv6 localhost ::1
-        hosts allow = 192.168.1. 127.0.0.1 localhost
-        hosts deny = 0.0.0.0/0
-        guest account = nobody
-        map to guest = bad user
-      '';
-      shares = {
-        private = {
-          path = "/mnt/wdpurple";
-          browseable = "yes";
-          "read only" = "no";
-          "guest ok" = "no";
-          "create mask" = "0644";
-          "directory mask" = "0755";
-          "force user" = "catou";
-        };
+    nfs = {
+      server = {
+        enable = true;
+        exports = ''
+          /export 192.168.1.0/24(insecure,ro,sync,no_subtree_check,crossmnt,fsid=0)
+          /export/wdpurple 192.168.1.0/24(insecure,ro,sync,no_subtree_check)
+        '';
       };
-    };
-
-    samba-wsdd = {
-      enable = true;
-      openFirewall = true;
     };
 
     # encrypted dns
