@@ -15,7 +15,7 @@
     transmission_4-gtk
 
     discord
-    discord-screenaudio
+    vesktop
 
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions;
