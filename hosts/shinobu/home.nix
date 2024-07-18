@@ -20,6 +20,7 @@
     # music
     shntool
     flac
+    cyanrip
 
     zip
     unzip
