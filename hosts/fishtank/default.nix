@@ -3,7 +3,9 @@
   inputs,
   outputs,
   ...
-}: {
+}: let
+  naersk' = pkgs.callPackage inputs.naersk {};
+in {
   imports = [
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
@@ -167,25 +169,36 @@
 
   environment = {
     pathsToLink = ["/share/xdg-desktop-portal" "/share/applications"];
-    systemPackages = with pkgs; [
-      coreutils
-      killall
-      vim
-      alejandra
-      wget
-      tree
+    systemPackages =
+      (with pkgs; [
+        coreutils
+        killall
+        vim
+        alejandra
+        wget
+        tree
 
-      util-linux
-      vulkan-tools
-      exfat
+        util-linux
+        vulkan-tools
+        exfat
 
-      ffmpeg-full
+        ffmpeg-full
 
-      #misc
-      cabextract
-      cifs-utils
-      usbutils
-    ];
+        #misc
+        cabextract
+        cifs-utils
+        usbutils
+      ])
+      ++ [
+        (naersk'.buildPackage {
+          src = pkgs.fetchFromGitHub {
+            owner = "kuroahna";
+            repo = "mpv_websocket";
+            rev = "0.2.0";
+            hash = "sha256-yqZdLCAv9hP6ZMuNcgy2w8CYK/cNGMwpCE/0s2ELNTA=";
+          };
+        })
+      ];
     variables = {
       # track https://github.com/swaywm/sway/issues/8143
       GTK_IM_MODULE = "fcitx";
