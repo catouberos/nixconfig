@@ -1,8 +1,22 @@
 {
   pkgs,
   config,
+  inputs,
   ...
-}: {
+}: let
+  naersk' = pkgs.callPackage inputs.naersk {};
+in {
+  home.packages = [
+    (naersk'.buildPackage {
+      src = pkgs.fetchFromGitHub {
+        owner = "kuroahna";
+        repo = "mpv_websocket";
+        rev = "0.2.0";
+        hash = "sha256-yqZdLCAv9hP6ZMuNcgy2w8CYK/cNGMwpCE/0s2ELNTA=";
+      };
+    })
+  ];
+
   programs.mpv = {
     enable = true;
     scripts = with pkgs.mpvScripts; [
@@ -14,6 +28,18 @@
     scriptOpts = {
       webm = {
         output_directory = "${config.home.homeDirectory}/Videos";
+      };
+      subs2srs = {
+        use_ffmpeg = "yes";
+        # https://arbyste.github.io/jp-mining-note-prerelease/setupmpvacious/
+        model_name = "JP Mining Note";
+        sentence_field = "Sentence";
+        audio_field = "SentenceAudio";
+        image_field = "Picture";
+        audio_bitrate = "32k";
+        snapshot_quality = "50";
+        snapshot_width = "800";
+        snapshot_height = "-2";
       };
     };
     config = {
@@ -47,6 +73,9 @@
 
       # yt-dlp
       ytdl-format = "bestvideo+bestaudio";
+
+      # websocket
+      input-ipc-server = "/tmp/mpv-ipc";
     };
   };
 }
