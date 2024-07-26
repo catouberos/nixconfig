@@ -1,4 +1,8 @@
-{
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    playerctl
+  ];
+
   programs.waybar = {
     enable = true;
     settings = {
@@ -7,11 +11,24 @@
         position = "bottom";
         height = 24;
         modules-left = ["sway/workspaces"];
-        modules-right = ["tray" "clock"];
+        modules-right = ["tray" "mpris" "clock"];
         "sway/workspaces" = {
           disable-scroll = true;
         };
-        "clock" = {
+        mpris = {
+          format = "{player_icon} {dynamic}";
+          format-paused = "{status_icon} <i>{dynamic}</i>";
+          player-icons = {
+            default = "▶";
+            mpv = "";
+            Supersonic = "🎵";
+          };
+          status-icons = {
+            paused = "⏸";
+          };
+          dynamic-len = 80;
+        };
+        clock = {
           format = "{:%A, %B %d, %Y (%R)}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
