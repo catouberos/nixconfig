@@ -3,6 +3,11 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./lsp.nix
+    ./keymaps.nix
+  ];
+
   home.packages = with pkgs; [
     ripgrep
     fd
@@ -12,9 +17,7 @@
     nixvim = {
       enable = true;
       defaultEditor = true;
-      globals = {
-        mapleader = " ";
-      };
+
       opts = {
         number = true;
         relativenumber = true;
@@ -23,6 +26,7 @@
         expandtab = true;
         smartindent = true;
       };
+
       colorschemes.catppuccin = {
         enable = true;
         settings = {
@@ -31,20 +35,17 @@
       };
 
       plugins = {
-        # lsp
-        lsp = {
+        nvim-lightbulb = {
           enable = true;
-          servers = {
-            tsserver.enable = true;
-            nil-ls.enable = true;
-            clangd.enable = true;
-            gopls.enable = true;
-            volar.enable = true;
-            eslint.enable = true;
-            tailwindcss.enable = true;
-            html.enable = true;
+          settings = {
+            autocmd = {
+              enabled = true;
+              updatetime = 200;
+            };
           };
         };
+        # lsp
+
         conform-nvim = {
           enable = true;
           formatOnSave = ''
@@ -88,8 +89,21 @@
           keymaps = {
             "<leader>ff" = "find_files";
             "<leader>fg" = "live_grep";
+            "<leader>git" = {
+              action = "git_files";
+              options = {
+                desc = "Telescope Git Files";
+              };
+            };
+            "<leader>ci" = "ui-select";
+          };
+          extensions = {
+            ui-select = {
+              enable = true;
+            };
           };
         };
+
         neo-tree = {
           enable = true;
         };

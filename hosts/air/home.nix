@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../home-manager/cli
-    ../../home-manager/nixvim.nix
+    ../../home-manager/nixvim
     ../../home-manager/1password.nix
   ];
 
