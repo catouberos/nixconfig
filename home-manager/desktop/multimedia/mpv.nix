@@ -31,6 +31,7 @@ in {
       };
       subs2srs = {
         use_ffmpeg = "yes";
+        snapshot_format = "webp";
         # https://arbyste.github.io/jp-mining-note-prerelease/setupmpvacious/
         model_name = "JP Mining Note";
         sentence_field = "Sentence";
@@ -73,9 +74,6 @@ in {
 
       # yt-dlp
       ytdl-format = "bestvideo+bestaudio";
-
-      # websocket
-      input-ipc-server = "/tmp/mpv-ipc";
     };
   };
 }
