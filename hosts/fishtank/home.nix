@@ -3,6 +3,7 @@
     ../../home-manager/desktop
     ../../home-manager/cli
     ../../home-manager/nixvim
+    ../../home-manager/development
     ../../home-manager/1password.nix
   ];
 
