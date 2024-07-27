@@ -25,6 +25,8 @@
       };
     };
 
-    targets.nixvim.enable = true;
+    targets = {
+      vscode.enable = true;
+    };
   };
 }
