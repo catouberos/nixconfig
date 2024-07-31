@@ -36,6 +36,8 @@
         eslint.enable = true;
         tailwindcss.enable = true;
         html.enable = true;
+        jsonls.enable = true;
+        phpactor.enable = true;
       };
     };
     nvim-jdtls = {
