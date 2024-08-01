@@ -42,6 +42,9 @@
         go = ["gofmt"];
         php = ["prettier"];
         yaml = ["yamlfmt"];
+        swift = ["swift_format"];
+        javascriptreact = ["prettier"];
+        typescriptreact = ["prettier"];
       };
     };
   };
