@@ -58,7 +58,6 @@
                 desc = "Telescope Git Files";
               };
             };
-            "<leader>ci" = "ui-select";
           };
           extensions = {
             ui-select = {
