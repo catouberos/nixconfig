@@ -12,6 +12,7 @@
 
     ./hardware-configuration.nix
     ../../modules/security
+    ../../modules/virtualisation
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -41,6 +42,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
+      options = "--delete-older-than 30d";
     };
   };
 
@@ -60,8 +62,6 @@
 
   # sops
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
-  sops.age.keyFile = "/home/catou/.config/sops/age/keys.txt";
-  sops.secrets.cloudflare_tokens = {};
 
   hardware = {
     graphics.enable = true;
