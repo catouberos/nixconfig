@@ -78,6 +78,9 @@
   };
 
   services = {
+    logind.extraConfig = ''
+      HandlePowerKey=suspend
+    '';
     pipewire = {
       enable = true;
       alsa = {

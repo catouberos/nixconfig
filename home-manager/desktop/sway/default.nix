@@ -20,6 +20,9 @@
   programs = {
     wofi.enable = true;
     imv.enable = true;
+    swaylock = {
+      enable = true;
+    };
   };
 
   services = {
