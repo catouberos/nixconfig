@@ -5,6 +5,7 @@
 
   home.packages = with pkgs; [
     zed-editor
+    jetbrains.idea-ultimate
   ];
 
   programs = {
