@@ -139,15 +139,6 @@
       fsType = "nfs";
       options = ["x-systemd.automount" "noauto"];
     };
-
-    "/mnt/samsung860" = {
-      device = "/dev/disk/by-uuid/ae9d72ed-1bf6-41e0-b8ba-fe04dcaa695d";
-      fsType = "ext4";
-      options = [
-        "users" # Allows any user to mount and unmount
-        "nofail" # Prevent system from failing if this drive doesn't mount
-      ];
-    };
   };
 
   programs = {
