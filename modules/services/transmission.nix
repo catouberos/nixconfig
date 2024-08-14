@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   services.transmission = {
     enable = true;
     package = pkgs.transmission_4;
@@ -8,6 +12,7 @@
     settings = {
       # files
       download-dir = "/mnt/wdpurple/Torrents";
+      incomplete-dir = "${config.services.transmission.settings.download-dir}/.incomplete";
       preallocation = 2;
       # misc
       cache-size-mb = 1024;
