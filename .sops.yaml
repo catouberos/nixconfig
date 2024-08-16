@@ -5,9 +5,11 @@
 keys:
   - &fishtank age12sngc39lckmlcaczasd4dxz4ejpst534al5sk9n88sj3ks90huqq08625n
   - &shinobu age1t0wzt7l985g4q5vk7cw5fz8pjtk3jyl5q80tal07f8rm2jzzlvcq3uk98x
+  - &araragi age18tqfyj726f4jywhcry93240j8e3a36mqscs328ppy7hakhvgrf8s2k5nsh
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
-    - age:
-      - *fishtank
-      - *shinobu
+      - age:
+          - *fishtank
+          - *shinobu
+          - *araragi
