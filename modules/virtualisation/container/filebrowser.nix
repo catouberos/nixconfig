@@ -5,7 +5,8 @@
       autoStart = true;
       ports = ["8080:80"];
       volumes = [
-        "/mnt/wdpurple:/srv:ro"
+        "/mnt/samsung860:/srv/samsung860:ro"
+        "/mnt/wdpurple:/srv/wdpurple:ro"
         "${config.users.users.catou.home}/filebrowser/database.db:/database.db"
       ];
     };
