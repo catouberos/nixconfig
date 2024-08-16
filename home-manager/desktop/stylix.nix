@@ -16,17 +16,14 @@
       };
 
       sansSerif = {
-        name = "IBM Plex Sans";
+        name = "IBM Plex Sans JP";
         package = pkgs.ibm-plex;
       };
+
       serif = {
         name = "IBM Plex Serif";
         package = pkgs.ibm-plex;
       };
-    };
-
-    targets = {
-      vscode.enable = true;
     };
   };
 }
