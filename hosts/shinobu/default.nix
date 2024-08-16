@@ -199,8 +199,11 @@
     };
   };
 
-  systemd.services.dnscrypt-proxy2.serviceConfig = {
-    StateDirectory = "dnscrypt-proxy";
+  systemd.services = {
+    dnscrypt-proxy2.serviceConfig = {
+      StateDirectory = "dnscrypt-proxy";
+    };
+    transmission.serviceConfig.BindPaths = ["/mnt/wdpurple" "/mnt/samsung860"];
   };
 
   programs = {
