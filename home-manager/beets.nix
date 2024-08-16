@@ -8,7 +8,7 @@
     settings = {
       plugins = "fetchart embedart convert";
       directory = "/mnt/wdblue/Music";
-      library = "${config.users.users.catou.home}/.beets/library.db";
+      library = "${config.home.homeDirectory}/.beets/library.db";
       match = {
         strong_rec_thresh = 0.15;
       };
@@ -23,7 +23,7 @@
         {coverart = "releasegroup";}
       ];
       convert = {
-        dest = "${config.users.users.catou.home}/Beets";
+        dest = "${config.home.homeDirectory}/Beets";
         format = "flacipod";
         formats = {
           flacipod = {
