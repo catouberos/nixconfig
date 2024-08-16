@@ -5,7 +5,7 @@
 }: {
   services.transmission = {
     enable = true;
-    package = pkgs.transmission;
+    package = pkgs.transmission_4;
     webHome = pkgs.flood-for-transmission;
     openRPCPort = true;
     openPeerPorts = true;
