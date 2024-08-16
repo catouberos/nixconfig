@@ -65,6 +65,12 @@
         modules = [./hosts/shinobu];
         specialArgs = {inherit inputs outputs;};
       };
+
+      # homelab
+      araragi = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/araragi];
+        specialArgs = {inherit inputs outputs;};
+      };
     };
 
     darwinConfigurations = {
