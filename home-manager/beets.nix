@@ -1,10 +1,14 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.beets = {
     enable = true;
     settings = {
       plugins = "fetchart embedart convert";
-      directory = "/mnt/wdpurple/Music";
-      library = "/home/catou/library.db";
+      directory = "/mnt/wdblue/Music";
+      library = "${config.users.users.catou.home}/.beets/library.db";
       match = {
         strong_rec_thresh = 0.15;
       };
@@ -19,7 +23,7 @@
         {coverart = "releasegroup";}
       ];
       convert = {
-        dest = "/home/catou/Beets";
+        dest = "${config.users.users.catou.home}/Beets";
         format = "flacipod";
         formats = {
           flacipod = {
