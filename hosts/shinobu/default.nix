@@ -168,6 +168,13 @@
             reverse_proxy :8080
           '';
         };
+        # filebrowser
+        "music.catou.id.vn" = {
+          extraConfig = ''
+            encode gzip
+            reverse_proxy 192.168.1.70:4533
+          '';
+        };
       };
     };
 
