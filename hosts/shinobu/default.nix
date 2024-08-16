@@ -13,7 +13,7 @@
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
-    ../../modules/virtualisation/container
+    ../../modules/virtualisation/container/azunyan.nix
     ../../modules/virtualisation/container/flood.nix
     ../../modules/virtualisation/container/filebrowser.nix
     ../../modules/services/transmission.nix
