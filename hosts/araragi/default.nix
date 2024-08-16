@@ -13,12 +13,7 @@
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
-    ../../modules/virtualisation/container
-    ../../modules/virtualisation/container/flood.nix
-    ../../modules/virtualisation/container/filebrowser.nix
-    ../../modules/services/transmission.nix
-    ../../modules/services/jellyfin.nix
-    ../../modules/services/inadyn.nix
+    ../../modules/services/navidrome.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -26,9 +21,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
-    hostName = "shinobu";
-    # temporarily
-    enableIPv6 = false;
+    hostName = "araragi";
+    # enableIPv6 = false;
     networkmanager = {
       enable = true;
       dns = "none";
@@ -40,7 +34,7 @@
     firewall = {
       enable = true;
       # http https NFSv4 pod-flood filebrowser
-      allowedTCPPorts = [80 443 2049 3000 8080];
+      allowedTCPPorts = [80 443 2049];
     };
   };
 
@@ -75,19 +69,14 @@
   # sops
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
-  sops.secrets.cloudflare_tokens = {
-    mode = "0440";
-    owner = config.users.users.inadyn.name;
-    group = config.users.users.inadyn.group;
-  };
 
   hardware = {
     graphics.enable = true;
   };
 
   fileSystems = {
-    "/mnt/wdpurple" = {
-      device = "/dev/disk/by-uuid/94f0ee25-b428-4583-9523-2b3efa7ce1fa";
+    "/mnt/wdblue" = {
+      device = "/dev/disk/by-uuid/c2789c9e-4076-4077-a164-1b2800864448";
       fsType = "ext4";
       options = [
         "users" # Allows any user to mount and unmount
@@ -95,22 +84,8 @@
       ];
     };
 
-    "/mnt/samsung860" = {
-      device = "/dev/disk/by-uuid/5840f1f0-6c32-457e-ac1a-343f41a663da";
-      fsType = "ext4";
-      options = [
-        "users" # Allows any user to mount and unmount
-        "nofail" # Prevent system from failing if this drive doesn't mount
-      ];
-    };
-
-    "/export/wdpurple" = {
-      device = "/mnt/wdpurple";
-      options = ["bind"];
-    };
-
-    "/export/samsung860" = {
-      device = "/mnt/samsung860";
+    "/export/wdblue" = {
+      device = "/mnt/wdblue";
       options = ["bind"];
     };
   };
@@ -118,8 +93,6 @@
   services = {
     dbus.enable = true;
     udisks2.enable = true;
-    # somehow this cause issue with ipv6
-    nscd.enableNsncd = false;
     openssh = {
       enable = true;
       settings = {
@@ -139,7 +112,7 @@
         enable = true;
         exports = ''
           /export 192.168.1.0/24(insecure,ro,sync,no_subtree_check,crossmnt,fsid=0)
-          /export/wdpurple 192.168.1.0/24(insecure,ro,sync,no_subtree_check)
+          /export/wdblue 192.168.1.0/24(insecure,ro,sync,no_subtree_check)
         '';
       };
     };
@@ -147,25 +120,11 @@
     caddy = {
       enable = true;
       virtualHosts = {
-        # flood
-        "shinobu.catou.id.vn" = {
+        # navidrome
+        "music.catou.id.vn" = {
           extraConfig = ''
             encode gzip
-            reverse_proxy :3000
-          '';
-        };
-        # jellyfin
-        "jellyfin.catou.id.vn" = {
-          extraConfig = ''
-            encode gzip
-            reverse_proxy :8096
-          '';
-        };
-        # filebrowser
-        "files.catou.id.vn" = {
-          extraConfig = ''
-            encode gzip
-            reverse_proxy :8080
+            reverse_proxy :4533
           '';
         };
       };
@@ -228,17 +187,10 @@
       wget
       tree
 
-      # linux-firmware
       util-linux
       vulkan-tools
-      exfat
 
       ffmpeg-full
-
-      #misc
-      cabextract
-      cifs-utils
-      usbutils
     ];
   };
 
