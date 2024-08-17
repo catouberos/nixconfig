@@ -13,7 +13,6 @@
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
-    ../../modules/services/navidrome.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -116,19 +115,6 @@
           /export 192.168.1.0/24(insecure,ro,sync,no_subtree_check,crossmnt,fsid=0)
           /export/wdblue 192.168.1.0/24(insecure,ro,sync,no_subtree_check)
         '';
-      };
-    };
-
-    caddy = {
-      enable = true;
-      virtualHosts = {
-        # navidrome
-        "music.catou.id.vn" = {
-          extraConfig = ''
-            encode gzip
-            reverse_proxy :4533
-          '';
-        };
       };
     };
 
