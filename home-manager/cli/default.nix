@@ -14,6 +14,7 @@
   home.packages = with pkgs; [
     imagemagick
     sops
+    mkvtoolnix-cli
   ];
 
   programs = {
