@@ -6,6 +6,5 @@
 
   home.packages = with pkgs; [
     supersonic-wayland
-    tauon
   ];
 }
