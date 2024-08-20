@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./lsp.nix
     ./conform.nix
@@ -92,7 +88,6 @@
             indent = {
               enable = true;
             };
-            parser_install_dir = "${config.home.homeDirectory}/nvim";
           };
         };
 
