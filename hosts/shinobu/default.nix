@@ -119,8 +119,6 @@
   services = {
     dbus.enable = true;
     udisks2.enable = true;
-    # somehow this cause issue with ipv6
-    nscd.enableNsncd = false;
     openssh = {
       enable = true;
       settings = {
