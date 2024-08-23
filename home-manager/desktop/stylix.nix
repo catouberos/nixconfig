@@ -16,8 +16,8 @@
       };
 
       sansSerif = {
-        name = "IBM Plex Sans JP";
-        package = pkgs.ibm-plex;
+        name = "Inter";
+        package = pkgs.inter;
       };
 
       serif = {
