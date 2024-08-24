@@ -2,7 +2,7 @@
   programs.beets = {
     enable = true;
     settings = {
-      plugins = "fetchart embedart convert";
+      plugins = "fetchart embedart convert zero";
       directory = "/mnt/samsung860/Music";
       library = "${config.home.homeDirectory}/.beets/library.db";
       match = {
@@ -17,6 +17,14 @@
           "itunes"
           {coverart = "releasegroup";}
         ];
+      };
+      zero = {
+        fields = "comments";
+        comments = [
+          "[rR]ipped by"
+          "cyanrip"
+        ];
+        update_database = true;
       };
     };
   };
