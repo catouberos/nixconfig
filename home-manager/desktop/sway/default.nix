@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./waybar.nix
+    ./bemenu.nix
     ./mako.nix
     ./xdg.nix
   ];
@@ -18,7 +19,6 @@
   ];
 
   programs = {
-    wofi.enable = true;
     imv.enable = true;
     swaylock = {
       enable = true;
@@ -45,7 +45,7 @@
         {command = "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";}
         {command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
       ];
-      menu = "wofi --show drun";
+      menu = "${pkgs.bemenu}/bin/bemenu-run -l 20 --binding vim -c -p \">\" --vim-esc-exits -B 2 -H 12 -W 0.3";
 
       bars = [{command = "${pkgs.waybar}/bin/waybar";}];
 
@@ -85,7 +85,7 @@
       };
 
       keybindings = {
-        "${modifier}+space" = "exec wofi --show drun";
+        "${modifier}+space" = "exec ${menu}";
         "Ctrl+Shift+Space" = "exec 1password --quick-access";
 
         # screenshot

@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     mullvad-browser
     brave
+    keepassxc
   ];
 
   qt = {
