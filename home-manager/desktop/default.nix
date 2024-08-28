@@ -21,7 +21,10 @@
   };
 
   programs = {
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+      package = pkgs.firefox-bin;
+    };
     chromium = {
       enable = true;
       commandLineArgs = [
