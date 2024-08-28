@@ -32,6 +32,7 @@
       };
 
       plugins = {
+        transparent.enable = true;
         nvim-lightbulb = {
           enable = true;
           settings = {

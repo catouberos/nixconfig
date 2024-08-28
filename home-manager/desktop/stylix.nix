@@ -25,5 +25,16 @@
         package = pkgs.ibm-plex;
       };
     };
+
+    targets = {
+      fish.enable = false;
+      wezterm.enable = false;
+      waybar = {
+        enable = true;
+        enableCenterBackColors = true;
+        enableLeftBackColors = true;
+        enableRightBackColors = true;
+      };
+    };
   };
 }
