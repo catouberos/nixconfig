@@ -17,6 +17,7 @@
     ../../modules/virtualisation/container/filebrowser.nix
     ../../modules/virtualisation/container/flood.nix
     ../../modules/services/transmission.nix
+    ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
     ../../modules/services/inadyn.nix

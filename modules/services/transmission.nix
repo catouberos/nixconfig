@@ -9,7 +9,7 @@
     webHome = pkgs.flood-for-transmission;
     openRPCPort = true;
     openPeerPorts = true;
-    performanceNetParameters = true;
+    # performanceNetParameters = true;
     settings = {
       # files
       download-dir = "/mnt/wdpurple/Torrents";
