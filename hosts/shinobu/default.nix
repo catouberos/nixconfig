@@ -20,6 +20,7 @@
     ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
+    ../../modules/services/komga.nix
     ../../modules/services/inadyn.nix
   ];
 
@@ -177,6 +178,13 @@
             reverse_proxy :8096
           '';
         };
+        # komga
+        "komga.catou.id.vn" = {
+          extraConfig = ''
+            encode gzip
+            reverse_proxy :8090
+          '';
+        };
         # filebrowser
         "files.catou.id.vn" = {
           extraConfig = ''
@@ -184,7 +192,7 @@
             reverse_proxy :8080
           '';
         };
-        # filebrowser
+        # navidrome
         "music.catou.id.vn" = {
           extraConfig = ''
             encode gzip
