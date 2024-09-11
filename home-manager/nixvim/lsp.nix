@@ -29,6 +29,7 @@
             };
           };
         };
+        svelte.enable = true;
         volar.enable = true;
         nil-ls.enable = true;
         clangd.enable = true;
