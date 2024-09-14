@@ -3,9 +3,9 @@
     polarity = "dark";
 
     cursor = {
-      package = pkgs.apple-cursor;
+      package = pkgs.vanilla-dmz;
 
-      name = "macOS-Monterey";
+      name = "Vanilla-DMZ";
       size = 24;
     };
 
