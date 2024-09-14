@@ -21,7 +21,10 @@
     tmux = {
       enable = true;
     };
-    btop.enable = true;
+    btop = {
+      enable = true;
+      package = pkgs.btop.override {rocmSupport = true;};
+    };
     fzf.enable = true;
     bat.enable = true;
     eza = {
