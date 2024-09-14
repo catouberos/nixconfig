@@ -23,7 +23,6 @@
   programs = {
     firefox = {
       enable = true;
-      package = pkgs.firefox-bin;
     };
     chromium = {
       enable = true;
