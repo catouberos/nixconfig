@@ -18,7 +18,7 @@
       # misc
       cache-size-mb = 1024;
       # performance
-      peer-limit-global = 2000;
+      peer-limit-global = 500;
       performanceNetParameters = true;
       # queuing
       download-queue-enabled = false;
