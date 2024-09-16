@@ -33,6 +33,7 @@
 
       plugins = {
         transparent.enable = true;
+        ts-autotag.enable = true;
         nvim-lightbulb = {
           enable = true;
           settings = {
