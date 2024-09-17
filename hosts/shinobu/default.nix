@@ -15,6 +15,7 @@
     ../../modules/virtualisation/podman.nix
     ../../modules/virtualisation/container/filebrowser.nix
     ../../modules/virtualisation/container/flood.nix
+    ../../modules/services/prometheus.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
@@ -150,6 +151,9 @@
           /export/wdpurple 192.168.1.0/24(insecure,ro,sync,no_subtree_check)
         '';
       };
+    };
+
+    grafana_reporter = {
     };
 
     caddy = {
