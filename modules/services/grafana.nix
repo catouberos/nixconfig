@@ -15,16 +15,27 @@
       };
     };
 
-    # declarativePlugins = with pkgs.grafanaPlugins; [ ... ];
+    provision = {
+      enable = true;
 
-    datasources.settings.datasources = [
-      # "Built-in" datasources can be provisioned - c.f. https://grafana.com/docs/grafana/latest/administration/provisioning/#data-sources
-      {
-        name = "Prometheus";
-        type = "prometheus";
-        url = "http://${config.services.prometheus.listenAddress}:${toString config.services.prometheus.port}";
-      }
-    ];
+      dashboards.settings.providers = [
+        {
+          name = "my dashboards";
+          options.path = "/etc/grafana-dashboards";
+        }
+      ];
+
+      # declarativePlugins = with pkgs.grafanaPlugins; [ ... ];
+
+      datasources.settings.datasources = [
+        # "Built-in" datasources can be provisioned - c.f. https://grafana.com/docs/grafana/latest/administration/provisioning/#data-sources
+        {
+          name = "Prometheus";
+          type = "prometheus";
+          url = "http://${config.services.prometheus.listenAddress}:${toString config.services.prometheus.port}";
+        }
+      ];
+    };
   };
 
   services.caddy.virtualHosts = {
