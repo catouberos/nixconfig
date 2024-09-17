@@ -15,7 +15,7 @@
     ../../modules/virtualisation/podman.nix
     ../../modules/virtualisation/container/filebrowser.nix
     ../../modules/virtualisation/container/flood.nix
-    ../../modules/services/prometheus.nix
+    ../../modules/services/grafana.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
