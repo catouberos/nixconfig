@@ -10,20 +10,13 @@
     settings = {
       server = {
         http_addr = "127.0.0.1";
-        http_port = 3000;
+        http_port = 3001;
         domain = "grafana.catou.id.vn";
       };
     };
 
     provision = {
       enable = true;
-
-      dashboards.settings.providers = [
-        {
-          name = "my dashboards";
-          options.path = "/etc/grafana-dashboards";
-        }
-      ];
 
       # declarativePlugins = with pkgs.grafanaPlugins; [ ... ];
 
