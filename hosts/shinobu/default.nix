@@ -159,14 +159,6 @@
     caddy = {
       enable = true;
       virtualHosts = {
-        # temp
-        "hss.catou.id.vn" = {
-          extraConfig = ''
-            encode gzip
-            reverse_proxy :1234
-          '';
-        };
-
         # flood
         "shinobu.catou.id.vn" = {
           extraConfig = ''

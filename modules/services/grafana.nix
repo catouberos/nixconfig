@@ -26,4 +26,13 @@
       }
     ];
   };
+
+  services.caddy.virtualHosts = {
+    "grafana.catou.id.vn" = {
+      extraConfig = ''
+        encode gzip
+        reverse_proxy ${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}
+      '';
+    };
+  };
 }

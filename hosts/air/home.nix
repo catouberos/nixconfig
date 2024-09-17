@@ -16,10 +16,18 @@
     fd
     alejandra
     ffmpeg
+
+    jmeter
   ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
+  };
+
+  services = {
+    syncthing = {
+      enable = true;
+    };
   };
 
   # Let Home Manager install and manage itself.
