@@ -8,7 +8,7 @@
     lsp = {
       enable = true;
       servers = {
-        tsserver = {
+        ts-ls = {
           enable = true;
           filetypes = [
             "typescript"
