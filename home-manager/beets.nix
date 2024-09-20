@@ -2,7 +2,7 @@
   programs.beets = {
     enable = true;
     settings = {
-      plugins = "fetchart embedart convert zero mbsync fish";
+      plugins = "fetchart embedart convert zero mbsync fish smartplaylist";
       directory = "/mnt/samsung860/Music";
       library = "${config.home.homeDirectory}/.beets/library.db";
       match = {
@@ -25,6 +25,19 @@
           "cyanrip"
         ];
         update_database = true;
+      };
+      smartplaylist = {
+        playlist_dir = "${config.programs.beets.settings.directory}";
+        playlists = [
+          {
+            name = "Blue Archive Soundtrack.m3u";
+            query = "'album::Blue Archive.*(Soundtrack|OST)'";
+          }
+          {
+            name = "IDOLY PRIDE.m3u";
+            query = "artist:星見プロダクション , artist:TRINITYAiLE , artist:サニーピース , artist:LizNoir , artist:月のテンペスト , artist:ⅢX , 'album:IDOLY PRIDE'";
+          }
+        ];
       };
     };
   };
