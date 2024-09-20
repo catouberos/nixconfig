@@ -1,9 +1,5 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [./prometheus.nix];
+{config, ...}: {
+  imports = [./prometheus];
 
   services.grafana = {
     enable = true;
@@ -32,10 +28,16 @@
   };
 
   services.caddy.virtualHosts = {
-    "grafana.catou.id.vn" = {
+    ":3002" = {
       extraConfig = ''
         encode gzip
-        reverse_proxy ${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}
+        reverse_proxy :${toString config.services.grafana.settings.server.http_port}
+      '';
+    };
+    "${config.services.grafana.settings.server.domain}" = {
+      extraConfig = ''
+        encode gzip
+        reverse_proxy :${toString config.services.grafana.settings.server.http_port}
       '';
     };
   };

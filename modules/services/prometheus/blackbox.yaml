@@ -1,0 +1,53 @@
+modules:
+  http_2xx:
+    prober: http
+    timeout: 5s
+    http:
+      valid_http_versions: ["HTTP/1.1", "HTTP/2.0"]
+      valid_status_codes: [] # Defaults to 2xx
+      method: GET
+      follow_redirects: true
+      fail_if_ssl: false
+      fail_if_not_ssl: false
+      fail_if_body_matches_regexp:
+        - "Could not connect to database"
+      fail_if_body_not_matches_regexp:
+        - "Download the latest version here"
+      tls_config:
+        insecure_skip_verify: false
+      preferred_ip_protocol: "ip4" # defaults to "ip6"
+      ip_protocol_fallback: false # no fallback to "ip6"
+  dns_udp_example:
+    prober: dns
+    timeout: 5s
+    dns:
+      query_name: "www.prometheus.io"
+      query_type: "A"
+      valid_rcodes:
+        - NOERROR
+      validate_answer_rrs:
+        fail_if_matches_regexp:
+          - ".*127.0.0.1"
+        fail_if_all_match_regexp:
+          - ".*127.0.0.1"
+        fail_if_not_matches_regexp:
+          - "www.prometheus.io.\t300\tIN\tA\t127.0.0.1"
+        fail_if_none_matches_regexp:
+          - "127.0.0.1"
+      validate_authority_rrs:
+        fail_if_matches_regexp:
+          - ".*127.0.0.1"
+      validate_additional_rrs:
+        fail_if_matches_regexp:
+          - ".*127.0.0.1"
+  dns_soa:
+    prober: dns
+    dns:
+      query_name: "prometheus.io"
+      query_type: "SOA"
+  dns_tcp_example:
+    prober: dns
+    dns:
+      transport_protocol: "tcp" # defaults to "udp"
+      preferred_ip_protocol: "ip4" # defaults to "ip6"
+      query_name: "www.prometheus.io"
