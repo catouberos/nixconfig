@@ -137,18 +137,19 @@
       # TODO: check when fix
       enable = false;
       ignoreIP = [
-        "192.168.1.0/16"
+        "192.168.0.0/16"
       ];
     };
     nfs = {
       server = {
         enable = true;
         exports = ''
-          /export 192.168.1.0/24(insecure,ro,sync,no_subtree_check,crossmnt,fsid=0)
-          /export/wdpurple 192.168.1.0/24(insecure,ro,sync,no_subtree_check)
+          /export 192.168.0.1/24(insecure,ro,sync,no_subtree_check,crossmnt,fsid=0)
+          /export/wdpurple 192.168.0.0/24(insecure,ro,sync,no_subtree_check)
         '';
       };
     };
+  };
 
   systemd.services = {
     transmission.serviceConfig.BindPaths = ["/mnt/wdpurple" "/mnt/samsung860"];

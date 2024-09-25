@@ -105,7 +105,7 @@
       # TODO: check when fix
       enable = false;
       ignoreIP = [
-        "192.168.1.0/16"
+        "192.168.0.0/16"
       ];
     };
     nfs = {

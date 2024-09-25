@@ -133,7 +133,7 @@
 
   fileSystems = {
     "/mnt/wdpurple" = {
-      device = "192.168.1.69:/wdpurple";
+      device = "192.168.0.69:/wdpurple";
       fsType = "nfs";
       options = ["x-systemd.automount" "noauto"];
     };
