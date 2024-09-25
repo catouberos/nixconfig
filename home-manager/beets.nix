@@ -23,6 +23,7 @@
         comments = [
           "[rR]ipped by"
           "cyanrip"
+          "[dD]ownloaded"
         ];
         update_database = true;
       };
