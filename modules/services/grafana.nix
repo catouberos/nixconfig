@@ -26,19 +26,4 @@
       ];
     };
   };
-
-  services.caddy.virtualHosts = {
-    ":3002" = {
-      extraConfig = ''
-        encode gzip
-        reverse_proxy :${toString config.services.grafana.settings.server.http_port}
-      '';
-    };
-    "${config.services.grafana.settings.server.domain}" = {
-      extraConfig = ''
-        encode gzip
-        reverse_proxy :${toString config.services.grafana.settings.server.http_port}
-      '';
-    };
-  };
 }

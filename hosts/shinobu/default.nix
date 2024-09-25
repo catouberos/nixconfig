@@ -15,7 +15,6 @@
     ../../modules/virtualisation/podman.nix
     ../../modules/virtualisation/container/filebrowser.nix
     ../../modules/virtualisation/container/flood.nix
-    ../../modules/services/caddy.nix
     ../../modules/services/grafana.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
@@ -147,47 +146,6 @@
         exports = ''
           /export 192.168.1.0/24(insecure,ro,sync,no_subtree_check,crossmnt,fsid=0)
           /export/wdpurple 192.168.1.0/24(insecure,ro,sync,no_subtree_check)
-        '';
-      };
-    };
-
-    grafana_reporter = {
-    };
-
-    caddy.virtualHosts = {
-      # flood
-      "shinobu.catou.id.vn" = {
-        extraConfig = ''
-          encode gzip
-          reverse_proxy :3000
-        '';
-      };
-      # jellyfin
-      "jellyfin.catou.id.vn" = {
-        extraConfig = ''
-          encode gzip
-          reverse_proxy :8096
-        '';
-      };
-      # komga
-      "komga.catou.id.vn" = {
-        extraConfig = ''
-          encode gzip
-          reverse_proxy :8090
-        '';
-      };
-      # filebrowser
-      "files.catou.id.vn" = {
-        extraConfig = ''
-          encode gzip
-          reverse_proxy :8080
-        '';
-      };
-      # navidrome
-      "music.catou.id.vn" = {
-        extraConfig = ''
-          encode gzip
-          reverse_proxy :4533
         '';
       };
     };

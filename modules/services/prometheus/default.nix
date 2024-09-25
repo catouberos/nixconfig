@@ -60,12 +60,6 @@
           {targets = ["localhost:${toString config.services.prometheus.exporters.blackbox.port}"];}
         ];
       }
-      {
-        job_name = "caddy";
-        static_configs = [
-          {targets = ["localhost:2019"];}
-        ];
-      }
     ];
   };
 }
