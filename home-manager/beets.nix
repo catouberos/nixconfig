@@ -40,23 +40,23 @@
           }
           {
             name = "ONGEKI.m3u";
-            query = "'album: ONGEKI'";
+            query = "ONGEKI";
           }
           {
             name = "ONGEKI Vocal Collection.m3u";
-            query = "'album: ONGEKI Vocal Collection'";
+            query = "ONGEKI Vocal Collection";
           }
           {
             name = "ONGEKI Vocal Party.m3u";
-            query = "'album: ONGEKI Vocal Party'";
+            query = "ONGEKI Vocal Party";
           }
           {
             name = "ONGEKI Sound Collection.m3u";
-            query = "'album: ONGEKI Sound Collection'";
+            query = "ONGEKI Sound Collection";
           }
           {
             name = "ONGEKI Memorial Soundtrack.m3u";
-            query = "'album: ONGEKI Memorial Soundtrack'";
+            query = "ONGEKI Memorial Soundtrack";
           }
         ];
       };
