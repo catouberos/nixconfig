@@ -21,7 +21,6 @@
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
     ../../modules/services/komga.nix
-    ../../modules/services/inadyn.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -83,11 +82,6 @@
   # sops
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
-  sops.secrets.cloudflare_tokens = {
-    mode = "0440";
-    owner = config.users.users.inadyn.name;
-    group = config.users.users.inadyn.group;
-  };
 
   hardware = {
     graphics.enable = true;
