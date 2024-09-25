@@ -38,6 +38,26 @@
             name = "IDOLY PRIDE.m3u";
             query = "artist:星見プロダクション , artist:TRINITYAiLE , artist:サニーピース , artist:LizNoir , artist:月のテンペスト , artist:ⅢX , 'album:IDOLY PRIDE'";
           }
+          {
+            name = "ONGEKI.m3u";
+            query = "'album: ONGEKI'";
+          }
+          {
+            name = "ONGEKI Vocal Collection.m3u";
+            query = "'album: ONGEKI Vocal Collection'";
+          }
+          {
+            name = "ONGEKI Vocal Party.m3u";
+            query = "'album: ONGEKI Vocal Party'";
+          }
+          {
+            name = "ONGEKI Sound Collection.m3u";
+            query = "'album: ONGEKI Sound Collection'";
+          }
+          {
+            name = "ONGEKI Memorial Soundtrack.m3u";
+            query = "'album: ONGEKI Memorial Soundtrack'";
+          }
         ];
       };
     };
