@@ -51,10 +51,7 @@
     hostName = "fishtank";
     networkmanager = {
       enable = true;
-      dns = "none";
     };
-    # encrypted dns
-    nameservers = ["127.0.0.1" "::1"];
     # TODO: check https://discourse.nixos.org/t/connected-to-mullvadvpn-but-no-internet-connection/35803/11
     # resolvconf.enable = false;
   };
@@ -132,29 +129,6 @@
     udisks2.enable = true;
     mullvad-vpn.enable = true;
     nscd.enableNsncd = false;
-    # encrypted dns
-    dnscrypt-proxy2 = {
-      enable = true;
-      settings = {
-        ipv6_servers = true;
-        require_dnssec = true;
-
-        sources.public-resolvers = {
-          urls = [
-            "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
-            "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
-          ];
-          cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
-          minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
-        };
-
-        server_names = ["mullvad-adblock-doh" "nextdns" "nextdns-ipv6"];
-      };
-    };
-  };
-
-  systemd.services.dnscrypt-proxy2.serviceConfig = {
-    StateDirectory = "dnscrypt-proxy";
   };
 
   fileSystems = {
