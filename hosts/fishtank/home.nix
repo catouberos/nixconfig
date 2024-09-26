@@ -30,6 +30,7 @@
 
     # misc
     gimp
+    pinta
   ];
 
   home.sessionVariables = {
