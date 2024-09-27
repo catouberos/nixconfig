@@ -28,6 +28,7 @@
         update_database = true;
       };
       smartplaylist = {
+        relative_to = "${config.programs.beets.settings.directory}";
         playlist_dir = "${config.programs.beets.settings.directory}";
         playlists = [
           {
