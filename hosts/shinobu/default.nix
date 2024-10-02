@@ -191,6 +191,7 @@
       cabextract
       cifs-utils
       usbutils
+      powertop
     ];
   };
 

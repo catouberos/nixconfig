@@ -183,6 +183,7 @@
       cabextract
       cifs-utils
       usbutils
+      powertop
     ];
     variables = {
       # track https://github.com/swaywm/sway/issues/8143
