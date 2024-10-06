@@ -192,6 +192,7 @@
       cifs-utils
       usbutils
       powertop
+      rclone
     ];
   };
 
