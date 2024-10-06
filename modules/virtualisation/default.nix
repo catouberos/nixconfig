@@ -1,3 +1,3 @@
 {
-  imports = [./virt-manager.nix ./podman.nix ./waydroid.nix];
+  imports = [./virt-manager.nix ./docker.nix ./waydroid.nix];
 }
