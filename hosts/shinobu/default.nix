@@ -14,7 +14,6 @@
     ../../modules/virtualisation/podman.nix
     ../../modules/virtualisation/container/filebrowser.nix
     ../../modules/virtualisation/container/flood.nix
-    ../../modules/virtualisation/container/shoko.nix
     ../../modules/services/grafana.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
