@@ -5,7 +5,6 @@
     ../../home-manager/nixvim
     ../../home-manager/development
     ../../home-manager/1password.nix
-    ../../home-manager/syncthing.nix
   ];
 
   home.username = "catou";
