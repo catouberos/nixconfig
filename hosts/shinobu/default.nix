@@ -13,7 +13,6 @@
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
     ../../modules/virtualisation/container/filebrowser.nix
-    ../../modules/virtualisation/container/flood.nix
     ../../modules/services/grafana.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
@@ -21,6 +20,7 @@
     ../../modules/services/jellyfin.nix
     ../../modules/services/komga.nix
     ../../modules/services/immich.nix
+    ../../modules/services/flood.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
