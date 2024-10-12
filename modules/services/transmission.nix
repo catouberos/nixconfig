@@ -9,22 +9,20 @@
     webHome = pkgs.flood-for-transmission;
     openRPCPort = true;
     openPeerPorts = true;
-    # performanceNetParameters = true;
+    performanceNetParameters = true;
     settings = {
       # files
-      download-dir = "/mnt/wdpurple/Torrents";
       incomplete-dir = "${config.services.transmission.settings.download-dir}/.incomplete";
       preallocation = 2;
       # misc
       cache-size-mb = 1024;
       # performance
       peer-limit-global = 500;
-      performanceNetParameters = true;
       # queuing
       download-queue-enabled = false;
       queue-stalled-enabled = false;
       # rpc
-      rpc-bind-address = "0.0.0.0";
+      rpc-bind-address = "::";
       rpc-whitelist = "127.0.0.1, 192.168.*.*";
     };
   };

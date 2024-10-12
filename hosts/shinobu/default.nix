@@ -13,7 +13,6 @@
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
     ../../modules/virtualisation/container/filebrowser.nix
-    ../../modules/services/grafana.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
@@ -32,12 +31,10 @@
     networkmanager = {
       enable = true;
     };
-    # TODO: check https://discourse.nixos.org/t/connected-to-mullvadvpn-but-no-internet-connection/35803/11
-    # resolvconf.enable = false;
     firewall = {
       enable = true;
-      # http https NFSv4 pod-flood filebrowser
-      allowedTCPPorts = [80 443 2049 3000 8080];
+      # http https NFSv4
+      allowedTCPPorts = [80 443 2049];
     };
   };
 
@@ -131,13 +128,6 @@
         AllowUsers = ["catou"]; # Allows all users by default. Can be [ "user1" "user2" ]
       };
     };
-    fail2ban = {
-      # TODO: check when fix
-      enable = false;
-      ignoreIP = [
-        "192.168.0.0/16"
-      ];
-    };
     nfs = {
       server = {
         enable = true;
@@ -147,6 +137,9 @@
         '';
       };
     };
+    transmission.settings.download-dir = "/mnt/wdpurple/Torrents";
+    rtorrent.downloadDir = "/mnt/samsung860/Torrents";
+    navidrome.settings.MusicFolder = "/mnt/samsung860/Music";
   };
 
   systemd.services = {

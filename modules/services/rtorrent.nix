@@ -5,7 +5,6 @@
 }: {
   services.rtorrent = {
     enable = true;
-    downloadDir = "/mnt/samsung860/Torrents";
     openFirewall = true;
     configText = lib.mkForce ''
       # Instance layout (base paths)
@@ -83,7 +82,7 @@
 
       # XMLRPC
       # scgi_local = (cfg.rpcsock)
-      scgi_port = localhost:5000
+      scgi_port = :::5000
       # schedule = scgi_group,0,0,"execute.nothrow=chown,\":${config.services.rtorrent.group}\",(cfg.rpcsock)"
       # schedule = scgi_permission,0,0,"execute.nothrow=chmod,\"775\",(cfg.rpcsock)"
     '';
