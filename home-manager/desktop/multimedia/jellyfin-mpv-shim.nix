@@ -76,7 +76,7 @@
           "remote_direct_paths": false,
           "remote_kbps": 10000,
           "sanitize_output": true,
-          "screenshot_dir": "${config.home.homeDirectory}/Pictures",
+          "screenshot_dir": "${config.home.homeDirectory}/Pictures/mpv",
           "screenshot_menu": true,
           "seek_down": -60,
           "seek_h_exact": false,
