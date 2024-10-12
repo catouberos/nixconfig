@@ -20,6 +20,7 @@
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
     ../../modules/services/komga.nix
+    ../../modules/services/immich.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
