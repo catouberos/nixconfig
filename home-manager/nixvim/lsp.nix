@@ -8,7 +8,7 @@
     lsp = {
       enable = true;
       servers = {
-        ts-ls = {
+        ts_ls = {
           enable = true;
           filetypes = [
             "typescript"
@@ -31,7 +31,7 @@
         };
         svelte.enable = true;
         volar.enable = true;
-        nil-ls.enable = true;
+        nil_ls.enable = true;
         clangd.enable = true;
         gopls.enable = true;
         eslint.enable = true;

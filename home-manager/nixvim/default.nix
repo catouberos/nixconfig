@@ -32,6 +32,7 @@
       };
 
       plugins = {
+        web-devicons.enable = true;
         transparent.enable = true;
         ts-autotag.enable = true;
         nvim-lightbulb = {
