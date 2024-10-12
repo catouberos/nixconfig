@@ -81,8 +81,14 @@
   sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
 
   hardware = {
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver
+      ];
+    };
   };
+  environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
 
   fileSystems = {
     "/mnt/wdpurple" = {
