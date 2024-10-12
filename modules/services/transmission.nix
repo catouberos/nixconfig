@@ -22,7 +22,7 @@
       download-queue-enabled = false;
       queue-stalled-enabled = false;
       # rpc
-      rpc-bind-address = "::";
+      rpc-bind-address = "0.0.0.0";
       rpc-whitelist = "127.0.0.1, 192.168.*.*";
     };
   };
