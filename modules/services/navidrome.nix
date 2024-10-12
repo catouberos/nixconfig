@@ -1,9 +1,9 @@
-{config, ...}: {
+{
   services.navidrome = {
     enable = true;
     openFirewall = true;
     settings = {
-      Address = "::";
+      Address = "0.0.0.0";
       DefaultTheme = "Nord";
       EnableGravatar = true;
       EnableSharing = true;
