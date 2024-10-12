@@ -3,6 +3,7 @@
     ../../home-manager/cli
     ../../home-manager/nixvim
     ../../home-manager/1password.nix
+    ../../home-manager/desktop/multimedia/mpv.nix
   ];
 
   home.username = "catou";
