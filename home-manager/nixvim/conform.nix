@@ -21,6 +21,7 @@
           javascript = ["prettier"];
           typescript = ["prettier"];
           vue = ["prettier"];
+          svelte = ["prettier"];
           html = ["prettier"];
           css = ["prettier"];
           go = ["gofmt"];
