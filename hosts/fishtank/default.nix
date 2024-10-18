@@ -137,6 +137,11 @@
       fsType = "nfs";
       options = ["x-systemd.automount" "noauto"];
     };
+    "/mnt/samsung860" = {
+      device = "192.168.0.69:/samsung860";
+      fsType = "nfs";
+      options = ["x-systemd.automount" "noauto"];
+    };
   };
 
   programs = {
