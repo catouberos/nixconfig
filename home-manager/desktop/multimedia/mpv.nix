@@ -53,7 +53,7 @@ in {
       alang = ["ja" "jp" "jpn" "en" "eng"];
       slang = ["enm" "en" "eng"];
       demuxer-mkv-subtitle-preroll = true;
-      sub-ass-vsfilter-blur-compat = true;
+      sub-ass-use-video-data = "all";
       sub-fix-timing = true;
       sub-auto = "fuzzy";
       profile = "high-quality";
