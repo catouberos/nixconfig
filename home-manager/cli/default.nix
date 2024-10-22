@@ -29,7 +29,7 @@
     bat.enable = true;
     eza = {
       enable = true;
-      icons = true;
+      icons = "auto";
     };
     yt-dlp.enable = true;
     starship = {
