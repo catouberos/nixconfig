@@ -13,6 +13,9 @@
           difficulty = 3;
           white-list = true;
         };
+        whitelist = {
+          "treetw" = "118f1463-2fff-41d8-9c79-ebc21878ae7f";
+        };
       };
     };
   };

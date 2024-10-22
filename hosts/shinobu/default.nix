@@ -9,6 +9,7 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.home-manager.nixosModules.default
     inputs.sops-nix.nixosModules.sops
+    inputs.nix-minecraft.nixosModules.minecraft-servers
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/podman.nix
@@ -20,6 +21,7 @@
     ../../modules/services/komga.nix
     ../../modules/services/immich.nix
     ../../modules/services/flood.nix
+    ../../modules/services/minecraft.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -56,6 +58,7 @@
   nixpkgs = {
     overlays = [
       outputs.overlays.modifications
+      inputs.nix-minecraft.overlay
     ];
     config.allowUnfree = true;
   };

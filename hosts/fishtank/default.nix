@@ -11,7 +11,6 @@
     inputs.home-manager.nixosModules.default
     inputs.stylix.nixosModules.stylix
     inputs.sops-nix.nixosModules.sops
-    inputs.nix-minecraft.nixosModules.minecraft-servers
 
     ./hardware-configuration.nix
     ../../modules/gaming
@@ -75,7 +74,6 @@
   nixpkgs = {
     overlays = [
       outputs.overlays.modifications
-      inputs.nix-minecraft.overlay
     ];
     config.allowUnfree = true;
   };
