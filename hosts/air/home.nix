@@ -20,6 +20,10 @@
     ffmpeg
 
     jmeter
+
+    # container
+    colima
+    docker
   ];
 
   home.sessionVariables = {
