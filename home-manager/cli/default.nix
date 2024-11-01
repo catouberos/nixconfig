@@ -23,7 +23,6 @@
     };
     btop = {
       enable = true;
-      package = lib.mkIf (pkgs.stdenv.isLinux) (pkgs.btop.override {rocmSupport = true;});
     };
     fzf.enable = true;
     bat.enable = true;
