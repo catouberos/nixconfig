@@ -5,8 +5,7 @@
   ...
 }: {
   imports = [
-    inputs.nixos-hardware.nixosModules.common-gpu-amd
-    inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.home-manager.nixosModules.default
     inputs.stylix.nixosModules.stylix
@@ -20,6 +19,7 @@
   ];
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     # Use the systemd-boot EFI boot loader.
     loader = {
       systemd-boot.enable = true;
