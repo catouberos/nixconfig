@@ -53,12 +53,11 @@ in {
       alang = ["ja" "jp" "jpn" "en" "eng"];
       slang = ["enm" "en" "eng"];
       demuxer-mkv-subtitle-preroll = true;
-      sub-ass-use-video-data = "all";
       sub-fix-timing = true;
       sub-auto = "fuzzy";
       profile = "high-quality";
       hwdec = "auto";
-      vo = "gpu-next,gpu,libmpv";
+      vo = "gpu,libmpv";
 
       # subtitles
       sub-font = "Inter";
