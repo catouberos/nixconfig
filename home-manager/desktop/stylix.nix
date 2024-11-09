@@ -29,6 +29,8 @@
     targets = {
       fish.enable = false;
       wezterm.enable = false;
+      nixvim.enable = false;
+      btop.enable = false;
       waybar = {
         enable = true;
         enableCenterBackColors = true;
