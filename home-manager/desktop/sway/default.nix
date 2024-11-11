@@ -39,21 +39,17 @@
 
     config = rec {
       modifier = "Mod4";
-      terminal = "alacritty";
+      terminal = "wezterm";
       defaultWorkspace = "workspace number 1";
       startup = [
-        {command = "${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";}
-        {command = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
+        {command = "exec ${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";}
+        {command = "exec ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
       ];
-      menu = "${pkgs.bemenu}/bin/bemenu-run -l 20 --binding vim -c -p \">\" --vim-esc-exits -B 2 -H 12 -W 0.3";
+      menu = "exec ${pkgs.bemenu}/bin/bemenu-run -l 20 --binding vim -c -p \">\" --vim-esc-exits -B 2 -H 12 -W 0.3";
 
-      bars = [{command = "${pkgs.waybar}/bin/waybar";}];
+      bars = [{command = "exec ${pkgs.waybar}/bin/waybar";}];
 
       input = {
-        "1133:50504:Logitech_USB_Receiver_Mouse" = {
-          accel_profile = "flat";
-          pointer_accel = "0";
-        };
         "1133:45111:MX_Anywhere_3S_Mouse" = {
           accel_profile = "flat";
           pointer_accel = "0";
@@ -64,12 +60,6 @@
         };
         "1118:2415:Microsoft_Surface_Type_Cover_Mouse" = {
           natural_scroll = "disabled";
-        };
-      };
-
-      output = {
-        "HDMI-A-1" = {
-          scale = "1.5";
         };
       };
 

@@ -17,7 +17,7 @@
       -- This is where you actually apply your config choices
 
       config.font = wezterm.font("JetBrainsMono Nerd Font")
-      config.font_size = 14
+      config.font_size = 16
       config.color_scheme = "catppuccin-macchiato"
 
       config.window_background_opacity = 0.9

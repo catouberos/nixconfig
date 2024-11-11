@@ -24,6 +24,13 @@
         name = "IBM Plex Serif";
         package = pkgs.ibm-plex;
       };
+
+      sizes = {
+        applications = 16;
+        desktop = 16;
+        popups = 16;
+        terminal = 16;
+      };
     };
 
     targets = {
@@ -36,6 +43,9 @@
         enableCenterBackColors = true;
         enableLeftBackColors = true;
         enableRightBackColors = true;
+      };
+      bemenu = {
+        fontSize = 16;
       };
     };
   };
