@@ -6,7 +6,7 @@
       package = pkgs.vanilla-dmz;
 
       name = "Vanilla-DMZ";
-      size = 24;
+      size = 32;
     };
 
     fonts = {
