@@ -10,6 +10,7 @@
 
   home.packages = with pkgs; [
     mullvad-browser
+    libreoffice-qt6-fresh
     keepassxc
   ];
 
