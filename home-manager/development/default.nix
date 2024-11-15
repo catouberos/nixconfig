@@ -7,6 +7,7 @@
     zed-editor
     jetbrains.idea-ultimate
     android-studio
+    httpie
     postman
   ];
 
