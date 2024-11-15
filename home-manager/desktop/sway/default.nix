@@ -47,7 +47,7 @@
       ];
       menu = "exec ${pkgs.bemenu}/bin/bemenu-run -l 20 --binding vim -c -p \">\" --vim-esc-exits -B 2 -H 12 -W 0.3";
 
-      bars = [{command = "exec ${pkgs.waybar}/bin/waybar";}];
+      bars = [{command = "${pkgs.waybar}/bin/waybar";}];
 
       input = {
         "1133:45111:MX_Anywhere_3S_Mouse" = {
