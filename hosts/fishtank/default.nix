@@ -129,6 +129,13 @@
     udisks2.enable = true;
     mullvad-vpn.enable = true;
     nscd.enableNsncd = false;
+
+    # PlatformIO udev rules
+    # see: https://wiki.nixos.org/wiki/Platformio#NixOS
+    udev.packages = [
+      pkgs.platformio-core
+      pkgs.openocd
+    ];
   };
 
   fileSystems = {
