@@ -9,6 +9,7 @@
     android-studio
     httpie
     postman
+    platformio-core
   ];
 
   programs = {
