@@ -143,6 +143,7 @@
     transmission.settings.download-dir = "/mnt/wdpurple/Torrents";
     rtorrent.downloadDir = "/mnt/samsung860/Torrents";
     navidrome.settings.MusicFolder = "/mnt/samsung860/Music";
+    tailscale.enable = true;
   };
 
   systemd.services = {
