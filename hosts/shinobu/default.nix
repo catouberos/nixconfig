@@ -195,6 +195,7 @@
       usbutils
       powertop
       rclone
+      lms
     ];
   };
 
