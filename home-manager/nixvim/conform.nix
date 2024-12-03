@@ -30,6 +30,8 @@
           swift = ["swift_format"];
           javascriptreact = ["prettier"];
           typescriptreact = ["prettier"];
+          c = ["clang-format"];
+          cpp = ["clang-format"];
         };
       };
     };
