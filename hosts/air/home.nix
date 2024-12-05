@@ -4,6 +4,7 @@
     ../../home-manager/nixvim
     ../../home-manager/1password.nix
     ../../home-manager/desktop/multimedia/mpv.nix
+    ../../home-manager/development/direnv.nix
   ];
 
   home.username = "catou";

@@ -11,6 +11,7 @@
     httpie
     postman
     platformio-core
+    tio
   ];
 
   programs = {
