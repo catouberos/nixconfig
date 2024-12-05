@@ -18,8 +18,7 @@
     fd
     alejandra
     ffmpeg
-
-    jmeter
+    xld
 
     # container
     colima
