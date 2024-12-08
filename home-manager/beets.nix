@@ -59,6 +59,10 @@
             name = "ONGEKI Memorial Soundtrack.m3u";
             query = "ONGEKI Memorial Soundtrack";
           }
+          {
+            name = "THE IDOLM@STER CINDERELLA GIRLS.m3u";
+            query = "THE IDOLM@STER CINDERELLA GIRLS";
+          }
         ];
       };
     };
