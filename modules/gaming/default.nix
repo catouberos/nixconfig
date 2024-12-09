@@ -5,5 +5,6 @@
     prismlauncher
     r2modman
     osu-lazer-bin
+    mindustry-wayland
   ];
 }
