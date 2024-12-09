@@ -57,7 +57,7 @@ in {
       sub-auto = "fuzzy";
       profile = "high-quality";
       hwdec = "auto";
-      vo = "gpu,libmpv";
+      vo = "gpu-next,gpu,libmpv";
 
       # subtitles
       sub-font = "Inter";
