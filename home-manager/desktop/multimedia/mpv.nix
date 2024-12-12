@@ -50,14 +50,14 @@ in {
       save-position-on-quit = true;
 
       # video
-      alang = ["ja" "jp" "jpn" "en" "eng"];
-      slang = ["enm" "en" "eng"];
+      alang = "ja,jp";
+      slang = "enm,nm,eng";
       demuxer-mkv-subtitle-preroll = true;
       sub-fix-timing = true;
       sub-auto = "fuzzy";
       profile = "high-quality";
       hwdec = "auto";
-      vo = "gpu-next,gpu,libmpv";
+      vo = "gpu,libmpv";
 
       # subtitles
       sub-font = "Inter";
