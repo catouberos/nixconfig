@@ -16,6 +16,8 @@
     polkit_gnome
     # gtk lib
     glib
+    # vnc
+    wayvnc
   ];
 
   programs = {
