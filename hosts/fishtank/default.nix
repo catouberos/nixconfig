@@ -129,6 +129,7 @@
     udisks2.enable = true;
     mullvad-vpn.enable = true;
     nscd.enableNsncd = false;
+    tailscale.enable = true;
 
     # PlatformIO udev rules
     # see: https://wiki.nixos.org/wiki/Platformio#NixOS
