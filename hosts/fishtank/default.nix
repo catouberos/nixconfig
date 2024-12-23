@@ -159,11 +159,12 @@
       enable = true;
       enableSSHSupport = true;
     };
+    adb.enable = true;
   };
 
   users.users.catou = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "gamemode" "libvirtd"];
+    extraGroups = ["wheel" "docker" "gamemode" "libvirtd" "adbusers"];
   };
 
   home-manager = {
