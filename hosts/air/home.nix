@@ -11,7 +11,7 @@
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    nerd-fonts.jetbrains-mono
     jetbrains-mono
 
     # nixvim
@@ -24,6 +24,8 @@
     # container
     colima
     docker
+
+    httpie
   ];
 
   home.sessionVariables = {
