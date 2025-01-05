@@ -1,6 +1,6 @@
-{
+{pkgs, ...}: {
   imports = [
-    ./alacritty.nix
     ./wezterm.nix
+    ./ghostty.nix
   ];
 }
