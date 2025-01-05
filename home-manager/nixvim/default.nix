@@ -32,16 +32,16 @@
       };
 
       extraPlugins = [
-        (pkgs.vimUtils.buildVimPlugin {
-          name = "nvim-platformio";
-          src = pkgs.fetchFromGitHub {
-            owner = "anurag3301";
-            repo = "nvim-platformio.lua";
-            rev = "f83d290bff9588cad890dbfb96a6ae8a0413ee95";
-            hash = "sha256-H+uOFXBqw7K3wIboG+I4D6AAIFnte36D+wfcrv4QnXg=";
-          };
-        })
-        pkgs.vimPlugins.plenary-nvim
+        #        (pkgs.vimUtils.buildVimPlugin {
+        #          name = "nvim-platformio";
+        #          src = pkgs.fetchFromGitHub {
+        #            owner = "anurag3301";
+        #            repo = "nvim-platformio.lua";
+        #            rev = "f83d290bff9588cad890dbfb96a6ae8a0413ee95";
+        #            hash = "sha256-H+uOFXBqw7K3wIboG+I4D6AAIFnte36D+wfcrv4QnXg=";
+        #          };
+        #        })
+        #        pkgs.vimPlugins.plenary-nvim
       ];
 
       plugins = {
