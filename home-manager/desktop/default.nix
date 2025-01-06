@@ -32,14 +32,5 @@
         "--gtk-version=4"
       ];
     };
-    librewolf = {
-      enable = true;
-      settings = {
-        "privacy.clearOnShutdown.history" = false;
-        "privacy.clearOnShutdown.downloads" = false;
-        "middlemouse.paste" = false;
-        "general.autoScroll" = true;
-      };
-    };
   };
 }
