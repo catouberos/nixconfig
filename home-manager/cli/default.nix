@@ -4,40 +4,23 @@
   ...
 }: {
   imports = [
-    ./terminal
-    ./utility
     ./compression.nix
     ./fish.nix
     ./lf.nix
+    ./tmux.nix
   ];
 
   home.packages = with pkgs; [
     imagemagick
     sops
     mkvtoolnix-cli
+    httpie
+    tio
+    platformio-core
   ];
 
   programs = {
-    tmux = {
-      enable = true;
-      shell = "${pkgs.fish}/bin/fish";
-      plugins = with pkgs; [
-        {
-          plugin = tmuxPlugins.resurrect;
-          extraConfig = "set -g @resurrect-strategy-nvim 'session'";
-        }
-        {
-          plugin = tmuxPlugins.continuum;
-          extraConfig = ''
-            set -g @continuum-restore 'on'
-            set -g @continuum-save-interval '60' # minutes
-          '';
-        }
-      ];
-    };
-    btop = {
-      enable = true;
-    };
+    btop.enable = true;
     fzf.enable = true;
     bat.enable = true;
     eza = {

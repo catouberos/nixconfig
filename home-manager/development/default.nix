@@ -8,15 +8,6 @@
     zed-editor
     jetbrains.idea-ultimate
     android-studio
-    httpie
     postman
-    platformio-core
-    tio
   ];
-
-  programs = {
-    java = {
-      enable = true;
-    };
-  };
 }

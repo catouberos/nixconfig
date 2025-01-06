@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../home-manager/cli
+    ../../home-manager/cli/terminal/wezterm.nix
     ../../home-manager/nixvim
     ../../home-manager/1password.nix
     ../../home-manager/desktop/multimedia/mpv.nix
@@ -24,8 +25,6 @@
     # container
     colima
     docker
-
-    httpie
   ];
 
   home.sessionVariables = {
