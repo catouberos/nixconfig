@@ -52,6 +52,11 @@
     networkmanager = {
       enable = true;
     };
+    firewall = {
+      enable = true;
+      # vnc
+      allowedTCPPorts = [5900];
+    };
     # TODO: check https://discourse.nixos.org/t/connected-to-mullvadvpn-but-no-internet-connection/35803/11
     # resolvconf.enable = false;
   };
@@ -131,6 +136,15 @@
     nscd.enableNsncd = false;
     tailscale.enable = true;
 
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+        AllowUsers = ["catou"]; # Allows all users by default. Can be [ "user1" "user2" ]
+        AllowAgentForwarding = true;
+      };
+    };
+
     # PlatformIO udev rules
     # see: https://wiki.nixos.org/wiki/Platformio#NixOS
     udev.packages = [
@@ -165,6 +179,10 @@
   users.users.catou = {
     isNormalUser = true;
     extraGroups = ["wheel" "docker" "gamemode" "libvirtd" "adbusers"];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADAlbdEFy+qGrgOfffqnSNAF8W7ozq36M3R0JtBclFV"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKrwXjRy8QWobQ3tFwy8ombcT0K1kbZzFxX/fiYhqeNG"
+    ];
   };
 
   home-manager = {
@@ -198,6 +216,8 @@
       cifs-utils
       usbutils
       powertop
+
+      wayvnc
     ];
     variables = {
       # track https://github.com/swaywm/sway/issues/8143
