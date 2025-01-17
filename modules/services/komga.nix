@@ -1,7 +1,11 @@
 {
   services.komga = {
     enable = true;
-    port = 8090;
     openFirewall = true;
+    settings = {
+      server = {
+        port = 8090;
+      };
+    };
   };
 }
