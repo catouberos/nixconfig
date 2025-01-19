@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./waybar.nix
-    ./bemenu.nix
     ./mako.nix
     ./xdg.nix
   ];
@@ -18,6 +17,8 @@
     glib
     # vnc
     wayvnc
+    # misc
+    wmenu
     brightnessctl
   ];
 
@@ -48,7 +49,7 @@
         {command = "exec ${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";}
         {command = "exec ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
       ];
-      menu = "exec ${pkgs.wmenu}/bin/wmenu-run";
+      menu = "exec ${pkgs.wmenu}/bin/wmenu-run -b -N 00000000 -f \"JetBrains Mono Normal 16\"";
 
       bars = [{command = "${pkgs.waybar}/bin/waybar";}];
 
