@@ -24,11 +24,16 @@
         };
 
         wireplumber = {
-          format = "{volume}% {icon}";
-          format-muted = "";
+          format = "{icon} {volume}%";
+          format-muted = "🔇";
           on-click = "";
           max-volume = 100;
-          format-icons = ["" "" ""];
+          format-icons = ["🔈" "🔉" "🔊"];
+        };
+
+        battery = {
+          format = "{icon} {capacity}%";
+          format-icons = ["🪫" "🔋"];
         };
 
         mpris = {

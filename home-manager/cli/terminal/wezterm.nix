@@ -21,7 +21,7 @@
       config.color_scheme = "catppuccin-macchiato"
 
       config.window_background_opacity = 0.9
-      config.front_end = "WebGpu"
+      config.front_end = "OpenGL"
 
       config.default_prog = { '${pkgs.fish}/bin/fish', '--login' }
 

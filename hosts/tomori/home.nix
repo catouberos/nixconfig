@@ -47,7 +47,7 @@
           border-radius: 0;
       }
 
-      #mode, #clock, #battery {
+      #mode, #clock, #battery, #wireplumber, #mpris, #tray {
           padding: 0 12px;
       }
     '';
