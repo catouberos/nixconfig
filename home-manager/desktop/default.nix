@@ -8,6 +8,10 @@
     ./thunderbird.nix
   ];
 
+  home.packages = with pkgs; [
+    nyxt
+  ];
+
   qt = {
     enable = true;
     platformTheme.name = "gtk3";

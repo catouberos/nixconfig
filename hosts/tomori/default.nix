@@ -26,6 +26,8 @@
     '';
   };
 
+  swapDevices = [{device = "/swap/swapfile";}];
+
   networking = {
     hostName = "tomori";
     networkmanager = {
@@ -112,6 +114,10 @@
   };
 
   fileSystems = {
+    "/".options = ["compress=zstd"];
+    "/home".options = ["compress=zstd"];
+    "/nix".options = ["compress=zstd" "noatime"];
+    "/swap".options = ["noatime"];
     "/mnt/wdpurple" = {
       device = "192.168.0.69:/wdpurple";
       fsType = "nfs";
