@@ -111,6 +111,19 @@
     tailscale.enable = true;
   };
 
+  fileSystems = {
+    "/mnt/wdpurple" = {
+      device = "192.168.0.69:/wdpurple";
+      fsType = "nfs";
+      options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+    };
+    "/mnt/samsung860" = {
+      device = "192.168.0.69:/samsung860";
+      fsType = "nfs";
+      options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+    };
+  };
+
   programs = {
     dconf.enable = true;
     mtr.enable = true;

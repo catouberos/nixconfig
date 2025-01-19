@@ -62,8 +62,8 @@
           accel_profile = "flat";
           pointer_accel = "-0.5";
         };
-        "1118:2415:Microsoft_Surface_Type_Cover_Mouse" = {
-          natural_scroll = "disabled";
+        "type:touchpad" = {
+          scroll_factor = "0.25";
         };
       };
 
