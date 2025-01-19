@@ -21,6 +21,9 @@
       efi.canTouchEfiVariables = false;
     };
     kernelParams = ["apple_dcp.show_notch=1"];
+    extraModprobeConfig = ''
+      options hid-apple swap_fn_leftctrl=1
+    '';
   };
 
   networking = {
