@@ -64,7 +64,12 @@
     rtkit.enable = true;
     polkit.enable = true;
     sudo.wheelNeedsPassword = false;
-    pam.services.login.enableGnomeKeyring = true;
+    pam = {
+      services = {
+        login.enableGnomeKeyring = true;
+        swaylock = {};
+      };
+    };
   };
 
   hardware = {
