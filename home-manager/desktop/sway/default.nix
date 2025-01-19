@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./waybar.nix
-    ./bemenu.nix
     ./mako.nix
     ./xdg.nix
   ];
@@ -18,6 +17,9 @@
     glib
     # vnc
     wayvnc
+    # misc
+    wmenu
+    brightnessctl
   ];
 
   programs = {
@@ -47,7 +49,7 @@
         {command = "exec ${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";}
         {command = "exec ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
       ];
-      menu = "exec ${pkgs.bemenu}/bin/bemenu-run -l 20 --binding vim -c -p \">\" --vim-esc-exits -B 2 -H 12 -W 0.3";
+      menu = "exec ${pkgs.wmenu}/bin/wmenu-run -b -N 00000000 -f \"JetBrains Mono Normal 16\"";
 
       bars = [{command = "${pkgs.waybar}/bin/waybar";}];
 
@@ -65,6 +67,12 @@
         };
       };
 
+      output = {
+        eDP-1 = {
+          scale = "1.0";
+        };
+      };
+
       gaps = {
         smartBorders = "on";
         smartGaps = true;
@@ -79,6 +87,9 @@
         "Shift+print" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -w 0)\" - | ${pkgs.wl-clipboard}/bin/wl-copy";
         "Ctrl+print" = "exec ${pkgs.grim}/bin/grim $(xdg-user-dir PICTURES)/Screenshots/$(date +'%s_grim.png')";
         "Ctrl+Shift+print" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -w 0)\" $(xdg-user-dir PICTURES)/Screenshots/$(date +'%s_grim.png')";
+
+        "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set +1%";
+        "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%-";
 
         "XF86AudioRaiseVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+";
         "XF86AudioLowerVolume" = "exec ${pkgs.wireplumber}/bin/wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";

@@ -10,6 +10,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    apple-silicon = {
+      url = "github:tpwrules/nixos-apple-silicon";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -31,6 +35,7 @@
     nix-darwin,
     home-manager,
     sops-nix,
+    apple-silicon,
     systems,
     ...
   } @ inputs: let
@@ -53,6 +58,12 @@
       # main PC
       fishtank = nixpkgs.lib.nixosSystem {
         modules = [./hosts/fishtank];
+        specialArgs = {inherit inputs outputs;};
+      };
+
+      # air but linux
+      tomori = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/tomori];
         specialArgs = {inherit inputs outputs;};
       };
 

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = with pkgs; [
     playerctl
   ];
@@ -8,15 +12,28 @@
 
     settings = {
       main = {
-        layer = "top";
-        position = "bottom";
-        height = 24;
-        modules-left = ["sway/workspaces" "mpris"];
-        modules-right = ["tray" "clock"];
-        spacing = 6;
+        layer = lib.mkDefault "top";
+        position = lib.mkDefault "bottom";
+        height = lib.mkDefault 24;
+        modules-left = lib.mkDefault ["sway/workspaces" "mpris"];
+        modules-right = lib.mkDefault ["tray" "clock"];
+        spacing = lib.mkDefault 6;
 
         "sway/workspaces" = {
           disable-scroll = true;
+        };
+
+        wireplumber = {
+          format = "{icon} {volume}%";
+          format-muted = "🔇";
+          on-click = "";
+          max-volume = 100;
+          format-icons = ["🔈" "🔉" "🔊"];
+        };
+
+        battery = {
+          format = "{icon} {capacity}%";
+          format-icons = ["🪫" "🔋"];
         };
 
         mpris = {
@@ -35,7 +52,7 @@
         };
 
         tray = {
-          spacing = 6;
+          spacing = lib.mkDefault 6;
         };
 
         clock = {
@@ -64,22 +81,5 @@
         };
       };
     };
-
-    style = ''
-      * {
-          border: none;
-          border-radius: 0;
-          font-size: 12px;
-          min-height: 0;
-      }
-
-      #workspaces button {
-          padding: 0 5px;
-      }
-
-      #mode, #clock, #battery {
-          padding: 0 6px;
-      }
-    '';
   };
 }
