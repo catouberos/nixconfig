@@ -8,6 +8,27 @@
     };
     commands = {
       trash = "%trash-put $fx";
+      fg = ''
+        ''${{
+            cmd="${pkgs.ripgrep}/bin/rg --column --line-number --no-heading --color=always --smart-case"
+            ${pkgs.fzf}/bin/fzf --ansi --disabled --layout=reverse --header="Search in files" --delimiter=: \
+                --bind="start:reload([ -n {q} ] && $cmd -- {q} || true)" \
+                --bind="change:reload([ -n {q} ] && $cmd -- {q} || true)" \
+                --bind='enter:become(lf -remote "send $id select \"$(printf "%s" {1} | sed '\'''s/\\/\\\\/g;s/"/\\"/g'\''')\"")' \
+                --preview='${pkgs.bat}/bin/bat -- {1}' # Use your favorite previewer here (bat, source-highlight, etc.), for example:
+        }}
+      '';
+      on-select = ''
+        &{{
+            ${pkgs.lf}/bin/lf -remote "send $id set statfmt \"$(${pkgs.eza}/bin/eza -ld --color=always "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
+        }}
+      '';
+      on-cd = ''
+        &{{
+            fmt="$(STARSHIP_SHELL=${pkgs.starship}/bin/starship prompt | sed 's/\\/\\\\/g;s/"/\\"/g')"
+            ${pkgs.lf}/bin/lf -remote "send $id set promptfmt \"$fmt\""
+        }}
+      '';
     };
     settings = {
       ifs = "\n";
