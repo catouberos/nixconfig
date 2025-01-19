@@ -48,7 +48,7 @@
         {command = "exec ${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";}
         {command = "exec ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
       ];
-      menu = "exec ${pkgs.bemenu}/bin/bemenu-run -l 20 --binding vim -c -p \">\" --vim-esc-exits -B 2 -H 12 -W 0.3";
+      menu = "exec ${pkgs.wmenu}/bin/wmenu-run";
 
       bars = [{command = "${pkgs.waybar}/bin/waybar";}];
 
