@@ -14,7 +14,13 @@
       url = "github:tpwrules/nixos-apple-silicon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,6 +42,7 @@
     home-manager,
     sops-nix,
     apple-silicon,
+    auto-cpufreq,
     systems,
     ...
   } @ inputs: let
@@ -63,7 +70,7 @@
 
       # air but linux
       tomori = nixpkgs.lib.nixosSystem {
-        modules = [./hosts/tomori];
+        modules = [./hosts/tomori auto-cpufreq.nixosModules.default];
         specialArgs = {inherit inputs outputs;};
       };
 

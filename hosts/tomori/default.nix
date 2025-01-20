@@ -137,6 +137,7 @@
       enable = true;
       enableSSHSupport = true;
     };
+    auto-cpufreq.enable = true;
   };
 
   users.users.catou = {

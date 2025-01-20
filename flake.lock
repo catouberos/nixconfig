@@ -22,6 +22,26 @@
         "type": "github"
       }
     },
+    "auto-cpufreq": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1737093527,
+        "narHash": "sha256-A3J+O+IUDSYuNvaQ0QHdkBnTzU188FXzqyhmXeRzUU4=",
+        "owner": "AdnanHodzic",
+        "repo": "auto-cpufreq",
+        "rev": "cef9bfec79007c48d871feed547eb5d04c15b6e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AdnanHodzic",
+        "repo": "auto-cpufreq",
+        "type": "github"
+      }
+    },
     "base16": {
       "inputs": {
         "fromYaml": "fromYaml"
@@ -648,6 +668,7 @@
     "root": {
       "inputs": {
         "apple-silicon": "apple-silicon",
+        "auto-cpufreq": "auto-cpufreq",
         "home-manager": "home-manager",
         "naersk": "naersk",
         "nix-darwin": "nix-darwin",
