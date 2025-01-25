@@ -12,8 +12,8 @@
     inputs.nix-minecraft.nixosModules.minecraft-servers
 
     ./hardware-configuration.nix
-    ../../modules/virtualisation/podman.nix
-    ../../modules/virtualisation/container/filebrowser.nix
+    ../../modules/virtualisation/docker.nix
+    ../../modules/virtualisation/container/lms.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
