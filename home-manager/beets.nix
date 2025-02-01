@@ -63,6 +63,10 @@
             name = "THE IDOLM@STER CINDERELLA GIRLS.m3u";
             query = "THE IDOLM@STER CINDERELLA GIRLS";
           }
+          {
+            name = "ラブライブ！スーパースター!!.m3u";
+            query = "artist:Liella,artist:唐可可,artist:平安名すみれ,artist:葉月恋,artist:澁谷かのん,artist:嵐千砂都,artist:KALEIDOSCORE,artist:ウィーン・マルガレーテ,artist:桜小路きな子,artist:鬼塚夏美,artist:若菜四季,artist:米女メイ,'artist:Sunny Passion',artist:鬼塚冬毬,artist:柊摩央,artist:聖澤悠奈";
+          }
         ];
       };
     };
