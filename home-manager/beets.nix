@@ -44,7 +44,7 @@
               "artist:LizNoir"
               "artist:月のテンペスト"
               "artist:ⅢX"
-              "\"album:IDOLY PRIDE\""
+              "album:IDOLY PRIDE"
             ];
           }
           {
@@ -70,7 +70,7 @@
               "artist:東條希"
               "artist:Printemps"
               "artist:BiBi"
-              "\"artist:lily white\""
+              "artist:lily white"
             ];
           }
           {
@@ -93,7 +93,7 @@
               "artist:CatChu!"
               "artist:5yncri5e!"
               "artist:KALEIDOSCORE"
-              "\"artist:Sunny Passion\""
+              "artist:Sunny Passion"
             ];
           }
           {
@@ -111,8 +111,8 @@
               "artist:黒澤ルビィ"
               "artist:CYaRon!"
               "artist:AZALEA"
-              "\"artist:Guilty Kiss\""
-              "\"artist:Saint Snow\""
+              "artist:Guilty Kiss"
+              "artist:Saint Snow"
               "artist:わいわいわい"
             ];
           }
