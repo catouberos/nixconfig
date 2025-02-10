@@ -66,7 +66,6 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
-    sudo.wheelNeedsPassword = false;
     pam.loginLimits = [
       {
         domain = "*";
@@ -101,6 +100,16 @@
       ];
     };
 
+    "/mnt/wdblue" = {
+      device = "/dev/disk/by-uuid/e71d6700-cdfe-4ab3-9452-00d38b167245";
+      fsType = "btrfs";
+      options = [
+        "users" # Allows any user to mount and unmount
+        "compress=zstd" # btrfs compress
+        "nofail" # Prevent system from failing if this drive doesn't mount
+      ];
+    };
+
     "/mnt/samsung860" = {
       device = "/dev/disk/by-uuid/5840f1f0-6c32-457e-ac1a-343f41a663da";
       fsType = "ext4";
@@ -112,6 +121,11 @@
 
     "/export/wdpurple" = {
       device = "/mnt/wdpurple";
+      options = ["bind"];
+    };
+
+    "/export/wdblue" = {
+      device = "/mnt/wdblue";
       options = ["bind"];
     };
 
@@ -137,11 +151,12 @@
         exports = ''
           /export 192.168.0.1/24(insecure,ro,sync,no_subtree_check,crossmnt,fsid=0)
           /export/wdpurple 192.168.0.0/24(insecure,ro,sync,no_subtree_check)
+          /export/wdblue 192.168.0.0/24(insecure,ro,sync,no_subtree_check)
         '';
       };
     };
     transmission.settings.download-dir = "/mnt/wdpurple/Torrents";
-    rtorrent.downloadDir = "/mnt/samsung860/Torrents";
+    rtorrent.downloadDir = "/mnt/wdblue/Torrents";
     navidrome.settings.MusicFolder = "/mnt/samsung860/Music";
     tailscale.enable = true;
   };
