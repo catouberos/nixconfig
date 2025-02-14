@@ -5,8 +5,6 @@
   ];
 
   home.packages = with pkgs; [
-    zed-editor
-    jetbrains.idea-ultimate
-    postman
+    #jetbrains.idea-ultimate
   ];
 }

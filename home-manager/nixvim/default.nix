@@ -47,25 +47,15 @@
       plugins = {
         toggleterm.enable = true;
         web-devicons.enable = true;
-        transparent.enable = true;
         ts-autotag.enable = true;
-        nvim-lightbulb = {
-          enable = true;
-          settings = {
-            autocmd = {
-              enabled = true;
-              updatetime = 200;
-            };
-          };
-        };
 
         # navigation
         telescope = {
           enable = true;
           keymaps = {
+            "<leader><leader>" = "buffers";
             "<leader>ff" = "find_files";
             "<leader>fg" = "live_grep";
-            "<leader>fb" = "buffers";
             "<leader>git" = {
               action = "git_files";
               options = {

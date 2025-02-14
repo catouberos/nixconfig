@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -42,11 +41,6 @@
         graphql.enable = true;
         rust_analyzer.enable = true;
       };
-    };
-    nvim-jdtls = {
-      enable = true;
-      configuration = "${config.home.homeDirectory}/.cache/jdtls/config";
-      data = "${config.home.homeDirectory}/.cache/jdtls/workspace";
     };
   };
 }
