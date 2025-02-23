@@ -24,6 +24,16 @@
         smartindent = true;
       };
 
+      files = {
+        "ftplugin/go.lua" = {
+          opts = {
+            expandtab = false;
+            shiftwidth = 8;
+            tabstop = 8;
+          };
+        };
+      };
+
       colorschemes.catppuccin = {
         enable = true;
         settings = {
