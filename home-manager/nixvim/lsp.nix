@@ -38,7 +38,6 @@
         html.enable = true;
         jsonls.enable = true;
         phpactor.enable = true;
-        graphql.enable = true;
         rust_analyzer.enable = true;
       };
     };

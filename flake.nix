@@ -8,7 +8,6 @@
     naersk.url = "github:nix-community/naersk";
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     apple-silicon = {
       url = "github:tpwrules/nixos-apple-silicon";
