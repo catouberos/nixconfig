@@ -2,9 +2,6 @@
   programs.wezterm = {
     enable = true;
     extraConfig = ''
-      -- Pull in the wezterm API
-      local wezterm = require("wezterm")
-
       -- This table will hold the configuration.
       local config = {}
 
@@ -17,13 +14,16 @@
       -- This is where you actually apply your config choices
 
       config.font = wezterm.font("JetBrainsMono Nerd Font")
-      config.font_size = 16
+      config.font_size = 14
       config.color_scheme = "catppuccin-macchiato"
 
       config.window_background_opacity = 0.9
       config.front_end = "WebGpu"
 
       config.default_prog = { '${pkgs.fish}/bin/fish', '--login' }
+
+      config.use_fancy_tab_bar = false
+      config.tab_max_width = 32
 
       -- and finally, return the configuration to wezterm
       return config
