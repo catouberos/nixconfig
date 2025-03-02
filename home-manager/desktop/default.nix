@@ -6,6 +6,7 @@
     ./sway
     ./fcitx5.nix
     ./thunderbird.nix
+    ./librewolf.nix
   ];
 
   home.packages = with pkgs; [
@@ -13,9 +14,6 @@
   ];
 
   programs = {
-    firefox = {
-      enable = true;
-    };
     chromium = {
       enable = true;
       commandLineArgs = [
