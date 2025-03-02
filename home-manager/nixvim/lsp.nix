@@ -38,7 +38,11 @@
         html.enable = true;
         jsonls.enable = true;
         phpactor.enable = true;
-        rust_analyzer.enable = true;
+        rust_analyzer = {
+          enable = true;
+          installRustc = true;
+          installCargo = true;
+        };
       };
     };
   };

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions;
+    profiles.default.extensions = with pkgs.vscode-extensions;
       [
         vue.volar
         bradlc.vscode-tailwindcss

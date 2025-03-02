@@ -91,8 +91,18 @@
     pam = {
       services = {
         login.enableGnomeKeyring = true;
+        # https://wiki.nixos.org/wiki/Sway#Swaylock_cannot_be_unlocked_with_the_correct_password
         swaylock = {};
       };
+      # https://wiki.nixos.org/wiki/Sway#Inferior_performance_compared_to_other_distributions
+      loginLimits = [
+        {
+          domain = "@users";
+          item = "rtprio";
+          type = "-";
+          value = 1;
+        }
+      ];
     };
   };
 
