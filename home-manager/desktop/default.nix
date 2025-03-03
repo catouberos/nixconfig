@@ -6,6 +6,7 @@
     ./sway
     ./fcitx5.nix
     ./thunderbird.nix
+    ./firefox.nix
     ./librewolf.nix
   ];
 
