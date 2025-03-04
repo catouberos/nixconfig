@@ -56,6 +56,10 @@
             query = "THE IDOLM@STER CINDERELLA GIRLS";
           }
           {
+            name = "ウマ娘 プリティーダービー";
+            query = "ウマ娘 プリティーダービー";
+          }
+          {
             name = "ラブライブ！.m3u";
             query = [
               "artist:μ’s"
@@ -137,27 +141,15 @@
               "artist:A・ZU・NA"
             ];
           }
-          # INCOMPLETE
           {
-            name = "アイカツ!.m3u";
+            name = "ラブライブ！蓮ノ空女学院スクールアイドルクラブ.m3u";
             query = [
-              "album:アイカツ"
-              "artist:STAR☆ANIS"
-              "artist:AIKATSU☆STARS!"
-              "artist:STARRY PLANET☆"
-              "artist:BEST FRIENDS!"
-              "artist:わか"
-              "artist:ふうり"
-              "artist:ゆな"
-              "artist:れみ"
-              "artist:えり"
-              "artist:りすこ"
-              "artist:るか"
-              "artist:りえ"
-              "artist:みき"
-              "artist:せな"
-              "artist:ななせ"
-              "artist:かな"
+              "artist:蓮ノ空女学院スクールアイドルクラブ"
+              "artist:DOLLCHESTRA"
+              "artist:スリーズブーケ"
+              "artist:みらくらぱーく!"
+              "artist:かほめぐ♡じぇらーと"
+              "artist:るりのとゆかいなつづりたち"
             ];
           }
         ];
