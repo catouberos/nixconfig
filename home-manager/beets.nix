@@ -56,7 +56,7 @@
             query = "THE IDOLM@STER CINDERELLA GIRLS";
           }
           {
-            name = "ウマ娘 プリティーダービー";
+            name = "ウマ娘 プリティーダービー.m3u";
             query = "ウマ娘 プリティーダービー";
           }
           {
