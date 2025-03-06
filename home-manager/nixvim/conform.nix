@@ -16,7 +16,7 @@
           lua = ["stylua"];
           nix = ["alejandra"];
           # Conform will run multiple formatters sequentially
-          python = ["isort" "black"];
+          python = ["ruff_fix" "ruff_format" "ruff_organize_imports"];
           # Use a sub-list to run only the first available formatter
           javascript = ["prettier"];
           typescript = ["prettier"];
@@ -26,6 +26,7 @@
           css = ["prettier"];
           go = ["gofmt"];
           php = ["prettier"];
+          json = ["prettier"];
           yaml = ["yamlfmt"];
           swift = ["swift_format"];
           javascriptreact = ["prettier"];
