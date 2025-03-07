@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.nixvim.plugins = {
     lsp = {
       enable = true;
@@ -17,17 +13,6 @@
             "typescriptreact"
             "vue"
           ];
-          extraOptions = {
-            init_options = {
-              plugins = [
-                {
-                  name = "@vue/typescript-plugin";
-                  location = "${lib.getBin pkgs.vue-language-server}/lib/node_modules/@vue/language-server";
-                  languages = ["vue"];
-                }
-              ];
-            };
-          };
         };
         svelte.enable = true;
         volar.enable = true;
