@@ -22,7 +22,6 @@
   users.users.catou.home = "/Users/catou";
 
   home-manager = {
-    useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";

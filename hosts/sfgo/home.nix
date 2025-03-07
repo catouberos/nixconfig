@@ -28,6 +28,10 @@
     EDITOR = "nvim";
   };
 
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
+
   services = {
     udiskie.enable = true;
   };
