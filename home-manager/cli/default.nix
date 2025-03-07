@@ -20,7 +20,10 @@
   ];
 
   programs = {
-    btop.enable = true;
+    btop = {
+      enable = true;
+      package = pkgs.btop-rocm;
+    };
     fzf.enable = true;
     bat.enable = true;
     eza = {
