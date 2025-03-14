@@ -47,6 +47,7 @@
       bemenu = {
         fontSize = 16;
       };
+      mpv.enable = false;
     };
   };
 }
