@@ -1,11 +1,12 @@
 {
   pkgs,
+  config,
   inputs,
   outputs,
   ...
 }: {
   imports = [
-    inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.nixos-hardware.nixosModules.common-cpu-amd
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.home-manager.nixosModules.default
@@ -20,7 +21,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_6;
     # Use the systemd-boot EFI boot loader.
     loader = {
       systemd-boot.enable = true;
@@ -42,6 +43,7 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
+    extraModulePackages = with config.boot.kernelPackages; [rtl8821au];
     # Hide the OS choice for bootloaders.
     # It's still possible to open the bootloader list by pressing any key
     # It will just not appear on screen unless a key is pressed
