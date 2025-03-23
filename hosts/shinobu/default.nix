@@ -22,6 +22,7 @@
     ../../modules/services/immich.nix
     ../../modules/services/flood.nix
     ../../modules/services/minecraft.nix
+    ../../modules/services/cloudflared.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
