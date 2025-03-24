@@ -2,7 +2,12 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  btopPackage =
+    if pkgs.system == "x86_64-linux"
+    then pkgs.btop-rocm
+    else pkgs.btop;
+in {
   imports = [
     ./compression.nix
     ./fish.nix
@@ -22,7 +27,7 @@
   programs = {
     btop = {
       enable = true;
-      package = pkgs.btop-rocm;
+      package = btopPackage;
     };
     fzf.enable = true;
     bat.enable = true;
