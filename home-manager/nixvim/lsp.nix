@@ -35,7 +35,7 @@
           installCargo = true;
         };
         # python
-        pylyzer.enable = true;
+        pyright.enable = true;
         ruff.enable = true;
       };
     };
