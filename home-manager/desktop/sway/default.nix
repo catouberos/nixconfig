@@ -20,6 +20,7 @@
     # misc
     wmenu
     brightnessctl
+    hyprpicker
   ];
 
   programs = {
@@ -60,7 +61,11 @@
         };
         "1133:50503:Logitech_USB_Receiver" = {
           accel_profile = "flat";
-          pointer_accel = "-0.5";
+          pointer_accel = "0";
+        };
+        "1133:50504:Logitech_USB_Receiver" = {
+          accel_profile = "flat";
+          pointer_accel = "0";
         };
         "type:touchpad" = {
           scroll_factor = "0.25";
@@ -88,6 +93,7 @@
         "Shift+print" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -w 0)\" - | ${pkgs.wl-clipboard}/bin/wl-copy";
         "Ctrl+print" = "exec ${pkgs.grim}/bin/grim $(xdg-user-dir PICTURES)/Screenshots/$(date +'%s_grim.png')";
         "Ctrl+Shift+print" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp -w 0)\" $(xdg-user-dir PICTURES)/Screenshots/$(date +'%s_grim.png')";
+        "Alt+print" = "exec ${pkgs.hyprpicker}/bin/hyprpicker --format rgb -a";
 
         "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set +1%";
         "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 1%-";
