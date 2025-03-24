@@ -21,7 +21,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_6;
+    kernelPackages = pkgs.linuxPackages_testing;
     # Use the systemd-boot EFI boot loader.
     loader = {
       systemd-boot.enable = true;
@@ -43,7 +43,7 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
-    extraModulePackages = with config.boot.kernelPackages; [rtl8821au];
+    # extraModulePackages = with config.boot.kernelPackages; [rtl8821au];
     # Hide the OS choice for bootloaders.
     # It's still possible to open the bootloader list by pressing any key
     # It will just not appear on screen unless a key is pressed
