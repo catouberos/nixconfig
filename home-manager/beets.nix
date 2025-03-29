@@ -57,7 +57,7 @@
           }
           {
             name = "ウマ娘 プリティーダービー.m3u";
-            query = "ウマ娘 プリティーダービー ^title:\"Game Size\" ^title:\"TV Size\" ^album::\"WINNING LIVE (25|17|12|06)\"";
+            query = "ウマ娘 プリティーダービー ^title:\"Off Vocal\" ^title:\"Game Size\" ^title:\"TV Size\" ^album::\"WINNING LIVE (25|17|12|06)\"";
           }
           {
             name = "ラブライブ！.m3u";
