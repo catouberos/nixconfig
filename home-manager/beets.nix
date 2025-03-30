@@ -2,7 +2,7 @@
   programs.beets = {
     enable = true;
     settings = {
-      plugins = "fetchart embedart convert zero mbsync fish smartplaylist";
+      plugins = "fetchart embedart convert zero mbsync fish smartplaylist lyrics";
       directory = "/mnt/samsung860/Music";
       library = "${config.home.homeDirectory}/.beets/library.db";
       match = {
@@ -26,6 +26,10 @@
           "[dD]ownloaded"
         ];
         update_database = true;
+      };
+      lyrics = {
+        sources = "lrclib";
+        synced = "yes";
       };
       smartplaylist = {
         relative_to = "${config.programs.beets.settings.directory}";
