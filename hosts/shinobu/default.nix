@@ -210,6 +210,7 @@
       usbutils
       powertop
       rclone
+      gdown
     ];
   };
 
