@@ -11,7 +11,7 @@
   ];
 
   home.packages = with pkgs; [
-    nyxt
+    ffsubsync
   ];
 
   programs = {
