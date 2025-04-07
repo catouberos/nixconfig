@@ -24,6 +24,8 @@ in {
       sponsorblock
       mpvacious
       mpv-webm
+      autosubsync-mpv
+      eisa01.smart-copy-paste-2
     ];
     scriptOpts = {
       webm = {
@@ -41,6 +43,10 @@ in {
         snapshot_quality = "50";
         snapshot_width = "800";
         snapshot_height = "-2";
+      };
+      "SmartCopyPaste_II" = {
+        linux_copy = "${pkgs.wl-clipboard}/bin/wl-copy";
+        linux_paste = "${pkgs.wl-clipboard}/bin/wl-paste";
       };
     };
     config = {
