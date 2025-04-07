@@ -10,6 +10,7 @@
           esbenp.prettier-vscode
           charliermarsh.ruff
           ms-toolsai.jupyter
+          vscodevim.vim
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
