@@ -17,7 +17,7 @@
     anki
     transmission_4-gtk
 
-    discord
+    discord-canary
     vesktop
 
     xdg-utils
