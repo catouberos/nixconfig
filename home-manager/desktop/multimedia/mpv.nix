@@ -66,9 +66,10 @@ in {
       vo = "gpu,libmpv";
 
       # subtitles
-      sub-font = "Inter";
+      sub-font = "IBM Plex Sans JP";
 
       # audio
+      ao = "pulse,avfoundation,coreaudio";
       volume = 80;
 
       # screenshot
