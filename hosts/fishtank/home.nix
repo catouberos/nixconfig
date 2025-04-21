@@ -15,7 +15,6 @@
 
   home.packages = with pkgs; [
     anki
-    transmission_4-gtk
 
     discord-canary
     vesktop
@@ -33,6 +32,11 @@
     # misc
     gimp
     pinta
+
+    zotero
+    libreoffice
+
+    jmtpfs
   ];
 
   home.sessionVariables = {

@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-amd
+    inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.home-manager.nixosModules.default
@@ -57,11 +58,7 @@
     };
     firewall = {
       enable = true;
-      # vnc
-      allowedTCPPorts = [5900];
     };
-    # TODO: check https://discourse.nixos.org/t/connected-to-mullvadvpn-but-no-internet-connection/35803/11
-    # resolvconf.enable = false;
   };
 
   time.timeZone = "Asia/Ho_Chi_Minh";
@@ -115,10 +112,6 @@
 
   hardware = {
     graphics.enable = true;
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
   };
 
   stylix = {
@@ -147,11 +140,9 @@
       };
     };
     dbus.enable = true;
-    blueman.enable = true;
     gnome.gnome-keyring.enable = true;
     udisks2.enable = true;
     mullvad-vpn.enable = true;
-    nscd.enableNsncd = false;
     tailscale.enable = true;
 
     openssh = {
@@ -162,13 +153,6 @@
         AllowAgentForwarding = true;
       };
     };
-
-    # PlatformIO udev rules
-    # see: https://wiki.nixos.org/wiki/Platformio#NixOS
-    udev.packages = [
-      pkgs.platformio-core
-      pkgs.openocd
-    ];
   };
 
   fileSystems = {
@@ -224,17 +208,8 @@
 
       util-linux
       vulkan-tools
-      exfat
 
       ffmpeg-full
-
-      #misc
-      cabextract
-      cifs-utils
-      usbutils
-      powertop
-
-      wayvnc
     ];
     variables = {
       # track https://github.com/swaywm/sway/issues/8143
