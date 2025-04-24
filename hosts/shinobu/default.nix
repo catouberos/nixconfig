@@ -13,12 +13,12 @@
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/docker.nix
-    ../../modules/virtualisation/container/lms.nix
+    # ../../modules/virtualisation/container/lms.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
-    ../../modules/services/komga.nix
+    # ../../modules/services/komga.nix
     ../../modules/services/immich.nix
     ../../modules/services/flood.nix
     ../../modules/services/minecraft.nix
