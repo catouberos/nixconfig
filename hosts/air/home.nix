@@ -26,6 +26,8 @@
     # container
     colima
     docker
+
+    zotero
   ];
 
   home.sessionVariables = {
