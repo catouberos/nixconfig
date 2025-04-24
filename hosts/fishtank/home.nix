@@ -37,6 +37,7 @@
     libreoffice
 
     jmtpfs
+    qgis
   ];
 
   home.sessionVariables = {
