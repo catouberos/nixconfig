@@ -30,7 +30,7 @@
     beets
 
     # misc
-    gimp
+    gimp3
     pinta
 
     zotero
