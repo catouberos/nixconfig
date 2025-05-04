@@ -28,6 +28,7 @@
         gopls.enable = true;
         # php
         phpactor.enable = true;
+        phan.enable = true;
         # rust
         rust_analyzer = {
           enable = true;
