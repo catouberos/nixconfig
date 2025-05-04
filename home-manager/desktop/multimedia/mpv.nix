@@ -2,19 +2,22 @@
   pkgs,
   config,
   inputs,
+  lib,
   ...
 }: let
   naersk' = pkgs.callPackage inputs.naersk {};
+
+  mpv-websocket = naersk'.buildPackage {
+    src = pkgs.fetchFromGitHub {
+      owner = "kuroahna";
+      repo = "mpv_websocket";
+      rev = "0.2.0";
+      hash = "sha256-yqZdLCAv9hP6ZMuNcgy2w8CYK/cNGMwpCE/0s2ELNTA=";
+    };
+  };
 in {
   home.packages = [
-    (naersk'.buildPackage {
-      src = pkgs.fetchFromGitHub {
-        owner = "kuroahna";
-        repo = "mpv_websocket";
-        rev = "0.2.0";
-        hash = "sha256-yqZdLCAv9hP6ZMuNcgy2w8CYK/cNGMwpCE/0s2ELNTA=";
-      };
-    })
+    mpv-websocket
   ];
 
   programs.mpv = {
@@ -58,15 +61,16 @@ in {
       # video
       alang = "ja,jp";
       slang = "enm,nm,eng";
-      demuxer-mkv-subtitle-preroll = true;
-      sub-fix-timing = true;
-      sub-auto = "fuzzy";
       profile = "high-quality";
       hwdec = "auto";
       vo = "gpu,libmpv";
 
       # subtitles
       sub-font = "IBM Plex Sans JP";
+      sub-auto = "fuzzy";
+      sub-file-paths = "${config.home.homeDirectory}/Downloads";
+      sub-fix-timing = true;
+      demuxer-mkv-subtitle-preroll = true;
 
       # audio
       ao = "pulse,avfoundation,coreaudio";
@@ -80,6 +84,8 @@ in {
 
       # yt-dlp
       ytdl-format = "bestvideo+bestaudio";
+
+      input-ipc-server = "/tmp/mpv";
     };
   };
 }
