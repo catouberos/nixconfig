@@ -23,6 +23,7 @@
     ../../modules/services/flood.nix
     ../../modules/services/minecraft.nix
     ../../modules/services/cloudflared.nix
+    ../../modules/services/prometheus
   ];
 
   # Use the systemd-boot EFI boot loader.
