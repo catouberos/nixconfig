@@ -21,7 +21,11 @@
         html.enable = true;
         jsonls.enable = true;
         # nix
-        nil_ls.enable = true;
+        nixd = {
+          enable = true;
+          filetypes = ["nix"];
+          rootMarkers = ["flake.nix" "git"];
+        };
         # c/c++
         clangd.enable = true;
         # go
@@ -38,6 +42,10 @@
         # python
         pyright.enable = true;
         ruff.enable = true;
+        # typst
+        tinymist = {
+          enable = true;
+        };
       };
     };
   };
