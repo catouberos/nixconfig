@@ -50,8 +50,9 @@
         {command = "exec ${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";}
         {command = "exec ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
       ];
-      menu = "exec ${pkgs.wmenu}/bin/wmenu-run -b -N 00000000 -f \"JetBrains Mono Normal 16\"";
 
+      # applications
+      menu = "${pkgs.wmenu}/bin/wmenu-run -b -N 00000000 -f \"JetBrains Mono Normal 16\"";
       bars = [{command = "${pkgs.waybar}/bin/waybar";}];
 
       input = {
@@ -84,7 +85,10 @@
       };
 
       keybindings = {
+        # applications
         "${modifier}+space" = "exec ${menu}";
+        "${modifier}+e" = "exec ${pkgs.wezterm}/bin/wezterm";
+        "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
         "Ctrl+Shift+Space" = "exec 1password --quick-access";
 
         # screenshot
