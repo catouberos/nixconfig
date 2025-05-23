@@ -10,7 +10,11 @@
       }
       {
         action = "<cmd>lua vim.diagnostic.open_float()<CR>";
-        key = "<leader>d";
+        key = "<leader>di";
+      }
+      {
+        action = "<cmd>lua vim.lsp.buf.hover()<CR>";
+        key = "<leader>de";
       }
       {
         action = "<cmd>lua vim.lsp.buf.definition()<CR>";
