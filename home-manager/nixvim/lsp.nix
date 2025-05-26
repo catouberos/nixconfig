@@ -46,6 +46,7 @@
         tinymist = {
           enable = true;
         };
+        protols.enable = true;
       };
     };
   };

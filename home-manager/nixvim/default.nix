@@ -59,6 +59,9 @@
         web-devicons.enable = true;
         ts-autotag.enable = true;
 
+        # typst
+        typst-preview.enable = true;
+
         # navigation
         telescope = {
           enable = true;

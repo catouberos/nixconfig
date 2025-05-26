@@ -34,6 +34,7 @@
           c = ["clang-format"];
           cpp = ["clang-format"];
           rust = ["rustfmt"];
+          proto = ["buf"];
         };
       };
     };
