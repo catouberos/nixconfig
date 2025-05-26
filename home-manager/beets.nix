@@ -60,6 +60,11 @@
             query = "THE IDOLM@STER CINDERELLA GIRLS ^title:\"オリジナル・カラオケ\" ^title:\"Game Version\" ^title:\"リミックス\" ^title:\"TV SIZE\" ^album:\"ORIGINAL SOUNDTRACK\" ^artist:\"[dialogue]\"";
           }
           {
+            name = "THE IDOLM@STER SHINY COLORS.m3u";
+            query = "THE IDOLM@STER SHINY COLORS ^title:\"Off Vocal\" ^title:\"Game Size\"";
+          }
+
+          {
             name = "ウマ娘 プリティーダービー.m3u";
             query = "ウマ娘 プリティーダービー ^title:\"Off Vocal\" ^title:\"Game Size\" ^title:\"TV Size\" ^album::\"WINNING LIVE (25|17|12|06)\"";
           }
