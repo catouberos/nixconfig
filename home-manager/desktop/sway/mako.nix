@@ -1,7 +1,9 @@
 {
   services.mako = {
     enable = true;
-    defaultTimeout = 10000;
-    maxIconSize = 32;
+    settings = {
+      default-timeout = 10000;
+      max-icon-size = 32;
+    };
   };
 }
