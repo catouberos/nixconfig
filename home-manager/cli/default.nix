@@ -21,6 +21,7 @@ in {
     mkvtoolnix-cli
     httpie
     tio
+    xan
     platformio-core
   ];
 

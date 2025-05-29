@@ -15,15 +15,19 @@
         formatters_by_ft = {
           lua = ["stylua"];
           nix = ["alejandra"];
+
           # Conform will run multiple formatters sequentially
           python = ["ruff_fix" "ruff_format" "ruff_organize_imports"];
+
           # Use a sub-list to run only the first available formatter
           javascript = ["prettier"];
           typescript = ["prettier"];
+          astro = ["prettier"];
           vue = ["prettier"];
           svelte = ["prettier"];
           html = ["prettier"];
           css = ["prettier"];
+
           go = ["gofmt"];
           php = ["prettier"];
           json = ["prettier"];
