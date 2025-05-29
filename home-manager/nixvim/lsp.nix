@@ -30,7 +30,10 @@
         };
 
         # c/c++
-        clangd.enable = true;
+        clangd = {
+          enable = true;
+          filetypes = ["c" "cpp"];
+        };
 
         # go
         gopls.enable = true;

@@ -20,6 +20,7 @@ in {
     sops
     mkvtoolnix-cli
     httpie
+    grpcurl
     tio
     xan
     platformio-core
