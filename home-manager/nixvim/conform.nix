@@ -28,6 +28,8 @@
           html = ["prettier"];
           css = ["prettier"];
 
+          sql = ["sleek"];
+
           go = ["gofmt"];
           php = ["prettier"];
           json = ["prettier"];
