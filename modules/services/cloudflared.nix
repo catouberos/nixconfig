@@ -14,6 +14,7 @@
         ingress = {
           "music.catou.id.vn" = "http://localhost:4533";
           "media.catou.id.vn" = "http://localhost:8096";
+          "wallabag.catou.id.vn" = "http://localhost:8002";
         };
         default = "http_status:404";
       };

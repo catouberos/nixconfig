@@ -18,7 +18,7 @@
     ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
-    # ../../modules/services/komga.nix
+    ../../modules/services/wallabag.nix
     ../../modules/services/immich.nix
     ../../modules/services/flood.nix
     ../../modules/services/minecraft.nix
