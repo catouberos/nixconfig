@@ -13,12 +13,11 @@
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/docker.nix
-    # ../../modules/virtualisation/container/lms.nix
+    ../../modules/services/container/wallabag.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
-    ../../modules/services/wallabag.nix
     ../../modules/services/immich.nix
     ../../modules/services/flood.nix
     ../../modules/services/minecraft.nix
