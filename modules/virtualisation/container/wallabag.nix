@@ -3,7 +3,7 @@
     wallabag = {
       image = "wallabag/wallabag";
       autoStart = true;
-      ports = ["80:8002"];
+      ports = ["8002:80"];
       volumes = [
         "${config.users.users.catou.home}/services/wallabag/data:/var/www/wallabag/data"
         "${config.users.users.catou.home}/services/wallabag/images:/var/www/wallabag/web/assets/images"
