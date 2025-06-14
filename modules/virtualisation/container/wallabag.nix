@@ -9,7 +9,7 @@
         "${config.users.users.catou.home}/services/wallabag/images:/var/www/wallabag/web/assets/images"
       ];
       environment = {
-        SYMFONY__ENV__DOMAIN_NAME = "http://shinobu:8002";
+        SYMFONY__ENV__DOMAIN_NAME = "https://wallabag.catou.id.vn";
       };
     };
   };
