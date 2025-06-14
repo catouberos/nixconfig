@@ -13,7 +13,7 @@
 
     ./hardware-configuration.nix
     ../../modules/virtualisation/docker.nix
-    ../../modules/services/container/wallabag.nix
+    ../../modules/virtualisation/container/wallabag.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
     ../../modules/services/navidrome.nix
