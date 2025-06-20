@@ -51,10 +51,28 @@
               "album:IDOLY PRIDE"
             ];
           }
+
           {
             name = "ONGEKI.m3u";
-            query = "ONGEKI";
+            query = "album: ONGEKI ^title:\"Game Size\" ^title:\"instrumental\" ^title:\"ver.-\"";
           }
+          {
+            name = "ONGEKI Vocal Collection.m3u";
+            query = "album: ONGEKI Vocal Collection ^title:\"Game Size\" ^title:\"instrumental\" ^title:\"ver.-\"";
+          }
+          {
+            name = "ONGEKI Vocal Party.m3u";
+            query = "album: ONGEKI Vocal Party ^title:\"Game Size\" ^title:\"instrumental\" ^title:\"ver.-\"";
+          }
+          {
+            name = "ONGEKI Sound Collection.m3u";
+            query = "album: ONGEKI Sound Collection";
+          }
+          {
+            name = "ONGEKI Memorial Soundtrack.m3u";
+            query = "album: ONGEKI Memorial Soundtrack";
+          }
+
           {
             name = "THE IDOLM@STER CINDERELLA GIRLS.m3u";
             query = "THE IDOLM@STER CINDERELLA GIRLS ^title:\"オリジナル・カラオケ\" ^title:\"Game Version\" ^title:\"リミックス\" ^title:\"TV SIZE\" ^album:\"ORIGINAL SOUNDTRACK\" ^artist:\"[dialogue]\"";
