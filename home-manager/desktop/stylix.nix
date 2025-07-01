@@ -3,10 +3,16 @@
     polarity = "dark";
 
     cursor = {
-      package = pkgs.vanilla-dmz;
-
-      name = "Vanilla-DMZ";
+      package = pkgs.apple-cursor;
+      name = "macOS";
       size = 32;
+    };
+
+    iconTheme = {
+      enable = true;
+      package = pkgs.adwaita-icon-theme;
+      light = "Adwaita";
+      dark = "Adwaita";
     };
 
     fonts = {
