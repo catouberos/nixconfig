@@ -52,11 +52,11 @@
       ];
 
       # applications
-      menu = "${pkgs.wmenu}/bin/wmenu-run -b -N 00000000 -f \"JetBrains Mono Normal 16\"";
+      menu = "${pkgs.wmenu}/bin/wmenu-run -b -N 00000000 -f \"UDEV Gothic NF 16\"";
       bars = [{command = "${pkgs.waybar}/bin/waybar";}];
 
       input = {
-        "1133:50504:Logitech_USB_Receiver_Mouse" = {
+        "type:mouse" = {
           accel_profile = "flat";
           pointer_accel = "0.55";
         };

@@ -62,7 +62,10 @@
   };
 
   time.timeZone = "Asia/Ho_Chi_Minh";
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocales = ["ja_JP.UTF-8/UTF-8" "vi_VN/UTF-8"];
+  };
 
   nix = {
     settings = {

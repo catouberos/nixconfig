@@ -17,13 +17,13 @@
 
     fonts = {
       monospace = {
-        name = "JetBrainsMono Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "UDEV Gothic NF";
+        package = pkgs.udev-gothic-nf;
       };
 
       sansSerif = {
-        name = "Inter";
-        package = pkgs.inter;
+        name = "IBM Plex Sans JP";
+        package = pkgs.ibm-plex;
       };
 
       serif = {
@@ -46,9 +46,6 @@
       btop.enable = false;
       waybar = {
         enable = true;
-        enableCenterBackColors = true;
-        enableLeftBackColors = true;
-        enableRightBackColors = true;
       };
       bemenu = {
         fontSize = 16;

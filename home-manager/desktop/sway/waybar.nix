@@ -14,10 +14,10 @@
       main = {
         layer = lib.mkDefault "top";
         position = lib.mkDefault "bottom";
-        height = lib.mkDefault 24;
+        height = lib.mkDefault 40;
         modules-left = lib.mkDefault ["sway/workspaces" "mpris"];
         modules-right = lib.mkDefault ["tray" "clock"];
-        spacing = lib.mkDefault 6;
+        spacing = lib.mkDefault 8;
 
         "sway/workspaces" = {
           disable-scroll = true;
@@ -37,13 +37,8 @@
         };
 
         mpris = {
-          format = "{player_icon} {dynamic}";
+          format = "{dynamic}";
           format-paused = "{status_icon} {dynamic}";
-          player-icons = {
-            default = "";
-            mpv = "";
-            Supersonic = "🎵";
-          };
           status-icons = {
             paused = "";
           };
@@ -52,11 +47,12 @@
         };
 
         tray = {
-          spacing = lib.mkDefault 6;
+          spacing = lib.mkDefault 16;
         };
 
         clock = {
-          format = "{:%A, %B %d, %Y (%R)}";
+          format = "{:L%x(%a) %R}";
+          locale = "ja_JP.UTF-8";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
             mode = "year";
@@ -81,5 +77,21 @@
         };
       };
     };
+
+    style = lib.mkAfter ''
+      #workspaces button {
+          padding: 0 12px;
+          border-radius: 0;
+      }
+
+      #mode, #clock, #battery, #wireplumber, #mpris, #tray {
+          padding: 0 6px;
+      }
+
+      tooltip {
+          border-width: 2px;
+          border-radius: 0;
+      }
+    '';
   };
 }

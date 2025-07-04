@@ -13,7 +13,7 @@
 
       -- This is where you actually apply your config choices
 
-      config.font = wezterm.font("JetBrainsMono Nerd Font")
+      config.font = wezterm.font("UDEV Gothic NF")
       config.font_size = 14
       config.color_scheme = "catppuccin-macchiato"
 
