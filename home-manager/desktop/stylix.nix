@@ -51,6 +51,8 @@
         fontSize = 16;
       };
       mpv.enable = false;
+      firefox.profileNames = ["default"];
+      librewolf.profileNames = ["default"];
     };
   };
 }

@@ -42,6 +42,11 @@
     enable = true;
     systemd.xdgAutostart = true;
 
+    extraConfigEarly = ''
+      assign [app_id="firefox"] workspace 1
+      assign [app_id="wezterm"] workspace 2
+    '';
+
     config = rec {
       modifier = "Mod4";
       terminal = "wezterm";
@@ -49,6 +54,9 @@
       startup = [
         {command = "exec ${pkgs.wl-clipboard}/bin/wl-paste --watch ${pkgs.cliphist}/bin/cliphist store";}
         {command = "exec ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
+        {command = "exec ${pkgs.firefox}/bin/firefox";}
+        {command = "exec ${pkgs.wezterm}/bin/wezterm";}
+        {command = "exec ${pkgs._1password-gui}/bin/1password";}
       ];
 
       # applications

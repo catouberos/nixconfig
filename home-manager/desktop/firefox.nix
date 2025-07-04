@@ -14,6 +14,36 @@ in
 
       package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override {pipewireSupport = true;}) {};
 
+      profiles = {
+        "default" = {
+          id = 0;
+          isDefault = true;
+
+          search = {
+            default = "startpage";
+            engines = {
+              startpage = {
+                name = "Startpage";
+                loadPath = "[https]www.startpage.com/startpage.xml";
+                urls = [
+                  {
+                    template = "https://www.startpage.com/sp/search?query={searchTerms}&cat=web&pl=opensearch&language=english";
+                    params = [];
+                    rels = [];
+                  }
+                  {
+                    template = "https://www.startpage.com/osuggestions?q={searchTerms}";
+                    type = "application/x-suggestions+json";
+                    rels = ["suggestions"];
+                    params = [];
+                  }
+                ];
+              };
+            };
+          };
+        };
+      };
+
       policies = {
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
@@ -44,6 +74,18 @@ in
           "browser.newtabpage.activity-stream.showSponsored" = lock-false;
           "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+
+          # search
+          "browser.search.region" = {
+            Value = "JP";
+          };
+
+          # tab location
+          "sidebar.verticalTabs" = lock-true;
+          "sidebar.main.tools" = {
+            Value = "";
+          };
+          "sidebar.position_start" = lock-false; # right-aligned
         };
 
         ExtensionSettings = {
