@@ -45,6 +45,7 @@
     extraConfigEarly = ''
       assign [app_id="firefox"] workspace 1
       assign [app_id="wezterm"] workspace 2
+      assign [app_id="thunderbird"] workspace 9
     '';
 
     config = rec {
@@ -57,6 +58,7 @@
         {command = "exec ${pkgs.firefox}/bin/firefox";}
         {command = "exec ${pkgs.wezterm}/bin/wezterm";}
         {command = "exec ${pkgs._1password-gui}/bin/1password";}
+        {command = "exec ${pkgs.thunderbird}/bin/thunderbird";}
       ];
 
       # applications
