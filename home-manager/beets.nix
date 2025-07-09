@@ -180,7 +180,7 @@
             ];
           }
           {
-            name = "田中秀和";
+            name = "田中秀和.m3u";
             query = "composer:田中秀和 ^releasetype:soundtrack";
           }
         ];
