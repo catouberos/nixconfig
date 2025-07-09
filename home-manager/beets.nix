@@ -84,7 +84,7 @@
 
           {
             name = "ウマ娘 プリティーダービー.m3u";
-            query = "ウマ娘 プリティーダービー ^title:\"Off Vocal\" ^title:\"Game Size\" ^title:\"TV Size\" ^album::\"WINNING LIVE (25|17|12|06)\"";
+            query = "ウマ娘 プリティーダービー ^title:\"Off Vocal\" ^title:\"Game Size\" ^title:\"TV Size\" ^album::\"WINNING LIVE (25|17|12|06)\" ^releasetype:soundtrack";
           }
           {
             name = "ラブライブ！.m3u";
@@ -178,6 +178,10 @@
               "artist:かほめぐ♡じぇらーと ^title:\"Off Vocal\""
               "artist:るりのとゆかいなつづりたち ^title:\"Off Vocal\""
             ];
+          }
+          {
+            name = "田中秀和";
+            query = "composer:田中秀和 ^releasetype:soundtrack";
           }
         ];
       };
