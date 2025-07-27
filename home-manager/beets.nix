@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.beets = {
     enable = true;
     settings = {
@@ -30,6 +34,16 @@
       lyrics = {
         sources = "lrclib";
         synced = "yes";
+      };
+      convert = {
+        dest = "${config.home.homeDirectory}/Beets";
+        format = "flacipod";
+        formats = {
+          flacipod = {
+            command = "${pkgs.ffmpeg-full}/bin/ffmpeg -i $source -y -sample_fmt s16 -ar 44100 -vn -acodec flac $dest";
+            extension = "flac";
+          };
+        };
       };
       smartplaylist = {
         relative_to = "${config.programs.beets.settings.directory}";
