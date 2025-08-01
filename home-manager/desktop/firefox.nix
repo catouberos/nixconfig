@@ -8,11 +8,24 @@ let
     Status = "locked";
   };
 in
-  {pkgs, ...}: {
+  {
+    lib,
+    pkgs,
+    ...
+  }: {
     programs.firefox = {
       enable = true;
 
-      package = pkgs.wrapFirefox (pkgs.firefox-unwrapped.override {pipewireSupport = true;}) {};
+      package = lib.mkMerge [
+        (
+          lib.mkIf pkgs.stdenv.isDarwin
+          (pkgs.firefox)
+        )
+        (
+          lib.mkIf pkgs.stdenv.isLinux
+          (pkgs.wrapFirefox (pkgs.firefox-unwrapped.override {pipewireSupport = true;}) {})
+        )
+      ];
 
       profiles = {
         "default" = {
@@ -74,6 +87,8 @@ in
           "browser.newtabpage.activity-stream.showSponsored" = lock-false;
           "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+
+          "browser.tabs.insertAfterCurrent" = lock-true;
 
           # search
           "browser.search.region" = {
