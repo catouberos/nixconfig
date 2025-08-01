@@ -5,8 +5,8 @@
     ../../home-manager/nixvim
     ../../home-manager/1password.nix
     ../../home-manager/desktop/multimedia/mpv.nix
+    ../../home-manager/desktop/firefox.nix
     ../../home-manager/development/direnv.nix
-    ../../home-manager/development/vscode.nix
   ];
 
   home.username = "catou";
@@ -24,10 +24,12 @@
     xld
 
     # container
-    colima
-    docker
+    container
+    # docker
 
     zotero
+    tart
+    softnet
   ];
 
   home.sessionVariables = {
