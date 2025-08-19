@@ -23,13 +23,9 @@
     ffmpeg
     xld
 
-    # container
     container
-    # docker
 
     zotero
-    tart
-    softnet
   ];
 
   home.sessionVariables = {
