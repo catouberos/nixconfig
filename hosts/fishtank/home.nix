@@ -38,6 +38,14 @@
 
     jmtpfs
     qgis
+
+    postman
+
+    # kubernetes
+    minikube
+    kubectl
+    helmfile
+    (pkgs.wrapHelm pkgs.kubernetes-helm {plugins = [pkgs.kubernetes-helmPlugins.helm-diff];})
   ];
 
   home.sessionVariables = {
