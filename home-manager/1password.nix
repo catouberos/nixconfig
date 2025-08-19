@@ -8,6 +8,7 @@
 in {
   programs.ssh = {
     enable = true;
+    forwardAgent = true;
     extraConfig = lib.mkMerge [
       (lib.mkIf pkgs.stdenv.isLinux
         ''
