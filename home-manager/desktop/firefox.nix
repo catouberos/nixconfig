@@ -129,6 +129,11 @@ in
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/facebook-container/latest.xpi";
             installation_mode = "force_installed";
           };
+          # Wallabagger
+          "{42fba672-e228-4d1e-a26b-f5915dd2d03a}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/wallabagger/latest.xpi";
+            installation_mode = "force_installed";
+          };
         };
       };
     };

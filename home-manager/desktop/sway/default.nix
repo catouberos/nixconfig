@@ -68,7 +68,7 @@
       input = {
         "type:mouse" = {
           accel_profile = "flat";
-          pointer_accel = "0.55";
+          pointer_accel = "0.7";
         };
         "type:touchpad" = {
           scroll_factor = "0.25";
