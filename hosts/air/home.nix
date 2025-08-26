@@ -7,6 +7,7 @@
     ../../home-manager/desktop/multimedia/mpv.nix
     ../../home-manager/desktop/firefox.nix
     ../../home-manager/development/direnv.nix
+    ../../home-manager/desktop/aerospace
   ];
 
   home.username = "catou";
@@ -26,6 +27,8 @@
     container
 
     zotero
+
+    autoraise
   ];
 
   home.sessionVariables = {
