@@ -21,9 +21,10 @@ in {
     mkvtoolnix-cli
     httpie
     grpcurl
-    tio
+    google-cloud-sdk
+    tcld
     xan
-    platformio-core
+    gh-markdown-preview
   ];
 
   programs = {

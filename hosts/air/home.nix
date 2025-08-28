@@ -24,10 +24,14 @@
     ffmpeg
     xld
 
-    container
+    colima
+    docker
+    docker-buildx
+    docker-compose
 
-    zotero
+    act
 
+    # desktop
     autoraise
   ];
 

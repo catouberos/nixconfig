@@ -30,7 +30,7 @@
 
           sql = ["sleek"];
 
-          go = ["gofmt"];
+          go = ["goimports" "gofmt"];
           php = ["prettier"];
           json = ["prettier"];
           yaml = ["yamlfmt"];
