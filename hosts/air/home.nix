@@ -29,10 +29,9 @@
     docker-buildx
     docker-compose
 
-    act
-
     # desktop
     autoraise
+    spicetify-cli
   ];
 
   home.sessionVariables = {
