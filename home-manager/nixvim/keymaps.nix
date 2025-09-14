@@ -13,16 +13,20 @@
         key = "<leader>di";
       }
       {
-        action = "<cmd>lua vim.lsp.buf.hover()<CR>";
-        key = "<leader>de";
-      }
-      {
         action = "<cmd>lua vim.lsp.buf.definition()<CR>";
         key = "<leader>gd";
       }
       {
-        action = ":ls<CR>:b<Space>";
+        action = ":ls<CR>:sb<Space>";
         key = "<leader>j";
+      }
+      {
+        action = ":bn<CR>";
+        key = "L";
+      }
+      {
+        action = ":bp<CR>";
+        key = "H";
       }
     ];
   };
