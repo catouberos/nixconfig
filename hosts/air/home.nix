@@ -31,6 +31,7 @@
 
     # desktop
     autoraise
+    supersonic
     spicetify-cli
   ];
 
