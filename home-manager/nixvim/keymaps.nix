@@ -28,6 +28,10 @@
         action = ":bp<CR>";
         key = "H";
       }
+      {
+        action = ":bd<CR>";
+        key = "X";
+      }
     ];
   };
 }

@@ -25,6 +25,9 @@
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";
+    sharedModules = [
+      inputs.mac-app-util.homeManagerModules.default
+    ];
     users.catou = {
       imports = [./home.nix inputs.nixvim.homeManagerModules.nixvim];
     };
