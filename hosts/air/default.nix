@@ -16,6 +16,20 @@
     fish.enable = true;
   };
 
+  # https://github.com/zhaofengli/nix-homebrew?tab=readme-ov-file#a-new-installation
+  nix-homebrew = {
+    enable = true;
+    enableRosetta = true;
+    user = "catou";
+  };
+
+  homebrew = {
+    enable = true;
+    casks = [
+      "ungoogled-chromium"
+    ];
+  };
+
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -34,6 +48,7 @@
   };
 
   system = {
+    primaryUser = "catou";
     # Set Git commit hash for darwin-version.
     # Used for backwards compatibility, please read the changelog before changing.
     # $ darwin-rebuild changelog

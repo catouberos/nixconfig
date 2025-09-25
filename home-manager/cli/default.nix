@@ -25,6 +25,7 @@ in {
     tcld
     xan
     gh-markdown-preview
+    github-cli
   ];
 
   programs = {

@@ -20,10 +20,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # macOS
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     mac-app-util.url = "github:hraban/mac-app-util";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
@@ -39,6 +41,7 @@
     self,
     nixpkgs,
     nix-darwin,
+    nix-homebrew,
     home-manager,
     sops-nix,
     apple-silicon,
@@ -98,7 +101,11 @@
       # macbook
       air = nix-darwin.lib.darwinSystem {
         specialArgs = {inherit inputs;};
-        modules = [mac-app-util.darwinModules.default ./hosts/air];
+        modules = [
+          mac-app-util.darwinModules.default
+          nix-homebrew.darwinModules.nix-homebrew
+          ./hosts/air
+        ];
       };
     };
   };
