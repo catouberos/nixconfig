@@ -22,7 +22,6 @@ in {
     httpie
     grpcurl
     google-cloud-sdk
-    tcld
     xan
     gh-markdown-preview
     github-cli
