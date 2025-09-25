@@ -46,6 +46,12 @@
     kubectl
     helmfile
     (pkgs.wrapHelm pkgs.kubernetes-helm {plugins = [pkgs.kubernetes-helmPlugins.helm-diff];})
+
+    spotify
+    spicetify-cli
+
+    orca-slicer
+    darktable
   ];
 
   home.sessionVariables = {
