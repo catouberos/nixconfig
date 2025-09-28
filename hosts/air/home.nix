@@ -2,6 +2,7 @@
   imports = [
     ../../home-manager/cli
     ../../home-manager/cli/terminal/wezterm.nix
+    ../../home-manager/cli/multimedia/spotify-player.nix
     ../../home-manager/nixvim
     ../../home-manager/1password.nix
     ../../home-manager/desktop/multimedia/mpv.nix

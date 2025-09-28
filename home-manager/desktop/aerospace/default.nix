@@ -43,6 +43,25 @@
         alt-k = "focus up";
         alt-l = "focus right";
       };
+
+      on-window-detected = [
+        {
+          "if" = {
+            app-id = "com.github.wez.wezterm";
+          };
+          run = [
+            "move-node-to-workspace 2"
+          ];
+        }
+        {
+          "if" = {
+            window-title-regex-substring = "spotify_player-wrapped";
+          };
+          run = [
+            "move-node-to-workspace 10"
+          ];
+        }
+      ];
     };
   };
 }
