@@ -4,6 +4,7 @@
     ../../home-manager/cli
     ../../home-manager/cli/terminal
     ../../home-manager/cli/utility
+    ../../home-manager/cli/multimedia/spotify-player.nix
     ../../home-manager/nixvim
     ../../home-manager/development
     ../../home-manager/1password.nix
