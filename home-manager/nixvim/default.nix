@@ -81,6 +81,17 @@
               enable = true;
             };
           };
+          settings = {
+            pickers = {
+              buffers = {
+                mappings = {
+                  i = {
+                    "<c-d>" = {__raw = "require('telescope.actions').delete_buffer + require('telescope.actions').move_to_top";};
+                  };
+                };
+              };
+            };
+          };
         };
 
         neo-tree = {
