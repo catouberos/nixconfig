@@ -8,18 +8,13 @@
 in {
   programs.ssh = {
     enable = true;
-    forwardAgent = true;
-    extraConfig = lib.mkMerge [
-      (lib.mkIf pkgs.stdenv.isLinux
-        ''
-          Host *
-            IdentityAgent "${onePassLinuxPath}"
-        '')
-      (lib.mkIf pkgs.stdenv.isDarwin
-        ''
-          Host *
-            IdentityAgent "${onePassDarwinPath}"
-        '')
-    ];
+    enableDefaultConfig = false;
+    matchBlocks."*" = {
+      forwardAgent = true;
+      identityAgent = lib.mkMerge [
+        (lib.mkIf pkgs.stdenv.isLinux onePassLinuxPath)
+        (lib.mkIf pkgs.stdenv.isDarwin onePassDarwinPath)
+      ];
+    };
   };
 }
