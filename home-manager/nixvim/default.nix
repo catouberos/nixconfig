@@ -66,7 +66,8 @@
         telescope = {
           enable = true;
           keymaps = {
-            "<leader><leader>" = "buffers";
+            "<leader><leader>" = "resume";
+            "<leader>fb" = "buffers";
             "<leader>ff" = "find_files";
             "<leader>fg" = "live_grep";
             "<leader>git" = {
@@ -85,6 +86,9 @@
             pickers = {
               buffers = {
                 mappings = {
+                  n = {
+                    "<c-d>" = {__raw = "require('telescope.actions').delete_buffer + require('telescope.actions').move_to_top";};
+                  };
                   i = {
                     "<c-d>" = {__raw = "require('telescope.actions').delete_buffer + require('telescope.actions').move_to_top";};
                   };
