@@ -47,6 +47,10 @@
     };
   };
 
+  services = {
+    tailscale.enable = true;
+  };
+
   system = {
     primaryUser = "catou";
     # Set Git commit hash for darwin-version.
