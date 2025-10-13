@@ -185,7 +185,7 @@
     extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";
     users.catou = {
-      imports = [./home.nix inputs.nixvim.homeManagerModules.nixvim];
+      imports = [./home.nix inputs.nixvim.homeModules.nixvim];
     };
   };
 

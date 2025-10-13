@@ -43,7 +43,7 @@
       inputs.mac-app-util.homeManagerModules.default
     ];
     users.catou = {
-      imports = [./home.nix inputs.nixvim.homeManagerModules.nixvim];
+      imports = [./home.nix inputs.nixvim.homeModules.nixvim];
     };
   };
 
