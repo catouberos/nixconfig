@@ -15,6 +15,19 @@
       enable = true;
       defaultEditor = true;
 
+      autoCmd = [
+        {
+          command = "Neotree close";
+          event = ["User"];
+          pattern = ["PersistenceSavePre"];
+        }
+        {
+          command = "Neotree";
+          event = ["User"];
+          pattern = ["PersistenceLoadPost"];
+        }
+      ];
+
       opts = {
         number = true;
         relativenumber = true;
@@ -55,12 +68,10 @@
       ];
 
       plugins = {
-        toggleterm.enable = true;
         web-devicons.enable = true;
         ts-autotag.enable = true;
 
-        # typst
-        typst-preview.enable = true;
+        persistence.enable = true;
 
         # navigation
         telescope = {
@@ -70,12 +81,6 @@
             "<leader>fb" = "buffers";
             "<leader>ff" = "find_files";
             "<leader>fg" = "live_grep";
-            "<leader>git" = {
-              action = "git_files";
-              options = {
-                desc = "Telescope Git Files";
-              };
-            };
           };
           extensions = {
             ui-select = {
@@ -129,44 +134,16 @@
 
         # completion
         luasnip.enable = true;
-        cmp = {
+        blink-cmp = {
           enable = true;
           settings = {
-            autoEnableSources = true;
-            snippet = {expand = "luasnip";};
-            sources = [
-              {name = "nvim_lsp";}
-              {
-                name = "buffer"; # text within current buffer
-                option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-              }
-              {
-                name = "path";
-              }
-              {
-                name = "luasnip";
-              }
-            ];
-            mapping = {
-              "<CR>" = "cmp.mapping.confirm({ select = true })";
-              "<Down>" = "cmp.mapping.select_next_item()";
-              "<Up>" = "cmp.mapping.select_prev_item()";
-              "<Tab>" = "cmp.mapping.select_next_item()";
-              "<S-Tab>" = "cmp.mapping.select_prev_item()";
-              "<C-j>" = "cmp.mapping.select_next_item()";
-              "<C-k>" = "cmp.mapping.select_prev_item()";
-              "<C-d>" = "cmp.mapping.scroll_docs(-4)";
-              "<C-f>" = "cmp.mapping.scroll_docs(4)";
-              "<C-Space>" = "cmp.mapping.complete()";
-              "<C-e>" = "cmp.mapping.close()";
+            completion = {
+              documentation = {
+                auto_show = true;
+              };
             };
           };
         };
-        cmp-nvim-lsp = {enable = true;}; # lsp
-        cmp-buffer = {enable = true;};
-        cmp-path = {enable = true;}; # file system paths
-        cmp_luasnip = {enable = true;}; # snippets
-        cmp-cmdline = {enable = false;}; # autocomplete for cmdline
       };
     };
   };

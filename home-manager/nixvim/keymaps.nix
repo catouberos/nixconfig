@@ -17,9 +17,18 @@
         key = "<leader>gd";
       }
       {
-        action = ":ls<CR>:sb<Space>";
-        key = "<leader>j";
+        action = "<cmd>lua require('persistence').load()<CR>";
+        key = "<leader>qs";
       }
+      {
+        action = "<cmd>lua require('persistence').select()<CR>";
+        key = "<leader>qS";
+      }
+      {
+        action = "<cmd>lua require('persistence').load({ last = true })<CR>";
+        key = "<leader>ql";
+      }
+
       {
         action = ":bn<CR>";
         key = "L";
