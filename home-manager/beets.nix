@@ -6,7 +6,7 @@
   programs.beets = {
     enable = true;
     settings = {
-      plugins = "fetchart embedart convert zero mbsync fish smartplaylist lyrics";
+      plugins = "musicbrainz fetchart embedart convert zero mbsync fish smartplaylist lyrics";
       directory = "/mnt/samsung860/Music";
       library = "${config.home.homeDirectory}/.beets/library.db";
       match = {
