@@ -73,6 +73,10 @@
         "type:touchpad" = {
           scroll_factor = "0.25";
         };
+        "type:keyboard" = {
+          "repeat_delay" = "200";
+          "repeat_rate" = "30";
+        };
       };
 
       output = {
