@@ -18,6 +18,9 @@
 in {
   home.packages = [
     mpv-websocket
+    pkgs.n-m3u8dl-re
+    pkgs.bento4
+    pkgs.shaka-packager
   ];
 
   programs.mpv = {
