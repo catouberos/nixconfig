@@ -100,7 +100,7 @@
     darwinConfigurations = {
       # macbook
       air = nix-darwin.lib.darwinSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           mac-app-util.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew
@@ -109,7 +109,7 @@
       };
 
       cloud = nix-darwin.lib.darwinSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           nix-homebrew.darwinModules.nix-homebrew
           ./hosts/cloud
