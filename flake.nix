@@ -107,6 +107,14 @@
           ./hosts/air
         ];
       };
+
+      cloud = nix-darwin.lib.darwinSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          nix-homebrew.darwinModules.nix-homebrew
+          ./hosts/cloud
+        ];
+      };
     };
   };
 }
