@@ -19,9 +19,10 @@ in
       package = lib.mkMerge [
         (
           lib.mkIf pkgs.stdenv.isDarwin
-          (pkgs.wrapFirefox (pkgs.firefox-unwrapped.override {
-            libcanberra-gtk3 = pkgs.libcanberra-gtk2;
-          }) {})
+(pkgs.firefox.overrideAttrs (_: {
+        gtk_modules = [ ];
+      })
+)
         )
         (
           lib.mkIf pkgs.stdenv.isLinux

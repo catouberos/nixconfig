@@ -108,6 +108,15 @@
         ];
       };
 
+      pro = nix-darwin.lib.darwinSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          mac-app-util.darwinModules.default
+          nix-homebrew.darwinModules.nix-homebrew
+          ./hosts/pro
+        ];
+      };
+
       cloud = nix-darwin.lib.darwinSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
