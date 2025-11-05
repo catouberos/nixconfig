@@ -10,7 +10,7 @@
         # web
         tsgo = {
           enable = true;
-          settings = {
+          config = {
             filetypes = [
               "typescript"
               "javascript"
@@ -22,7 +22,7 @@
         };
         vtsls = {
           enable = true;
-          settings = {
+          config = {
             filetypes = [
               "typescript"
               "javascript"
@@ -43,7 +43,7 @@
         # nix
         nixd = {
           enable = true;
-          settings = {
+          config = {
             filetypes = ["nix"];
             root_markers = ["flake.nix" "git"];
           };
@@ -52,7 +52,7 @@
         # c/c++
         clangd = {
           enable = true;
-          settings = {
+          config = {
             filetypes = ["c" "cpp"];
           };
         };

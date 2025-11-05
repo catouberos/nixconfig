@@ -45,15 +45,19 @@ in {
     };
     git = {
       enable = true;
-      userEmail = "khoanguyen.do@outlook.com";
-      userName = "Nguyen Do";
-      extraConfig = {
-        gpg.format = "ssh";
-        gpg."ssh".program = lib.mkMerge [
-          (lib.mkIf pkgs.stdenv.isLinux "${pkgs._1password-gui}/bin/op-ssh-sign")
-          (lib.mkIf pkgs.stdenv.isDarwin "/Applications/1Password.app/Contents/MacOS/op-ssh-sign")
-        ];
-        user.signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaumQv5SNC23QI8UytovjkssAor+yxQLixCGqVkk4vJ";
+      settings = {
+        user = {
+          email = "khoanguyen.do@outlook.com";
+          name = "Nguyen Do";
+          signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaumQv5SNC23QI8UytovjkssAor+yxQLixCGqVkk4vJ";
+        };
+        gpg = {
+          format = "ssh";
+          "ssh".program = lib.mkMerge [
+            (lib.mkIf pkgs.stdenv.isLinux "${pkgs._1password-gui}/bin/op-ssh-sign")
+            (lib.mkIf pkgs.stdenv.isDarwin "/Applications/1Password.app/Contents/MacOS/op-ssh-sign")
+          ];
+        };
         commit.gpgsign = true;
       };
     };
