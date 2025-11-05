@@ -13,7 +13,7 @@
     ripgrep
     fd
     alejandra
-    ffmpeg
+    ffmpeg_8-full
 
     colima
     docker

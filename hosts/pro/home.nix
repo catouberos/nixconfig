@@ -7,6 +7,7 @@
     ../../home-manager/1password.nix
     ../../home-manager/desktop/multimedia/mpv.nix
     ../../home-manager/desktop/firefox.nix
+    ../../home-manager/desktop/fonts.nix
     ../../home-manager/development/direnv.nix
     ../../home-manager/desktop/aerospace
   ];
@@ -15,14 +16,11 @@
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    jetbrains-mono
-
     # nixvim
     ripgrep
     fd
     alejandra
-    ffmpeg
+    ffmpeg_8-full
     xld
 
     colima
@@ -33,8 +31,7 @@
     # desktop
     autoraise
     supersonic
-
-    discord
+    spotify
   ];
 
   home.sessionVariables = {
