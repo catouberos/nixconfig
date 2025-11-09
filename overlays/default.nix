@@ -27,24 +27,25 @@
         };
       };
     };
-    python3Packages = prev.recurseIntoAttrs (python3.pkgs);
+    python3Packages = prev.lib.recurseIntoAttrs (python3.pkgs);
 
     octoprint = prev.octoprint.override {
       packageOverrides = self: super: {
         octoprint-bambuprinter = self.buildPythonPackage rec {
           pname = "BambuPrinter";
-          version = "0.1.7";
+          version = "0.1.8rc16";
           format = "setuptools";
           src = prev.fetchFromGitHub {
             owner = "jneilliii";
             repo = "OctoPrint-BambuPrinter";
             rev = version;
-            sha256 = "sha256-GHkcBkPtclIjl183mKX+G1PrjgKG9DBS7aRR8/X/WwM=";
+            sha256 = "sha256-DIu9K5bwwCfs817hV6YHBRRe8gku5QEBmRYzg8UTsTc=";
           };
           propagatedBuildInputs = [
             python3.pkgs.pybambu
             super.python.pkgs.paho-mqtt
             super.python.pkgs.python-dateutil
+            super.python.pkgs.cloudscraper
             super.octoprint
           ];
           doCheck = false;
