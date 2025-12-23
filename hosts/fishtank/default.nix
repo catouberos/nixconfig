@@ -23,6 +23,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_testing;
+    kernelModules = ["snd" "snd-timer" "snd-pcm" "snd-aloop"];
     # Use the systemd-boot EFI boot loader.
     loader = {
       systemd-boot.enable = true;
@@ -128,12 +129,34 @@
       enable = true;
       alsa = {
         enable = true;
-        support32Bit = true;
       };
       pulse.enable = true;
       jack.enable = true;
       extraConfig = {
         pipewire = {
+          "0-alsa-loopback" = {
+            "context.properties" = {
+              "default.clock.rate" = 192000;
+              "vm.overrides" = {
+                "default.clock.min-quantum" = 4096;
+              };
+            };
+            "context.objects" = [
+              {
+                factory = "adapter";
+                args = {
+                  "factory.name" = "api.alsa.pcm.sink";
+                  "node.name" = "alsa-sink";
+                  "node.description" = "Alsa Loopback";
+                  "media.class" = "Audio/Sink";
+                  "api.alsa.path" = "hw:Loopback,0,0";
+                  "audio.format" = "S32LE";
+                  "audio.rate" = 192000;
+                  "audio.channels" = 2;
+                };
+              }
+            ];
+          };
           "10-clock-rate" = {
             "context.properties" = {
               "default.clock.allowed-rates" = [44100 48000 88200 96000 176400 192000];
