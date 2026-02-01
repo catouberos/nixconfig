@@ -1,13 +1,11 @@
 {
   pkgs,
-  config,
   inputs,
   outputs,
   ...
 }: {
   imports = [
-    inputs.nixos-hardware.nixosModules.common-cpu-amd
-    inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.home-manager.nixosModules.default
@@ -19,6 +17,7 @@
     ../../modules/security
     ../../modules/virtualisation
     ../../modules/rgb.nix
+    ../../modules/services/camilladsp.nix
   ];
 
   boot = {
@@ -115,7 +114,41 @@
   sops.secrets.cloudflare_tokens = {};
 
   hardware = {
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    # https://github.com/HEnquist/camilladsp-config/blob/ac18c5b23405928d4e1d81b962b8dd23ebf1f092/asound.conf
+    alsa.config = ''
+      pcm.!default {
+         type plug
+         slave.pcm "camilladsp"
+      }
+
+      pcm.camilladsp {
+          type plug
+          slave {
+              pcm {
+                  type	hw
+                  card	"Loopback"
+                  device	0
+                  channels	2
+                  format	"S32_LE"
+                  rate	192000
+              }
+          }
+      }
+
+      ctl.!default {
+          type hw
+          card "Loopback"
+      }
+      ctl.camilladsp {
+              type	hw
+              card	"Loopback"
+      }
+    '';
+    keyboard.qmk.enable = true;
   };
 
   stylix = {
@@ -125,6 +158,7 @@
   };
 
   services = {
+    logrotate.checkConfig = false;
     pipewire = {
       enable = true;
       alsa = {
@@ -168,8 +202,9 @@
     dbus.enable = true;
     gnome.gnome-keyring.enable = true;
     udisks2.enable = true;
-    mullvad-vpn.enable = true;
-    tailscale.enable = true;
+    tailscale = {
+      enable = true;
+    };
 
     openssh = {
       enable = true;
@@ -183,12 +218,12 @@
 
   fileSystems = {
     "/mnt/wdpurple" = {
-      device = "192.168.0.69:/wdpurple";
+      device = "shinobu:/wdpurple";
       fsType = "nfs";
       options = ["x-systemd.automount" "noauto"];
     };
     "/mnt/samsung860" = {
-      device = "192.168.0.69:/samsung860";
+      device = "shinobu:/samsung860";
       fsType = "nfs";
       options = ["x-systemd.automount" "noauto"];
     };
@@ -201,12 +236,11 @@
       enable = true;
       enableSSHSupport = true;
     };
-    adb.enable = true;
   };
 
   users.users.catou = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "gamemode" "libvirtd" "adbusers"];
+    extraGroups = ["wheel" "docker" "gamemode" "libvirtd"];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADAlbdEFy+qGrgOfffqnSNAF8W7ozq36M3R0JtBclFV"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKrwXjRy8QWobQ3tFwy8ombcT0K1kbZzFxX/fiYhqeNG"
@@ -236,6 +270,7 @@
       vulkan-tools
 
       ffmpeg-full
+      qmk
     ];
     variables = {
       # track https://github.com/swaywm/sway/issues/8143

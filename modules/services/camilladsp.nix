@@ -125,7 +125,7 @@
 in {
   # https://github.com/HEnquist/camilladsp-config/blob/ac18c5b23405928d4e1d81b962b8dd23ebf1f092/camilladsp.service
   systemd.services.camilladsp = {
-    after = ["syslog.target"];
+    after = ["multi-user.target"];
     startLimitIntervalSec = 10;
     startLimitBurst = 10;
     serviceConfig = {
@@ -133,8 +133,6 @@ in {
       ExecStart = "${pkgs.camilladsp}/bin/camilladsp ${config}";
       Restart = "always";
       RestartSec = 1;
-      StandardOutput = "syslog";
-      StandardError = "syslog";
       SyslogIdentifier = "camilladsp";
       User = "root";
       Group = "root";
