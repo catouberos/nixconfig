@@ -1,6 +1,6 @@
 {
   virtualisation = {
-    docker = {
+    podman = {
       enable = true;
     };
 
