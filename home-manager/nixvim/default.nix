@@ -81,6 +81,11 @@
             "<leader>fb" = "buffers";
             "<leader>ff" = "find_files";
             "<leader>fg" = "live_grep";
+            # lsp
+            "<leader>k" = "diagnostics";
+            "<leader>d" = "lsp_definitions";
+            "<leader>i" = "lsp_implementations";
+            "<leader>t" = "lsp_type_definitions";
           };
           extensions = {
             ui-select = {

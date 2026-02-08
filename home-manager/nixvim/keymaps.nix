@@ -5,16 +5,8 @@
     };
     keymaps = [
       {
-        action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
-        key = "<leader>ca";
-      }
-      {
         action = "<cmd>lua vim.diagnostic.open_float()<CR>";
         key = "<C-k>";
-      }
-      {
-        action = "<cmd>lua vim.lsp.buf.definition()<CR>";
-        key = "<leader>gd";
       }
       {
         action = "<cmd>lua require('persistence').load()<CR>";
