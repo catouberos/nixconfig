@@ -1,9 +1,9 @@
 {
   programs.aerospace = {
     enable = true;
+    launchd.enable = true;
 
-    userSettings = {
-      start-at-login = true;
+    settings = {
       after-startup-command = ["layout tiles"];
 
       gaps = {
@@ -11,6 +11,19 @@
         outer.bottom = 0;
         outer.top = 0;
         outer.right = 0;
+      };
+
+      workspace-to-monitor-force-assignment = {
+        "11" = "secondary";
+        "12" = "secondary";
+        "13" = "secondary";
+        "14" = "secondary";
+        "15" = "secondary";
+        "16" = "secondary";
+        "17" = "secondary";
+        "18" = "secondary";
+        "19" = "secondary";
+        "20" = "secondary";
       };
 
       mode.main.binding = {
@@ -35,6 +48,28 @@
         alt-shift-8 = "move-node-to-workspace 8";
         alt-shift-9 = "move-node-to-workspace 9";
         alt-shift-0 = "move-node-to-workspace 10";
+
+        alt-q = "workspace 11";
+        alt-w = "workspace 12";
+        alt-e = "workspace 13";
+        alt-r = "workspace 14";
+        alt-t = "workspace 15";
+        alt-y = "workspace 16";
+        alt-u = "workspace 17";
+        alt-i = "workspace 18";
+        alt-o = "workspace 19";
+        alt-p = "workspace 20";
+
+        alt-shift-q = "move-node-to-workspace 11";
+        alt-shift-w = "move-node-to-workspace 12";
+        alt-shift-e = "move-node-to-workspace 13";
+        alt-shift-r = "move-node-to-workspace 14";
+        alt-shift-t = "move-node-to-workspace 15";
+        alt-shift-y = "move-node-to-workspace 16";
+        alt-shift-u = "move-node-to-workspace 17";
+        alt-shift-i = "move-node-to-workspace 18";
+        alt-shift-o = "move-node-to-workspace 19";
+        alt-shift-p = "move-node-to-workspace 20";
 
         alt-shift-tab = "move-workspace-to-monitor --wrap-around next";
 

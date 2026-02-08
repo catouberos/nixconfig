@@ -29,9 +29,11 @@
       "uBlock Origin Lite" = 6745342698;
       "Tailscale" = 1475387142;
       "1Password for Safari" = 1569813296;
+      "Shapr3D" = 1091675654;
     };
     casks = [
       "ungoogled-chromium"
+      "orcaslicer"
     ];
   };
 

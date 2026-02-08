@@ -2,7 +2,6 @@
   imports = [
     ../../home-manager/cli
     ../../home-manager/cli/terminal/wezterm.nix
-    ../../home-manager/cli/multimedia/spotify-player.nix
     ../../home-manager/nixvim
     ../../home-manager/1password.nix
     ../../home-manager/desktop/multimedia/mpv.nix
@@ -23,15 +22,15 @@
     ffmpeg_8-full
     xld
 
+    openscad
+
     colima
     docker
     docker-buildx
     docker-compose
 
     # desktop
-    autoraise
     supersonic
-    spotify
   ];
 
   home.sessionVariables = {
