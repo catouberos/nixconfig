@@ -23,6 +23,7 @@
     ../../modules/services/minecraft.nix
     ../../modules/services/cloudflared.nix
     ../../modules/services/prometheus
+    ../../modules/services/vaultwarden.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
