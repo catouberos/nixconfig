@@ -73,7 +73,7 @@
         domain = "*";
         item = "nofile";
         type = "-";
-        value = "32768";
+        value = "1048576";
       }
     ];
   };
@@ -163,8 +163,15 @@
     tailscale.enable = true;
   };
 
-  systemd.services = {
-    transmission.serviceConfig.BindPaths = ["/mnt/wdpurple" "/mnt/samsung860"];
+  systemd = {
+    settings.Manager = {
+      DefaultLimitNOFILE = "1048576:1048576";
+    };
+    user.extraConfig = "DefaultLimitNOFILE=1048576:1048576";
+
+    services = {
+      transmission.serviceConfig.BindPaths = ["/mnt/wdpurple" "/mnt/samsung860"];
+    };
   };
 
   programs = {
