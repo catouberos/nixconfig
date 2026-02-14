@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.nixos-hardware.nixosModules.common-cpu-intel-cpu-only
     inputs.nixos-hardware.nixosModules.common-gpu-amd
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.home-manager.nixosModules.default
@@ -13,7 +13,6 @@
     inputs.sops-nix.nixosModules.sops
 
     ./hardware-configuration.nix
-    ../../modules/gaming
     ../../modules/security
     ../../modules/virtualisation
     ../../modules/rgb.nix
@@ -116,7 +115,7 @@
   hardware = {
     graphics = {
       enable = true;
-      enable32Bit = true;
+      enable32Bit = false;
     };
     # https://github.com/HEnquist/camilladsp-config/blob/ac18c5b23405928d4e1d81b962b8dd23ebf1f092/asound.conf
     alsa.config = ''
