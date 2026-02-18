@@ -7,7 +7,7 @@
     ../../home-manager/cli/multimedia/spotify-player.nix
     ../../home-manager/nixvim
     ../../home-manager/development
-    ../../home-manager/1password.nix
+    ../../home-manager/bitwarden.nix
   ];
 
   home.username = "catou";
@@ -53,6 +53,8 @@
 
     orca-slicer
     darktable
+
+    bitwarden-desktop
   ];
 
   home.sessionVariables = {
