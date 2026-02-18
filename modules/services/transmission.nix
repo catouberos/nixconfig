@@ -6,7 +6,7 @@
   services.transmission = {
     enable = true;
     package = pkgs.transmission_4;
-    # webHome = pkgs.flood-for-transmission;
+    webHome = pkgs.trgui-ng-web;
     openRPCPort = true;
     openPeerPorts = true;
     performanceNetParameters = true;
@@ -24,6 +24,7 @@
       # rpc
       rpc-bind-address = "0.0.0.0";
       rpc-whitelist = "127.0.0.1, 192.168.*.*";
+      rpc-host-whitelist = "transmission.tail9e1cce.ts.net";
     };
   };
 }
