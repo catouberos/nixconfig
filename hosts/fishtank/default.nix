@@ -110,7 +110,6 @@
   # sops
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.age.keyFile = "/home/catou/.config/sops/age/keys.txt";
-  sops.secrets.cloudflare_tokens = {};
 
   hardware = {
     graphics = {
