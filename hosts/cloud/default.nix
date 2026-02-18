@@ -4,6 +4,7 @@
 {
   inputs,
   outputs,
+  config,
   pkgs,
   ...
 }: let
@@ -11,9 +12,17 @@
     ps.octoprint
     ps.octoprint-bambuprinter
   ]);
+
+  format = pkgs.formats.yaml {};
+  configFile = format.generate "go2rtc.yaml" {
+    streams = {
+      a1mini = "exec:${pkgs.bambu-go2rtc}/bin/bambu-go2rtc";
+    };
+  };
 in {
   imports = [
     inputs.home-manager.darwinModules.default
+    inputs.sops-nix.darwinModules.sops
   ];
 
   # Auto upgrade nix package and the daemon service.
@@ -52,7 +61,33 @@ in {
     stateVersion = 5;
   };
 
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
+  sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+  sops.secrets."bambu/address" = {
+    owner = config.system.primaryUser;
+  };
+  sops.secrets."bambu/access_code" = {
+    owner = config.system.primaryUser;
+  };
+
+  environment.systemPackages = [pkgs.bambu-go2rtc];
+
   launchd.user.agents = {
+    go2rtc = {
+      # export PRINTER_ADDRESS=$(cat ${config.sops.secrets."bambu/address".path})
+      # export PRINTER_ACCESS_CODE=$(cat ${config.sops.secrets."bambu/access_code".path})
+      script = ''
+        export PRINTER_ADDRESS=$(cat ${config.sops.secrets."bambu/address".path})
+        export PRINTER_ACCESS_CODE=$(cat ${config.sops.secrets."bambu/access_code".path})
+        ${pkgs.go2rtc}/bin/go2rtc -config ${configFile}
+      '';
+      serviceConfig = {
+        KeepAlive = true;
+        RunAtLoad = true;
+        StandardOutPath = "/tmp/go2rtc.out.log";
+        StandardErrorPath = "/tmp/go2rtc.err.log";
+      };
+    };
     octoprint = {
       command = "${octoprint}/bin/octoprint serve --port 5001";
       serviceConfig = {
