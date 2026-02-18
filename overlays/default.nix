@@ -29,6 +29,21 @@
     };
     python3Packages = prev.lib.recurseIntoAttrs (python3.pkgs);
 
+    bambu-go2rtc = prev.python3Packages.buildPythonApplication rec {
+      pname = "bambu-go2rtc";
+      version = "a6418dc619af7cef6a1d2573bd32c9f4dc9d7006";
+      pyproject = false;
+
+      src = prev.fetchFromGitHub {
+        owner = "synman";
+        repo = "bambu-go2rtc";
+        rev = version;
+        sha256 = "sha256-jvOJCy9Yg3tJnSdDuW80042wlEmJSguv2n9ytq+HWkI=";
+      };
+
+      installPhase = ''install -Dm755 camera-stream.py $out/bin/bambu-go2rtc'';
+    };
+
     octoprint = prev.octoprint.override {
       packageOverrides = self: super: {
         octoprint-bambuprinter = self.buildPythonPackage rec {
