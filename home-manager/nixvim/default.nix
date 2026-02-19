@@ -26,6 +26,11 @@
           event = ["User"];
           pattern = ["PersistenceLoadPost"];
         }
+        {
+          command = "let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))";
+          event = ["BufWinEnter"];
+          pattern = ["*"];
+        }
       ];
 
       opts = {
