@@ -22,15 +22,12 @@
     ffmpeg_8-full
     xld
 
-    openscad
-
     colima
     docker
     docker-buildx
     docker-compose
 
-    # desktop
-    supersonic
+    gemini-cli
   ];
 
   home.sessionVariables = {
