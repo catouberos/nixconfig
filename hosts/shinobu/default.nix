@@ -24,6 +24,7 @@
     ../../modules/services/cloudflared.nix
     ../../modules/services/prometheus
     ../../modules/services/vaultwarden.nix
+    ../../modules/services/home-assistant.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
