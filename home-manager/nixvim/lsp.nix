@@ -1,6 +1,29 @@
 {...}: {
   programs.nixvim = {
-    plugins.lsp.enable = true;
+    plugins = {
+      lsp.enable = true;
+      typescript-tools = {
+        enable = true;
+        settings = {
+          filetypes = [
+            "javascript"
+            "typescript"
+            "vue"
+          ];
+
+          jsx_close_tag = {
+            enable = true;
+          };
+
+          settings = {
+            tsserver_plugins = [
+              "@vue/language-server"
+              "@vue/typescript-plugin"
+            ];
+          };
+        };
+      };
+    };
 
     lsp = {
       servers = {
@@ -9,19 +32,7 @@
 
         # web
         tsgo = {
-          enable = true;
-          config = {
-            filetypes = [
-              "typescript"
-              "javascript"
-              "javascriptreact"
-              "typescriptreact"
-              "vue"
-            ];
-          };
-        };
-        vtsls = {
-          enable = true;
+          enable = false;
           config = {
             filetypes = [
               "typescript"
@@ -34,7 +45,7 @@
         };
         astro.enable = true;
         svelte.enable = true;
-        volar.enable = true;
+        vue_ls.enable = false;
         eslint.enable = true;
         tailwindcss.enable = true;
         html.enable = true;
