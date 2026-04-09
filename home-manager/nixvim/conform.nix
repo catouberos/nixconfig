@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    nodePackages.prettier
     yamlfmt
     stylua
   ];
