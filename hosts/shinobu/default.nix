@@ -124,16 +124,19 @@
 
     "/export/wdpurple" = {
       device = "/mnt/wdpurple";
+      fsType = "none";
       options = ["bind"];
     };
 
     "/export/wdblue" = {
       device = "/mnt/wdblue";
+      fsType = "none";
       options = ["bind"];
     };
 
     "/export/samsung860" = {
       device = "/mnt/samsung860";
+      fsType = "none";
       options = ["bind"];
     };
   };
