@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
+{pkgs, ...}: let
   btopPackage =
     if pkgs.system == "x86_64-linux"
     then pkgs.btop-rocm
@@ -45,16 +41,19 @@ in {
     };
     git = {
       enable = true;
+      signing = {
+        signByDefault = true;
+        format = "ssh";
+        key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaumQv5SNC23QI8UytovjkssAor+yxQLixCGqVkk4vJ";
+      };
       settings = {
         user = {
           email = "khoanguyen.do@outlook.com";
           name = "Nguyen Do";
-          signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICaumQv5SNC23QI8UytovjkssAor+yxQLixCGqVkk4vJ";
         };
         gpg = {
           format = "ssh";
         };
-        commit.gpgsign = true;
       };
     };
   };
