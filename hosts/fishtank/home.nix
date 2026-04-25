@@ -4,7 +4,6 @@
     ../../home-manager/cli
     ../../home-manager/cli/terminal
     ../../home-manager/cli/utility
-    ../../home-manager/cli/multimedia/spotify-player.nix
     ../../home-manager/nixvim
     ../../home-manager/development
     ../../home-manager/bitwarden.nix
@@ -47,9 +46,6 @@
     kubectl
     helmfile
     (pkgs.wrapHelm pkgs.kubernetes-helm {plugins = [pkgs.kubernetes-helmPlugins.helm-diff];})
-
-    spotify
-    spicetify-cli
 
     orca-slicer
     darktable
