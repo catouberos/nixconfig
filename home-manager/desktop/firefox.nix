@@ -81,7 +81,6 @@ in
             Status = "locked";
           };
           "extensions.pocket.enabled" = lock-false;
-          "browser.formfill.enable" = lock-false;
           "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
           "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
           "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
@@ -105,6 +104,13 @@ in
             Value = "";
           };
           "sidebar.position_start" = lock-false; # right-aligned
+
+          # disable auto-fill
+          "extensions.formautofill.addresses.enabled" = lock-false;
+          "extensions.formautofill.creditCards.enabled" = lock-false;
+          "signon.autofillForms" = lock-false;
+          "dom.forms.autocomplete.formautofill" = lock-false;
+          "browser.formfill.enable" = lock-false;
         };
 
         ExtensionSettings = {
