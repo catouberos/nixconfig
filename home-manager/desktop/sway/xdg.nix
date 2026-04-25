@@ -54,5 +54,6 @@ in {
       associations.added = associations;
       defaultApplications = associations;
     };
+    setSessionVariables = false;
   };
 }
