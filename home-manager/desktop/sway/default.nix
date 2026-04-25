@@ -57,7 +57,6 @@
         {command = "exec ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";}
         {command = "exec ${pkgs.firefox}/bin/firefox";}
         {command = "exec ${pkgs.wezterm}/bin/wezterm";}
-        {command = "exec ${pkgs._1password-gui}/bin/1password";}
         {command = "exec ${pkgs.thunderbird}/bin/thunderbird";}
       ];
 
@@ -95,7 +94,6 @@
         "${modifier}+space" = "exec ${menu}";
         "${modifier}+e" = "exec ${pkgs.wezterm}/bin/wezterm";
         "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
-        "Ctrl+Shift+Space" = "exec 1password --quick-access";
 
         # screenshot
         "print" = "exec ${pkgs.grim}/bin/grim - | ${pkgs.wl-clipboard}/bin/wl-copy";
