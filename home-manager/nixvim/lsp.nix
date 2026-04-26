@@ -1,28 +1,11 @@
-{...}: {
+{
+  lib,
+  config,
+  ...
+}: {
   programs.nixvim = {
     plugins = {
       lsp.enable = true;
-      typescript-tools = {
-        enable = true;
-        settings = {
-          filetypes = [
-            "javascript"
-            "typescript"
-            "vue"
-          ];
-
-          jsx_close_tag = {
-            enable = true;
-          };
-
-          settings = {
-            tsserver_plugins = [
-              "@vue/language-server"
-              "@vue/typescript-plugin"
-            ];
-          };
-        };
-      };
     };
 
     lsp = {
@@ -31,21 +14,26 @@
         harper_ls.enable = true;
 
         # web
-        tsgo = {
-          enable = false;
-          config = {
-            filetypes = [
-              "typescript"
-              "javascript"
-              "javascriptreact"
-              "typescriptreact"
-              "vue"
+        ts_ls = {
+          enable = true;
+          settings = {
+            filetypes = ["vue"];
+            init_options.plugins = [
+              {
+                name = "@vue/typescript-plugin";
+                location = "${lib.getBin config.programs.nixvim.lsp.servers.vue_ls.package}/lib/language-tools/packages/language-server";
+                languages = ["vue"];
+              }
             ];
           };
         };
+        vue_ls = {
+          enable = true;
+          packageFallback = true;
+        };
+
         astro.enable = true;
         svelte.enable = true;
-        vue_ls.enable = false;
         eslint.enable = true;
         tailwindcss.enable = true;
         html.enable = true;
