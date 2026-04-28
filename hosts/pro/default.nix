@@ -1,7 +1,12 @@
 # fishtank Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  outputs,
+  ...
+}: {
   imports = [
     inputs.home-manager.darwinModules.default
   ];
@@ -9,7 +14,6 @@
   # Auto upgrade nix package and the daemon service.
   # nix.package = pkgs.nix;
   nix.enable = true;
-  nixpkgs.config.allowUnfree = true;
 
   programs = {
     zsh.enable = true;
@@ -62,5 +66,12 @@
   };
 
   # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  nixpkgs = {
+    overlays = [
+      outputs.overlays.modifications
+    ];
+    config.allowUnfree = true;
+
+    hostPlatform = "aarch64-darwin";
+  };
 }

@@ -28,6 +28,10 @@
     docker-compose
 
     gemini-cli
+    wireshark
+
+    anki
+    supersonic
   ];
 
   home.sessionVariables = {

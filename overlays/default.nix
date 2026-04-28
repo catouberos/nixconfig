@@ -16,14 +16,69 @@
 
           src = super.fetchPypi {
             inherit pname version;
-            hash = "sha256-KHSfWsZHibJS52/5Tk5loBh38jiWd1H4pa4Om3mtI2k=";
+            hash = "";
           };
 
-          build-system = [
-            super.setuptools
-          ];
+          build-system = [super.setuptools];
 
           doCheck = false;
+        };
+
+        requests-doh = super.buildPythonPackage rec {
+          pname = "requests-doh";
+          version = "1.0.0";
+          pyproject = true;
+
+          src = prev.fetchFromGitHub {
+            owner = "mansuf";
+            repo = "requests-doh";
+            rev = "v${version}";
+            hash = "sha256-K1pesiCdDcRQinuZ1KZGBDnbHU3C+o/29FN/opb0lgw=";
+          };
+
+          build-system = [super.setuptools];
+
+          propagatedBuildInputs = let
+            requests = super.requests.overrideAttrs rec {
+              version = "2.32.3";
+
+              src = super.requests.src.override {
+                tag = "v${version}";
+                hash = "sha256-+RAPd/l+mwdmz1yAYZ/0gwHpFm91/dFVGlC2cjEAAKg=";
+              };
+            };
+            dnspython = super.dnspython.overrideAttrs rec {
+              version = "2.6.1";
+
+              src = super.dnspython.src.override {
+                inherit version;
+                hash = "sha256-6PD5wjp7fLmd7WTmw6bz5wHXj1DFXgArg53qciXP98w=";
+              };
+            };
+          in [requests requests.optional-dependencies.socks dnspython dnspython.optional-dependencies.doh];
+        };
+
+        pillow11 = super.pillow.overrideAttrs rec {
+          version = "11.1.0";
+
+          src = super.pillow.src.override {
+            tag = version;
+            hash = "sha256-9tcukZIJMheVNBfpppjUcuhvRal7J59iQWgBqkEgJDk=";
+          };
+
+          pytestFlagsArray = [];
+          preConfigure = let
+            getLibAndInclude = pkg: ''"${pkg.out}/lib", "${super.lib.getDev pkg}/include"'';
+          in ''
+            # The build process fails to find the pkg-config files for these dependencies
+            substituteInPlace setup.py \
+              --replace-fail 'IMAGEQUANT_ROOT = None' 'IMAGEQUANT_ROOT = ${getLibAndInclude prev.libimagequant}' \
+              --replace-fail 'JPEG2K_ROOT = None' 'JPEG2K_ROOT = ${getLibAndInclude prev.openjpeg}'
+
+            # Build with X11 support
+            export LDFLAGS="$LDFLAGS -L${prev.libxcb}/lib"
+            export CFLAGS="$CFLAGS -I${prev.libxcb.dev}/include"
+          '';
         };
       };
     };
@@ -42,6 +97,32 @@
       };
 
       installPhase = ''install -Dm755 camera-stream.py $out/bin/bambu-go2rtc'';
+    };
+
+    mangadex-downloader = prev.python3Packages.buildPythonApplication rec {
+      pname = "mangadex-downloader";
+      version = "a0c28102bcb3e18c478044cc08bdd82bc3d3a884";
+      pyproject = true;
+
+      src = prev.fetchFromGitHub {
+        owner = "mansuf";
+        repo = "mangadex-downloader";
+        rev = version;
+        sha256 = "sha256-YqH7VwaPN6L3D31c3NsDt1tJ07+w7AFqneFQkCe54io=";
+      };
+
+      build-system = with final.python3Packages; [setuptools];
+
+      dependencies = with final.python3Packages; [
+        tqdm
+        pathvalidate
+        packaging
+        pyjwt
+        beautifulsoup4
+        chardet
+        pillow11
+        requests-doh
+      ];
     };
 
     octoprint = prev.octoprint.override {
