@@ -17,7 +17,7 @@
         ts_ls = {
           enable = true;
           settings = {
-            filetypes = ["vue"];
+            filetypes = ["javascript" "typescript" "vue"];
             init_options.plugins = [
               {
                 name = "@vue/typescript-plugin";
