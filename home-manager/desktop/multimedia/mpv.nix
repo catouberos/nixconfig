@@ -61,7 +61,7 @@ in {
       slang = "enm,nm,eng";
       profile = "high-quality";
       hwdec = "auto";
-      vo = "gpu,libmpv";
+      vo = "gpu-next,gpu,libmpv";
 
       # subtitles
       sub-font = "IBM Plex Sans JP";
