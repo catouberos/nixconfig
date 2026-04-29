@@ -82,9 +82,8 @@
         };
       };
     };
-    python3Packages = prev.lib.recurseIntoAttrs (python3.pkgs);
 
-    bambu-go2rtc = prev.python3Packages.buildPythonApplication rec {
+    bambu-go2rtc = prev.python3.pkgs.buildPythonApplication rec {
       pname = "bambu-go2rtc";
       version = "a6418dc619af7cef6a1d2573bd32c9f4dc9d7006";
       pyproject = false;
@@ -148,5 +147,39 @@
         };
       };
     };
+
+    sway-unwrapped = prev.sway-unwrapped.overrideAttrs (old: final: rec {
+      version = "1.12-rc3";
+      src = prev.fetchFromGitHub {
+        owner = "swaywm";
+        repo = "sway";
+        rev = version;
+        hash = "sha256-SuVEUxz/PN9kJV4GG4bW4BojY6KEoW0qf3UF93AxCDI=";
+      };
+
+      buildInputs = with prev;
+        [
+          libGL
+          wayland
+          libxkbcommon
+          pcre2
+          json_c
+          libevdev
+          pango
+          cairo
+          libinput
+          gdk-pixbuf
+          librsvg
+          wayland-protocols
+          libdrm
+          (wlroots_0_20.override {inherit (final) enableXWayland;})
+        ]
+        ++ prev.lib.optionals stdenv.hostPlatform.isFreeBSD [
+          evdev-proto
+        ]
+        ++ prev.lib.optionals final.enableXWayland [
+          libxcb-wm
+        ];
+    });
   };
 }
