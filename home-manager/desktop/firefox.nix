@@ -11,6 +11,7 @@ in
   {
     lib,
     pkgs,
+    config,
     ...
   }: {
     programs.firefox = {
@@ -30,6 +31,8 @@ in
           (pkgs.wrapFirefox (pkgs.firefox-unwrapped.override {pipewireSupport = true;}) {})
         )
       ];
+
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
 
       profiles = {
         "default" = {
