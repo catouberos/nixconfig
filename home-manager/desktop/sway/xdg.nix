@@ -45,6 +45,7 @@ in {
     userDirs = {
       enable = true;
       createDirectories = true;
+      setSessionVariables = false;
       extraConfig = {
         XDG_CODE_DIR = "${config.home.homeDirectory}/Codes";
       };
@@ -54,6 +55,5 @@ in {
       associations.added = associations;
       defaultApplications = associations;
     };
-    setSessionVariables = false;
   };
 }
