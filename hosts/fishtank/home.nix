@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  outputs,
+  ...
+}: {
   imports = [
     ../../home-manager/desktop
     ../../home-manager/cli
@@ -59,6 +63,9 @@
 
   nixpkgs = {
     config.allowUnfree = true;
+    overlays = [
+      outputs.overlays.modifications
+    ];
   };
 
   services = {

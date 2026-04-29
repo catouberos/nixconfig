@@ -17,6 +17,7 @@
     ../../modules/virtualisation
     ../../modules/rgb.nix
     ../../modules/services/camilladsp.nix
+    ../../modules/gaming
   ];
 
   boot = {
@@ -79,9 +80,7 @@
   };
 
   nixpkgs = {
-    overlays = [
-      outputs.overlays.modifications
-    ];
+    overlays = [outputs.overlays.modifications];
     config.allowUnfree = true;
   };
 
@@ -114,7 +113,7 @@
   hardware = {
     graphics = {
       enable = true;
-      enable32Bit = false;
+      enable32Bit = true;
     };
     # https://github.com/HEnquist/camilladsp-config/blob/ac18c5b23405928d4e1d81b962b8dd23ebf1f092/asound.conf
     alsa.config = ''
@@ -234,11 +233,15 @@
       enable = true;
       enableSSHSupport = true;
     };
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
   };
 
   users.users.catou = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "gamemode" "libvirtd"];
+    extraGroups = ["wheel" "docker" "gamemode" "libvirtd" "wireshark"];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADAlbdEFy+qGrgOfffqnSNAF8W7ozq36M3R0JtBclFV"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKrwXjRy8QWobQ3tFwy8ombcT0K1kbZzFxX/fiYhqeNG"
@@ -247,7 +250,7 @@
 
   home-manager = {
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs outputs;};
     backupFileExtension = "backup";
     users.catou = {
       imports = [./home.nix inputs.nixvim.homeModules.nixvim];
