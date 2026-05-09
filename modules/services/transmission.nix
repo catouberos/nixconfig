@@ -10,6 +10,7 @@
     openRPCPort = true;
     openPeerPorts = true;
     performanceNetParameters = true;
+    group = "torrent";
     settings = {
       # files
       incomplete-dir = "${config.services.transmission.settings.download-dir}/.incomplete";

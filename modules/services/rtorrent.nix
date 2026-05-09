@@ -2,6 +2,7 @@
   services.rtorrent = {
     enable = true;
     openFirewall = true;
+    group = "torrent";
     configText = ''
       method.redirect=load.throw,load.normal
       method.redirect=load.start_throw,load.start
