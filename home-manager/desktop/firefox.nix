@@ -101,17 +101,11 @@ in
             Value = "JP";
           };
 
-          # tab location
-          "sidebar.verticalTabs" = lock-true;
-          "sidebar.main.tools" = {
-            Value = "";
-          };
-          "sidebar.position_start" = lock-false; # right-aligned
-
           # disable auto-fill
           "extensions.formautofill.addresses.enabled" = lock-false;
           "extensions.formautofill.creditCards.enabled" = lock-false;
           "signon.autofillForms" = lock-false;
+          "signon.rememberSignons" = lock-false;
           "dom.forms.autocomplete.formautofill" = lock-false;
           "browser.formfill.enable" = lock-false;
         };
