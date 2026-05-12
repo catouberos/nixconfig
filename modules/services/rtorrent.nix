@@ -8,6 +8,7 @@
       method.redirect=load.start_throw,load.start
       method.insert=d.down.sequential,value|const,0
       method.insert=d.down.sequential.set,value|const,0
+      system.umask.set = 0002
     '';
   };
 }

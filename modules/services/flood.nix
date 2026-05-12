@@ -7,7 +7,7 @@
 
   systemd.services.flood = {
     serviceConfig = {
-      SupplementaryGroups = ["rtorrent"];
+      SupplementaryGroups = ["torrent"];
     };
   };
 }

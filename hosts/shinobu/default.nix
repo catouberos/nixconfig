@@ -184,13 +184,16 @@
     mtr.enable = true;
   };
 
-  users.users.catou = {
-    isNormalUser = true;
-    extraGroups = ["wheel" "docker"];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADAlbdEFy+qGrgOfffqnSNAF8W7ozq36M3R0JtBclFV"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKrwXjRy8QWobQ3tFwy8ombcT0K1kbZzFxX/fiYhqeNG"
-    ];
+  users = {
+    groups.torrent = {};
+    users.catou = {
+      isNormalUser = true;
+      extraGroups = ["wheel" "docker" "torrent"];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADAlbdEFy+qGrgOfffqnSNAF8W7ozq36M3R0JtBclFV"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKrwXjRy8QWobQ3tFwy8ombcT0K1kbZzFxX/fiYhqeNG"
+      ];
+    };
   };
 
   home-manager = {
