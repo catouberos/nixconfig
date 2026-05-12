@@ -16,6 +16,7 @@
     ../../modules/virtualisation/container/wallabag.nix
     ../../modules/services/transmission.nix
     ../../modules/services/rtorrent.nix
+    ../../modules/services/qbittorrent.nix
     ../../modules/services/navidrome.nix
     ../../modules/services/jellyfin.nix
     ../../modules/services/immich.nix
