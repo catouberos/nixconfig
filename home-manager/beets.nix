@@ -33,7 +33,7 @@
       };
       lyrics = {
         sources = "lrclib";
-        synced = "yes";
+        synced = true;
       };
       convert = {
         dest = "${config.home.homeDirectory}/Beets";
