@@ -148,6 +148,21 @@
       };
     };
 
+    ha-bambulab = prev.buildHomeAssistantComponent rec {
+      owner = "greghesp";
+      domain = "bambu_lab";
+      version = "v2.2.20";
+
+      src = prev.fetchFromGitHub {
+        owner = "greghesp";
+        repo = "ha-bambulab";
+        rev = version;
+        hash = "sha256-lKKfPWWcri2OUM9nkdY2iltvIaoFhnUP4HGBGDUnEww=";
+      };
+
+      dependencies = [prev.python314Packages.beautifulsoup4 prev.python314Packages.cloudscraper];
+    };
+
     sway-unwrapped = prev.sway-unwrapped.overrideAttrs (old: final: rec {
       version = "1.12-rc3";
       src = prev.fetchFromGitHub {
