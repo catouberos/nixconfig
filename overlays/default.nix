@@ -98,7 +98,7 @@
       installPhase = ''install -Dm755 camera-stream.py $out/bin/bambu-go2rtc'';
     };
 
-    mangadex-downloader = prev.python3Packages.buildPythonApplication rec {
+    mangadex-downloader = prev.python3.pkgs.buildPythonApplication rec {
       pname = "mangadex-downloader";
       version = "a0c28102bcb3e18c478044cc08bdd82bc3d3a884";
       pyproject = true;
@@ -110,9 +110,9 @@
         sha256 = "sha256-YqH7VwaPN6L3D31c3NsDt1tJ07+w7AFqneFQkCe54io=";
       };
 
-      build-system = with final.python3Packages; [setuptools];
+      build-system = with final.python3.pkgs; [setuptools];
 
-      dependencies = with final.python3Packages; [
+      dependencies = with final.python3.pkgs; [
         tqdm
         pathvalidate
         packaging

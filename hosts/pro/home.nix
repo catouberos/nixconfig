@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  outputs,
+  ...
+}: {
   imports = [
     ../../home-manager/cli
     ../../home-manager/cli/terminal/wezterm.nix
@@ -19,7 +23,7 @@
     ripgrep
     fd
     alejandra
-    ffmpeg_8-full
+    ffmpeg-full
     xld
 
     colima
@@ -32,6 +36,8 @@
 
     anki
     supersonic
+
+    mangadex-downloader
   ];
 
   home.sessionVariables = {
@@ -40,6 +46,9 @@
 
   nixpkgs = {
     config.allowUnfree = true;
+    overlays = [
+      outputs.overlays.modifications
+    ];
   };
 
   # Let Home Manager install and manage itself.

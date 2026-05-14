@@ -2,8 +2,8 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
-  inputs,
   pkgs,
+  inputs,
   outputs,
   ...
 }: {
@@ -47,7 +47,7 @@
 
   home-manager = {
     useUserPackages = true;
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs outputs;};
     backupFileExtension = "backup";
     sharedModules = [
       inputs.mac-app-util.homeManagerModules.default
