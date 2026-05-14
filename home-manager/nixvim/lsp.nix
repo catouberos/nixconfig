@@ -16,7 +16,7 @@
         # web
         ts_ls = {
           enable = true;
-          settings = {
+          config = {
             filetypes = ["javascript" "typescript" "vue"];
             init_options.plugins = [
               {
